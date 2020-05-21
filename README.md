@@ -25,11 +25,11 @@ Gabriel Pires – gabriel.santos.pes@gmail.com
 
 Luis Fellipe – fe.fellipelima14@gmail.com
 
-Matheus Filho – matheusvestibulares2018@gmail.com
+Matheus Filho – matheusrodrigofilho@outlook.com
 
-## Contributing
+## Contribua
 
-1. Faça o *fork* do projeto ([https://github.com/yourname/yourproject/fork](https://github.com/GabriPires/pi-dory))
+1. Faça o *fork* do projeto ([https://github.com/GabriPires/pi-dory/fork](https://github.com/GabriPires/pi-dory))
 2. Crie uma *branch* para sua modificação (`git checkout -b feature/fooBar`)
 3. Faça o *commit* (`git commit -am 'Add some fooBar'`)
 4. *Push* (`git push origin feature/fooBar`)
