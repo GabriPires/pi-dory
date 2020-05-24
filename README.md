@@ -4,7 +4,7 @@
 
 O sistema Dory visa proporcionar facilidade de acesso, com uma ferramenta que disponibilize às pessoas a possibilidade e oportunidade de obterem maiores resultados nas buscas por seus entes queridos que vieram a se desprender do meio familiar contra a sua vontade.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/14eafd21-cbfd-42bf-a00f-854df42dd4f3/Logo_3.0.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/14eafd21-cbfd-42bf-a00f-854df42dd4f3/Logo_3.0.png)
+![alt text](https://github.com/GabriPires/pi-dory/blob/master/Imagens/Logo_3.0.png)
 
 ## Exemplo de uso
 
