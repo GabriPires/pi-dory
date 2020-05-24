@@ -8,6 +8,7 @@
     <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+   
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
     <script src="../../Scripts/jquery-3.0.0.min.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
@@ -16,14 +17,16 @@
 <body>
     <form id="form1" runat="server">
         <div class="row">
-            <div class="col-6 left-side">
+            <div class="col-6 left-side ">
                 <img src="../../Images/Logo_3.0.png" class="img-fluid" style="width: 30%; filter: grayscale(100%);"/>
             </div>
+            
             <div class="col-6 right-side">
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
                 </asp:ContentPlaceHolder>
             </div>
+            
         </div>
     </form>
 </body>

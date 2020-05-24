@@ -1,9 +1,11 @@
-﻿body {
+﻿
+/*
+body {
     margin: 0;
     padding: 0;
     outline: 0;
     box-sizing: border-box;
-}
+}*/
 
 .left-side {
     background-color: #808080;
@@ -17,7 +19,7 @@
     height: 100vh;
 }
 
-.btn-login {
+.btn-logincadastro {
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -25,4 +27,25 @@
 .btn-login-facebook {
     padding-left: 43px;
     padding-right: 43px;
+}
+
+.btn-cadastro {
+    padding-left: 67px;
+    padding-right: 67px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .400rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:12;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
