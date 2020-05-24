@@ -1,0 +1,28 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+.left-side {
+    background-color: #808080;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right-side {
+    height: 100vh;
+}
+
+.btn-login {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.btn-login-facebook {
+    padding-left: 43px;
+    padding-right: 43px;
+}
