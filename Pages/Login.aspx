@@ -40,7 +40,8 @@
 
                 <hr />
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-cadastro" Text="Crie uma Conta"/>
+                    <!-- <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-cadastro" Text="Crie uma Conta"/> -->
+                    <a href="CadastroInicialResponsavel.aspx" class="btn btn-dark btn-cadastro text-white">Crie uma Conta</a>
                 </div>
           </div>
         </div>

@@ -22,7 +22,7 @@
 
         <div class="col-8">
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="CPF:" required="true" tooltip="Adicione o seu CPF"/>
+                <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="CPF" required="true" tooltip="Adicione o seu CPF"/>
             </div>
 
 
@@ -63,7 +63,8 @@
             </div>
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
-                    <asp:Button ID="btnFimCadastro" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Finalizar Cadastro" />
+                    <!-- <asp:Button ID="btnFimCadastro" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Finalizar Cadastro" /> -->
+                    <a href="Login.aspx" class="btn btn-dark btn-logincadastro text-white">Finalizar Cadastro</a>
                 </div>
             </div>
 

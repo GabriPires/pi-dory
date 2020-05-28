@@ -20,12 +20,12 @@
             <div class="row justify-content-center">
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control form-control-lg" placeholder="Nome:" required="true" />
+                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control form-control-lg" placeholder="Nome" required="true" />
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtSobrenome" runat="server" CssClass="form-control form-control-lg" placeholder="Sobrenome:" required="true" />
+                        <asp:TextBox ID="txtSobrenome" runat="server" CssClass="form-control form-control-lg" placeholder="Sobrenome" required="true" />
                     </div>
                 </div>
                 <div class="col-6">
@@ -44,27 +44,28 @@
                 </div>
             </div>
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Email:" required="true" />
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Email" required="true" />
             </div>
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtConfirmaEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Confirme o Email:" required="true" />
+                <asp:TextBox ID="txtConfirmaEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Confirme o Email" required="true" />
             </div>
             <div class="row">
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Senha:" required="true" />
+                        <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Senha" required="true" />
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <asp:TextBox ID="txtConfirmaSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Confirme sua Senha:" required="true" />
+                        <asp:TextBox ID="txtConfirmaSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Confirme sua Senha" required="true" />
                     </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
             <div class="d-flex justify-content-center mt-2">
-                <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Continuar Cadastro" />
+                <!-- <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Continuar Cadastro" /> -->
+                <a href="CadastroFinalResponsavel.aspx" class="btn btn-dark btn-logincadastro text-white">Continuar Cadastro</a>
             </div>
         </div>
 
