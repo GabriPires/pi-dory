@@ -20,26 +20,24 @@
             
         </div>
 
-        <div class="col-10">
-
-
+        <div class="col-8">
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="CPF:" required tooltip="Adicione o seu CPF"/>
+                <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="CPF:" required="true" tooltip="Adicione o seu CPF"/>
             </div>
 
 
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço:" required tooltip="Adicione o seu Endereço"/>
+                <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço:" required="true" tooltip="Adicione o seu Endereço"/>
             </div>
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-4">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control form-control-lg" placeholder="Numero:" required tooltip="Adicione o numero da sua casa"/>
+                        <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control form-control-lg" placeholder="Numero:" required="true" tooltip="Adicione o numero da sua casa"/>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control form-control-lg" placeholder="Complemento(*):" required tooltip="Opcional"/>
+                        <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control form-control-lg" placeholder="Complemento(*):" required="true" tooltip="Opcional"/>
                     </div>
                 </div>
             </div>
@@ -51,7 +49,7 @@
             <div class="row justify-content-center">
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control form-control-lg" placeholder="Celular:" required tooltip="Adicione o seu Celular" />
+                        <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control form-control-lg" placeholder="Celular:" required="true" tooltip="Adicione o seu Celular" />
                     </div>
                 </div>
                 <div class="col-6">
@@ -61,7 +59,7 @@
                 </div>
             </div>
             <div class="form-group mb-1 text-right" style="font-size:10px;">
-                <p>Campos que tenham um * são opcionais!</p>
+                <p class="text-monospace">Campos que tenham um * são opcionais!</p>
             </div>
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
@@ -73,9 +71,6 @@
 
     </div>
 
-    <div class="row">
-        <asp:Literal ID="Facebook" runat="server" />
-        <asp:Literal ID="Instagram" runat="server" />
-    </div>
+    
 </asp:Content>
 
