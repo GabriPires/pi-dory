@@ -17,7 +17,6 @@
         <div class="col-12 text-center mb-2 mt-2 mb-5">
             <h1 class="text-monospace" >Cadastro</h1>
             <p >Estamos quase acabando</p>
-            
         </div>
 
         <div class="col-8">
