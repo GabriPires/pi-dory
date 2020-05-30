@@ -1,3 +1,14 @@
 ﻿body {
 
 }
+
+.btn-entrarCadastrar{
+    text-decoration:none;
+    color:black;
+
+}
+.btn-entrarCadastrar:hover{
+    text-decoration:none;
+    color:blue;
+    transition:0.4s;
+}
