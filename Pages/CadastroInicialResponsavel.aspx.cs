@@ -11,4 +11,8 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
     {
         
     }
+    protected void btn_Click(object sender, EventArgs e)
+    {
+        ltl.Text = "clicou";
+    }
 }

@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control form-control-lg" type="date" required="true" />
+                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de cadastro" type="date"/>
                     </div>
                 </div>
             </div>
@@ -64,8 +64,9 @@
         </div>
         <div class="form-group">
             <div class="d-flex justify-content-center mt-2">
-                <!-- <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Continuar Cadastro" /> -->
-                <a href="CadastroFinalResponsavel.aspx" class="btn btn-dark btn-logincadastro text-white">Continuar Cadastro</a>
+                <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Continuar Cadastro" onClick="btn_Click"/>
+                <a href="CadastroFinalResponsavel.aspx" class="btn btn-dark btn-logincadastro text-white">Continuar Cadastro link</a>
+                <asp:Literal ID="ltl" runat="server"/>
             </div>
         </div>
 
