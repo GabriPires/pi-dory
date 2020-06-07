@@ -59,9 +59,10 @@
 }
 
 .search {
-    width: 100%;
-    position: relative;
+    width: 70%;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchTerm {
