@@ -1,0 +1,140 @@
+﻿body {
+}
+
+.pessoasencontradas {
+    font-size: 1.5em;
+    color: #626262;
+    padding-top: 1em;
+}
+
+.tempos {
+    padding-top: 0.875em;
+    font-size: 0.875em;
+    text-align: left;
+    color: #979797;
+}
+
+.container-left {
+    border-radius: 25px;
+    box-shadow: 1px 2px 6px #808080;
+    float: right;
+    padding: 8px;
+}
+
+.content-container-left {
+    height: 400px;
+    overflow: auto;
+    background: #fff;
+}
+
+.img {
+    background-color: green;
+}
+
+.nome {
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    color: #979797;
+}
+
+.idade {
+    font-size: 0.90em;
+    padding: 0;
+    margin: 0;
+    color: #979797;
+}
+
+.bagulhoamarelo {
+    width: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgb(224, 221, 27);
+    margin: 0 auto;
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #ddddde;
+    border-right: none;
+    padding: 10px;
+    height: 40px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    outline: none;
+}
+
+
+.searchButton {
+    width: 40px;
+    height: 40px;
+    background: #475ac0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 100%;
+    margin-left: -15px;
+    border: none;
+    
+}
+
+.searchButton:hover {
+    opacity: 0.8;
+}
+.estatisticas {
+    text-align: center;
+    color: #706f6f;
+    font-size:1.5em;
+}
+
+.subTituloEstatistivas {
+    text-align: center;
+    color: #706f6f;
+    font-size: 0.875em;
+    margin-top: 0.875em;
+}
+
+.saibaMais {
+    font-size: 0.86em;
+    color: #706f6f;
+    margin-top: 0.86em;
+    text-decoration:none;
+}
+
+.saibaMais:hover {
+    
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #c4c4cc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #80808b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #262525;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #262525
+}
