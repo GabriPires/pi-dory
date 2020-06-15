@@ -11,7 +11,7 @@ public class Responsaveis
     private int res_id;
     private string res_email;
     private string res_senha;
-    private Pessoas pes_cpf;
+    private Pessoas pes_id;
 
     public int Res_id
     {
@@ -52,16 +52,16 @@ public class Responsaveis
         }
     }
 
-    public Pessoas Pes_cpf
+    public Pessoas Pes_id
     {
         get
         {
-            return pes_cpf;
+            return pes_id;
         }
 
         set
         {
-            pes_cpf = value;
+            pes_id = value;
         }
     }
 }

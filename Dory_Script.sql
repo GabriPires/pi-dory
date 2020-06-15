@@ -9,20 +9,18 @@ CREATE TABLE IF NOT EXISTS end_endereco (
     end_bairro varchar(180) not null,
     end_cidade varchar(180) not null,
     end_municipio char(2) not null,
-    end_pais varchar(50)
+    end_pais varchar(50) 
 )engine= innoDB;
 
 CREATE TABLE IF NOT EXISTS pes_pessoas(
 	pes_id integer not null primary key auto_increment,
     pes_cpf varchar(14),
     pes_nome varchar(180) not null,
-    pes_dataNascimento datetime not null,
+    pes_dataNascimento date not null,
     pes_sexo char(1) not null,
     pes_rg varchar(12),
-    pes_cutis varchar(50),
-    end_id integer not null,
+    pes_cutis varchar(50)
     
-    foreign key  (end_id) references end_endereco (end_id) 
 )engine = innoDB;
 
 CREATE TABLE IF NOT EXISTS con_contato(
@@ -37,8 +35,8 @@ CREATE TABLE IF NOT EXISTS con_contato(
 CREATE TABLE IF NOT EXISTS res_responsaveis(
 	res_id integer not null auto_increment primary key,
     res_email varchar(180) not null,
-    res_senha varchar(50),
-    pes_id integer not null,
+    res_senha varchar(50) not null,
+    pes_id integer,
     
     foreign key (pes_id) references pes_pessoas (pes_id)
 )engine = innoDB;
