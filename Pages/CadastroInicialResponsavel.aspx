@@ -31,15 +31,16 @@
                 <div class="col-6">
                     <div class="form-group mb-2">
                         <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg" placeholder="Sexo:">
-                            <asp:ListItem Value="F">Feminino</asp:ListItem>
-                            <asp:ListItem Value="M">Masculino</asp:ListItem>
-                            <asp:ListItem Value="O">Outro</asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Sexo" Value="-1"></asp:ListItem>
+                            <asp:ListItem Text="Masculino" Value="1"></asp:ListItem>
+                            <asp:ListItem Text="Feminino" Value="2"></asp:ListItem>
+                            <asp:ListItem Text="Outro" Value="3"></asp:ListItem>
                         </asp:DropDownList>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de cadastro" type="date"/>
+                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de Nascimento" type="date"/>
                     </div>
                 </div>
             </div>
@@ -66,6 +67,8 @@
             <div class="d-flex justify-content-center mt-2">
                 <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Continuar Cadastro" onClick="btn_Click"/>
                 <a href="CadastroFinalResponsavel.aspx" class="btn btn-dark btn-logincadastro text-white">Continuar Cadastro link</a>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
                 <asp:Literal ID="ltl" runat="server"/>
             </div>
         </div>

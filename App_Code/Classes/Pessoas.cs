@@ -1,20 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 /// <summary>
 /// Descrição resumida de Pessoas
 /// </summary>
 public class Pessoas
 {
+    private int pes_id;
     private int pes_cpf;
     private string pes_nome;
-    private DateTime pes_dataNascimento;
-    private char pes_sexo;
+    private string pes_dataNascimento;
+    private string pes_sexo;
     private string pes_rg;
     private string pes_cutis;
     private Endereco end_id;
+
+
+    public int Pes_id
+    {
+        get
+        {
+            return pes_id;
+        }
+
+        set
+        {
+            pes_id = value;
+        }
+    }
 
     public int Pes_cpf
     {
@@ -42,7 +54,7 @@ public class Pessoas
         }
     }
 
-    public DateTime Pes_dataNascimento
+    public string Pes_dataNascimento
     {
         get
         {
@@ -55,7 +67,7 @@ public class Pessoas
         }
     }
 
-    public char Pes_sexo
+    public string Pes_sexo
     {
         get
         {
