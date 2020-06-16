@@ -96,15 +96,16 @@ CREATE TABLE IF NOT EXISTS cde_caso_de_desaparecimento(
 )engine = innoDB;
 
 CREATE TABLE IF NOT EXISTS tut_tutorias(
+	tut_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
 	res_id INT NOT NULL,
     pes_id INT NOT NULL,
     
     tut_cadastro DATETIME NOT NULL,
     tut_ativo TINYINT NOT NULL,
     
-    CONSTRAINT pk_tut_tutorias PRIMARY KEY (res_id, pes_id),
-    CONSTRAINT fk_tut_tutorias2 FOREIGN KEY (res_id) REFERENCES res_responsaveis (res_id),
-    CONSTRAINT fk_tut_tutorias3 FOREIGN KEY (pes_id) REFERENCES pes_pessoas (pes_id)
+    FOREIGN KEY (res_id) REFERENCES res_responsaveis (res_id),
+    FOREIGN KEY (pes_id) REFERENCES pes_pessoas (pes_id)
 );
 
 /* drop table cde_caso_de_desaparecimento;
@@ -115,9 +116,5 @@ drop table min_mais_informacoes;
 drop table pes_pessoas;
 drop table res_responsaveis;
 drop table vul_vulneraveis;
+drop table tut_tutorias;
 /*
-
-
-
-
-
