@@ -115,4 +115,7 @@ drop table pes_pessoas;
 drop table res_responsaveis;
 drop table vul_vulneraveis;
 drop table tut_tutorias;
-/*
+*/
+
+
+select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id);

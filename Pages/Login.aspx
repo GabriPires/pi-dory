@@ -29,7 +29,7 @@
           </div>
             <div class="form-group">
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnEntrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Entrar"/>
+                    <asp:Button ID="btnEntrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Entrar" OnClick="btnEntrar_Click"/>
                 </div>
                 <div class="d-flex justify-content-center mt-2">
                     <p>ou</p>
