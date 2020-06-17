@@ -50,8 +50,16 @@
             </div>
             <div class="col-2 my-auto h-100">
                 <ul class="list-inline mb-0">
-                    <asp:Literal ID="ltlTextoLogado" runat="server"/>
-                    <asp:Button ID="btnLogout" runat="server" CssClass="mb-0 btn-entrarCadastrar" Text="Logout" OnClick="btnLogout_Click" />
+                    <form runat="server">
+                        <asp:Literal ID="ltlTextoLogado" runat="server"/>
+                        <% if(Session["nomeResponsavel"] != null)
+                            {
+                            %>
+                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="mb-0 btn-entrarCadastrar" Text="Logout" OnClick="btnLogout_Click" />
+                            <%
+                            }
+                        %>                       
+                    </form>
                 </ul>
                 
             </div>
