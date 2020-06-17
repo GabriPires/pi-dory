@@ -31,7 +31,7 @@ public partial class Pages_LoginCadastro : System.Web.UI.Page
         }
         else
         {
-            // Chamar modal dando erro de login
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroLogin').modal('show');</script>", false);
         }
     }
 }
