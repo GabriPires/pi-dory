@@ -50,15 +50,8 @@
             </div>
             <div class="col-2 my-auto h-100">
                 <ul class="list-inline mb-0">
-                    <li class="list-inline-item text">
-                        <a href="Login.aspx" class="mb-0 btn-entrarCadastrar">Entrar</a>
-                    </li>
-                
-                    <li class="list-inline-item">|</li>
-                
-                    <li class="list-inline-item">
-                        <a href="CadastroInicialResponsavel.aspx" class="mb-0 btn-entrarCadastrar">Cadastrar</a>
-                    </li>
+                    <asp:Literal ID="ltlTextoLogado" runat="server"/>
+                    <asp:Button ID="btnLogout" runat="server" CssClass="mb-0 btn-entrarCadastrar" Text="Logout" OnClick="btnLogout_Click" />
                 </ul>
                 
             </div>

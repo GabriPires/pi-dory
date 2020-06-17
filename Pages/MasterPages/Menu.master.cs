@@ -9,6 +9,30 @@ public partial class Pages_MasterPages_Menu : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if(Session["nomeResponsavel"] == null)
+        {
+            ltlTextoLogado.Text =  "<li class='list-inline-item text'>";
+            ltlTextoLogado.Text += "<a href='Login.aspx' class='mb-0 btn-entrarCadastrar'>Entrar</a>";
+            ltlTextoLogado.Text += "</li>";
+            ltlTextoLogado.Text += "<li class='list-inline-item'>|</li>";
+            ltlTextoLogado.Text += "<li class='list-inline-item'>";
+            ltlTextoLogado.Text += "<a href='CadastroInicialResponsavel.aspx' class='mb-0 btn-entrarCadastrar'>Cadastrar</a>";
+            ltlTextoLogado.Text += "</li>";
+        }
+        else
+        {
+            ltlTextoLogado.Text =  "<li class='list-inline-item text'>";
+            ltlTextoLogado.Text += "<p>" + Session["nomeResponsavel"].ToString() + "</p>";
+            ltlTextoLogado.Text += "</li>";
+            ltlTextoLogado.Text += "<li class='list-inline-item'>|</li>";
+            ltlTextoLogado.Text += "<li class='list-inline-item'>";
+            ltlTextoLogado.Text += "<a href='CadastroInicialResponsavel.aspx' class='mb-0 btn-entrarCadastrar'>Logout</a>";
+            ltlTextoLogado.Text += "</li>";
+        }
+    }
+
+    protected void btnLogout_Click(object sender, EventArgs e)
+    {
 
     }
 }
