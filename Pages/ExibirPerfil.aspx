@@ -5,10 +5,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="container bootstrap snippet">
         <div class="row mb-4">
-            <div class="col-sm-12">
-                <h1>
-                    Nome do Usuário                  
-                </h1>
+            <div class="col-12">
+                <asp:Literal ID="ltlTitulo" runat="server"></asp:Literal>
             </div>
         </div>
         <div class="row">

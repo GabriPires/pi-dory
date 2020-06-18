@@ -15,6 +15,7 @@ public partial class Pages_ExibirPerfil : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count >= 1)
         {
+            ltlTitulo.Text = "<h1>" + ds.Tables[0].Rows[0]["pes_nome"].ToString() +"</h1>";
             ltlNomeUsuario.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
             ltlCPF.Text = ds.Tables[0].Rows[0]["pes_cpf"].ToString();
             ltlRG.Text = ds.Tables[0].Rows[0]["pes_rg"].ToString();
