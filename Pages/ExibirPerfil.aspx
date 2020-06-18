@@ -48,31 +48,31 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <h5>Nome</h5>
-                                        <h6>Nome do usuário</h6>
+                                        <asp:Literal ID="ltlNomeUsuario" runat="server"></asp:Literal>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h5>CPF</h5>
-                                        <h6>CPF do usuário</h6>
+                                        <asp:Literal ID="ltlCPF" runat="server"></asp:Literal>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h5>RG</h5>
-                                        <h6>RG do usuário</h6>
+                                        <asp:Literal ID="ltlRG" runat="server"></asp:Literal>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h5>Sexo</h5>
-                                        <h6>Masculino</h6>
+                                        <asp:Literal ID="ltlSexo" runat="server"></asp:Literal>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h5>Data de nascimento</h5>
-                                        <h6>11/11/1111</h6>
+                                        <asp:Literal ID="ltlDataNascimento" runat="server"></asp:Literal>
                                     </div>
                                 </div>
                             </div>
@@ -83,11 +83,11 @@
                         <div class="col-12 p-4">
                             <div class="form-group">
                                 <h5>Celular</h5>
-                                <h6>12 9 9999-9999</h6>
+                                <asp:Literal ID="ltlCelular" runat="server"></asp:Literal>
                             </div>
                             <div class="form-group">
                                 <h5>Telefone</h5>
-                                <h6>12 9 9999-9999</h6>
+                                <asp:Literal ID="ltlTelefone" runat="server"></asp:Literal>
                             </div>
                         </div>
                     </div>

@@ -108,7 +108,7 @@ public class ResponsavelBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) where pes_id = ?pes_id";
+        string sql = "select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id) where pes_id = ?pes_id";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
