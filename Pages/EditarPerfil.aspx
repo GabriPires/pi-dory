@@ -45,8 +45,11 @@
                         <a class="nav-link active" id="pessoal-tab" data-toggle="tab" href="#dados_pessoais" role="tab" aria-controls="pessoal" aria-selected="true">Dados Pessoais</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#senha" role="tab" aria-controls="password" aria-selected="false">Alterar senha</a>
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contatos" role="tab" aria-controls="contact" aria-selected="false">Contatos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="password-tab" data-toggle="tab" href="#senha" role="tab" aria-controls="password" aria-selected="false">Alterar senha</a>
+                    </li>                
                 </ul>
 
                 <div class="tab-content">
@@ -91,6 +94,20 @@
                                     <button type="submit" class="btn btn-success btn-lg mb-2">Alterar dados</button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="contatos">
+                        <div class="col-12 p-4">
+                            <div class="form-group">
+                                <h6>Celular</h6>
+                                <input type="text" class="form-control form-control-lg" placeholder="Seu número de celular">
+                            </div>
+                            <div class="form-group">
+                                <h6>Telefone</h6>
+                                <input type="text" class="form-control form-control-lg" placeholder="Seu número de telefone">
+                            </div>
+                            <button type="submit" class="btn btn-success btn-lg mb-2">Alterar contatos</button>
                         </div>
                     </div>
 
