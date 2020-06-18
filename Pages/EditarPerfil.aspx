@@ -61,6 +61,7 @@
                                     <div class="form-group">
                                         <h6>Nome</h6>
                                         <input type="text" class="form-control form-control-lg" placeholder="Seu nome">
+                                        <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-6">
