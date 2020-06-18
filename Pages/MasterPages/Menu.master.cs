@@ -22,7 +22,7 @@ public partial class Pages_MasterPages_Menu : System.Web.UI.MasterPage
         else
         {
             ltlTextoLogado.Text =  "<li class='list-inline-item text'>";
-            ltlTextoLogado.Text += "<a href='#' class='list-inline-item btn-entrarCadastrar'>" + Session["nomeResponsavel"].ToString() + "</a>";
+            ltlTextoLogado.Text += "<a href='EditarPerfil.aspx' class='list-inline-item btn-entrarCadastrar'>" + Session["nomeResponsavel"].ToString() + "</a>";
             ltlTextoLogado.Text += "</li>";
             ltlTextoLogado.Text += "<li class='list-inline-item mr-0'>|</li>";
         }
