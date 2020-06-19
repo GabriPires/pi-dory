@@ -15,7 +15,7 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count >= 1)
         {
-            txtNome.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
+            //txtNome.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
             //ltlCPF.Text = ds.Tables[0].Rows[0]["pes_cpf"].ToString();
             //ltlRG.Text = ds.Tables[0].Rows[0]["pes_rg"].ToString();
             //ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? "Masculino" : "Feminino";

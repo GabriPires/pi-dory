@@ -80,6 +80,10 @@
                     <div class="tab-pane" id="contatos">
                         <div class="col-12 p-4">
                             <div class="form-group">
+                                <h5>Email</h5>
+                                <asp:Literal ID="ltlEmail" runat="server"></asp:Literal>
+                            </div>
+                            <div class="form-group">
                                 <h5>Celular</h5>
                                 <asp:Literal ID="ltlCelular" runat="server"></asp:Literal>
                             </div>

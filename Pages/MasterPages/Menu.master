@@ -16,65 +16,65 @@
     <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container-fluid ">
-        <div class="row">
-            <div class="col-2">
-                <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand mt-2 ml-5" href="#">
-                        <img src="../../Images/Logo_3.0.png" class="w-100" style="filter: grayscale(100%);" />
-                    </a>
-                </nav>
-            </div>
-            <div class="col-8">
-                <nav class="navbar navbar-expand-lg navbar-light my-auto h-100">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="Index.aspx">Início <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Desaparecidos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Quem Somos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Ajuda</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-2 my-auto h-100">
-                <ul class="list-inline mb-0">
-                    <form runat="server">
-                        <asp:Literal ID="ltlTextoLogado" runat="server"/>
-                        <% if(Session["nomeResponsavel"] != null)
+    <form runat="server">
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-2">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand mt-2 ml-5" href="#">
+                            <img src="../../Images/Logo_3.0.png" class="w-100" style="filter: grayscale(100%);" />
+                        </a>
+                    </nav>
+                </div>
+                <div class="col-8">
+                    <nav class="navbar navbar-expand-lg navbar-light my-auto h-100">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="Index.aspx">Início <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Desaparecidos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Quem Somos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Ajuda</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-2 my-auto h-100">
+                    <ul class="list-inline mb-0">
+
+                        <asp:Literal ID="ltlTextoLogado" runat="server" />
+                        <% if (Session["nomeResponsavel"] != null)
                             {
-                            %>
-                            <asp:LinkButton ID="btnLogout" runat="server" CssClass="mb-0 btn-entrarCadastrar" Text="Logout" OnClick="btnLogout_Click" />
-                            <%
+                        %>
+                        <asp:LinkButton ID="btnLogout" runat="server" CssClass="mb-0 btn-entrarCadastrar" Text="Logout" OnClick="btnLogout_Click" />
+                        <%
                             }
-                        %>                       
-                    </form>
-                </ul>
-                
+                        %>
+                    </ul>
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
             </div>
         </div>
-    </div>
-
+    </form>
 
 </body>
 </html>

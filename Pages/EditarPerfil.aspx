@@ -48,6 +48,9 @@
                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contatos" role="tab" aria-controls="contact" aria-selected="false">Contatos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" id="email-tab" data-toggle="tab" href="#email" role="tab" aria-controls="email" aria-selected="false">Alterar email</a>
+                    </li> 
+                    <li class="nav-item">
                         <a class="nav-link" id="password-tab" data-toggle="tab" href="#senha" role="tab" aria-controls="password" aria-selected="false">Alterar senha</a>
                     </li>                
                 </ul>
@@ -60,39 +63,38 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <h6>Nome</h6>
-                                        <input type="text" class="form-control form-control-lg" placeholder="Seu nome">
-                                        <asp:TextBox ID="txtNome" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control form-control-lg" placeholder="Seu nome"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h6>CPF</h6>
-                                        <input type="text" class="form-control form-control-lg" placeholder="Seu CPF">
+                                        <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="Seu CPF"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h6>RG</h6>
-                                        <input type="text" class="form-control form-control-lg" placeholder="Seu RG">
+                                        <asp:TextBox ID="txtRG" runat="server" CssClass="form-control form-control-lg" placeholder="Seu RG"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h6>Sexo</h6>
-                                        <select class="form-control form-control-lg" id="exampleFormControlSelect2">
-                                            <option>Masculino</option>
-                                            <option>Feminino</option>
-                                        </select>
+                                        <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg">
+                                            <asp:ListItem>Masculino</asp:ListItem>
+                                            <asp:ListItem>Feminino</asp:ListItem>
+                                        </asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h6>Data de nascimento</h6>
-                                        <input type="date" class="form-control form-control-lg">
+                                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control form-control-lg" type="date"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-success btn-lg mb-2">Alterar dados</button>
+                                    <asp:Button ID="btnSalvarDados" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar dados" />
                                 </div>
                             </div>
                         </div>
@@ -102,13 +104,31 @@
                         <div class="col-12 p-4">
                             <div class="form-group">
                                 <h6>Celular</h6>
-                                <input type="text" class="form-control form-control-lg" placeholder="Seu número de celular">
+                                <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control form-control-lg" placeholder="Seu número de celular"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <h6>Telefone</h6>
-                                <input type="text" class="form-control form-control-lg" placeholder="Seu número de telefone">
+                                <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control form-control-lg" placeholder="Seu número de telefone"></asp:TextBox>
                             </div>
-                            <button type="submit" class="btn btn-success btn-lg mb-2">Alterar contatos</button>
+                            <asp:Button ID="btnSalvarContatos" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar contatos" />
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="email">
+                        <div class="col-12 p-4">
+                            <div class="alert alert-warning" role="alert">
+                                <p><strong>Esse email é utilizado para realizar o login!</strong></p>
+                                Caso alterado não será possível realizar login com o email antigo.
+                            </div>
+                            <div class="form-group">
+                                <h6>Email antigo</h6>
+                                <asp:TextBox ID="txtEmailAntigo" runat="server" CssClass="form-control form-control-lg" placeholder="Email antigo"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <h6>Novo email</h6>
+                                <asp:TextBox ID="txtEmailNovo" runat="server" CssClass="form-control form-control-lg" placeholder="Novo email"></asp:TextBox>
+                            </div>
+                            <asp:Button ID="btnAlterarEmail" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar email" />
                         </div>
                     </div>
 
@@ -116,13 +136,13 @@
                         <div class="col-12 p-4">
                             <div class="form-group">
                                 <h6>Senha antiga</h6>
-                                <input type="password" class="form-control form-control-lg" placeholder="Senha antiga ">
+                                <asp:TextBox ID="txtSenhaAntiga" runat="server" CssClass="form-control form-control-lg" placeholder="Senha antiga"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <h6>Nova senha</h6>
-                                <input type="password" class="form-control form-control-lg" placeholder="Nova senha ">
+                                <asp:TextBox ID="txtNovaSenha" runat="server" CssClass="form-control form-control-lg" placeholder="Nova senha"></asp:TextBox>
                             </div>
-                            <button type="submit" class="btn btn-success btn-lg mb-2">Alterar senha</button>
+                            <asp:Button ID="btnSalvarSenha" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar senha" />
                         </div>
                     </div>
 
