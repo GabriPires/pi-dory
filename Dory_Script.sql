@@ -119,3 +119,4 @@ drop table tut_tutorias;
 
 
 select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id) where pes_id = 1;
+select con_contato, con_tipo from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id) where pes_id = 1;

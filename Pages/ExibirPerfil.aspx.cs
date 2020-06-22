@@ -22,8 +22,9 @@ public partial class Pages_ExibirPerfil : System.Web.UI.Page
             ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? "Masculino" : "Feminino";
             ltlDataNascimento.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString();
 
-            // FAZER OS CONTATOS
+            DataSet dsC = ResponsavelBD.SelectContatos(id);
             ltlEmail.Text = ds.Tables[0].Rows[0]["res_email"].ToString();
+            rptContatos.DataSource = dsC;
         }
         else
         {

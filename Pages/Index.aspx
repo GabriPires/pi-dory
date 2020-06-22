@@ -111,7 +111,7 @@
 
             </div>
         </div>
-        <!-- CONTAINER DO CENTRO -->
+        <!-- CONTAINER DO CEsNTRO -->
         <div class="col-6 text-center">
 
             <div class="row justify-content-center mb-3">

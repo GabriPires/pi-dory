@@ -84,6 +84,14 @@
                                 <asp:Literal ID="ltlEmail" runat="server"></asp:Literal>
                             </div>
                             <div class="form-group">
+                                <asp:Repeater ID="rptContatos" runat="server">
+                                    <ItemTemplate>
+                                        <h5><%Eval("con_tipo");%></h5>
+                                        <label><%Eval("con_contato");%></label>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
+                            <div class="form-group">
                                 <h5>Celular</h5>
                                 <asp:Literal ID="ltlCelular" runat="server"></asp:Literal>
                             </div>

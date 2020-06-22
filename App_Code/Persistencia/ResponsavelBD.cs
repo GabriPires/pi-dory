@@ -124,4 +124,27 @@ public class ResponsavelBD
 
         return ds;
     }
+    public static DataSet SelectContatos(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select con_contato, con_tipo from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id) where pes_id = ?pes_id";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?pes_id", id));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
 }
