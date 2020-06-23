@@ -26,7 +26,6 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
         r.Res_senha = txtSenha.Text;
 
         DataSet ds = ResponsavelBD.SelectID(p);
-        r.Pes_id = ds;
 
         if(ddlSexo.SelectedValue == "1") {
 

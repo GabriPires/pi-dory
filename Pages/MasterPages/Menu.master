@@ -36,7 +36,7 @@
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="Index.aspx"><strong>Início</strong></a>
+                                    <a class="nav-link buttonNav" href="Index.aspx"><strong>Início</strong></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"><strong>Quem Somos</strong></a>

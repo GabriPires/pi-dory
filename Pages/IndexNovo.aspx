@@ -5,40 +5,230 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5 mt-5">
             <div class="col-6">
-                <!-- Botoes centro -->
-            </div>
-                                 
-        </div>                            
-        <div class="row">
-            <div class="col-4">
-                <!-- ACHO QUE NAO TEM ESSE -->
-            </div>
-            <div class="col-4">
-                <!-- Pessoas Desaparecidas -->
-            </div>
-            <div class="col-4">
-            <div class="row justify-content-end">
-                    <div class="col-12 mb-3">
-                        <div class="search">
-                            <input type="text" class="searchTerm" placeholder="Pesquisar">
-                            <button type="submit" class="searchButton">
-                                <i class="fa fa-search fa-fw"></i>
+                <div class="row">
+                        <div class="col-4" align="center">
+                            <button class="buttonMenu">
+                                <i class="fa fa-info fa-fw "></i>
                             </button>
                         </div>
-                    </div>
-                   
-             </div>
-             <div class="row">
-                <div class="col-12 ">
-                    <p>Vulneraveis Ativos</p>
+                        <div class="col-4" align="center">
+                            <button class="buttonMenu">
+                                 <i class="fa fa-newspaper-o fa-fw "></i>
+                            </button>
+                        </div>
+                        <div class="col-4" align="center">
+                            <button class="buttonMenu">
+                                <i class="fa fa-heart fa-fw"></i>
+                            </button>
+                        </div>
                 </div>
             </div>
+                                 
+        </div>                          
+        <div class="row justify-content-center">
+            <div class="col-2">
+              <div class="row">
+                  <div class="col-12 container-left mt-5">
+                      <h3 class="tituloSocial">Confira as Redes Sociais:</h3>
+                      <div class="row">
+                          <div class="col-3">
+                              <div class="social">
+                                    <i class="fa fa-facebook-f fa-fw"></i>
+                              </div>
+                          </div>
+                          <div class="col-3">
+                              <div class="social">
+                                    <i class="fa fa-youtube-play fa-fw"></i>
+                               </div>
+                          </div>
+                          <div class="col-3">
+                              <div class="social">
+                                    <i class="fa fa-twitter fa-fw"></i>
+                              </div>
+                          </div>
+                          <div class="col-3">
+                              <div class="social">
+                                    <i class="fa fa-instagram fa-fw"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div> 
+                  <div class="col-12 container-left mt-3">
+                      <h3 class="tituloAtividadeRecente">Atividade Recente:</h3>
+                  </div>
+              </div>
+            </div>
+            <div class="col-6 mx-5">
+                
+                <div class="row">
+                
+                    <div class="col-12">
+                        <h2 class="PessoasDesaparecidas">Pessoas Desaparecidas</h2>
+                    </div>
+                    <div class="col-12">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="Pesquisar">
+                        </div>
+                    </div>
+                    <div class="col-12 mt-5">
+                        <div class="container">
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/malucorandom.jpg" class="imagem"/>
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: José Eduardo</p>
+                                            <p class="idade">Idade: 39 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/minarandom.jpg" class="imagem" />
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Ana Clara</p>
+                                            <p class="idade">Idade: 25 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/malucorandom2.jpg" class="imagem"/>
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Roberto Amaral</p>
+                                            <p class="idade">Idade: 27 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/minarandom2.jpg" class="imagem" />
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Roberta Silva</p>
+                                            <p class="idade">Idade: 35 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/malucorandom3.jpg" class="imagem"/>
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Enzo</p>
+                                            <p class="idade">Idade: 21 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/minarandom3.jpg" class="imagem"/>
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Perola Ribeiro</p>
+                                            <p class="idade">Idade: 39 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/malucorandom4.jpg" class="imagem"/>
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Francisco Oliveira</p>
+                                            <p class="idade">Idade: 53 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="cardPessoa">
+                                        <div class="imagem">
+                                            <img src="../Images/minarandom4.jpg" class="imagem"/>
+                                        </div>
+                                        <div class="infos" >
+                                            <p class="nome">Nome: Valentina</p>
+                                            <p class="idade">Idade: 7 Anos</p>
+                                            
+                                                <button class="buttonVerMais ">
+                                                <a href="#" class="buttonMenuTexto">ver +</a>
+                                                </button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                        </div>
+                    </div>
+                
+                </div>
+
+
+
+            </div>
+            <div class="col-2">
+            
+             <div class="row mt-5">
+                <div class="col-12 container-left mb-3">
+                    <p class="titulovundes">Vulneraveis Ativos:</p>
+                    <div class="plus">
+                        <i class="fa fa-plus fa-fw"></i>
+                    </div>
+                </div>
+                 
+            </div>
             <div class="row">
-                <div class="col-12">
-                    <p>Desaparecidos Ativos</p>
+                <div class="col-12 container-left mb-3">
+                    <p class="titulovundes">Desaparecidos Ativos:</p>
+                    <div class="plus">
+                        <i class="fa fa-plus fa-fw"></i>
+                    </div>
                 </div>
             </div>
             <div class="row">
