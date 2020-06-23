@@ -98,7 +98,8 @@
 }
 
 .buttonVerMais {
-    height:30px;
+    height: 35px;
+    width: 70px;
     background: #475ac0;
     cursor: pointer;
     border-radius: 30px;
@@ -111,6 +112,7 @@
 
 .buttonMenuTexto {
     text-decoration: none;
+    text-weight: bold;
     color: white;
     transition: 0.2s;
 }
