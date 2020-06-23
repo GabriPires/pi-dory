@@ -21,7 +21,7 @@
         
             
         <div class="col-6 left-side">
-            <img src="../../Images/Logo_3.0.png" class="img-fluid" style="width: 30%; filter: grayscale(100%);"/>
+            <img src="../../Images/Logo_3.0.png" class="img-fluid" style="width: 30%; filter: brightness(1000%);"/>
         </div>
         <div class="col-6 right-side">
             <form id="form1" runat="server">    
