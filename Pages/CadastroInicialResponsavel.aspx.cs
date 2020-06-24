@@ -18,16 +18,13 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
         Pessoas p = new Pessoas();
         Responsaveis r = new Responsaveis();
 
-        p.Pes_nome = txtNome + " " + txtSobrenome;
+        p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
         p.Pes_dataNascimento = txtData.Text;
 
-        
         r.Res_email = txtEmail.Text;
         r.Res_senha = txtSenha.Text;
 
-        DataSet ds = ResponsavelBD.SelectID(p);
-
-        if(ddlSexo.SelectedValue == "1") {
+        if (ddlSexo.SelectedValue == "1") {
 
             p.Pes_sexo = "Masculino"; 
 
@@ -41,16 +38,14 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
 
         }
 
-        switch (ResponsavelBD.Insert(r, p))
+        switch (ResponsavelBD.Insert(p, r))
         {
             case 0:
-                ltl.Text = "<div class='alert alert-success'>";
-                ltl.Text += ">>>>>>>>>> Cadastro OK <<<<<<<<<<";
-                ltl.Text += "</div>";
+                Response.Redirect("Login.aspx");
                 break;
             case -2:
                 ltl.Text = "<div class='alert alert-danger'>";
-                ltl.Text += ">>>>>>>>>> ERRO <<<<<<<<<<";
+                ltl.Text += ">>>>>>>>>> ERRO Insert Pessoa <<<<<<<<<<";
                 ltl.Text += "</div>";
                 break;
         }

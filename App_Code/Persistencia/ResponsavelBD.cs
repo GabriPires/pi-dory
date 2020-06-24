@@ -10,7 +10,7 @@ using System.Data;
 public class ResponsavelBD
 {
     
-    public static int Insert(Responsaveis responsavel, Pessoas pessoa)
+    public static int Insert(Pessoas pessoa, Responsaveis responsavel)
     {
         int retorno = 0;
 
@@ -19,19 +19,55 @@ public class ResponsavelBD
             IDbConnection objConnection;
             IDbCommand objCommand;
 
-            string sql  = "INSERT INTO pes_pessoas(pes_nome, pes_dataNascimento, pes_sexo) VALUES(?pes_nome,?pes_dataNascimento,?pes_sexo);";
-            string sql2 = "INSERT INTO res_responsaveis(res_email, res_senha,pes_id) VALUES(?res_email,?res_senha, ?pes_id); ";
+            string sql  =  "INSERT INTO pes_pessoas(pes_nome, pes_dataNascimento, pes_sexo) VALUES(?pes_nome,?pes_dataNascimento,?pes_sexo);";
+                   sql  += "INSERT INTO res_responsaveis(res_email, res_senha,pes_id) VALUES(?res_email,?res_senha, last_insert_id()); ";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            //parametrização
+
+            //Pessoa
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pessoa.Pes_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_dataNascimento", pessoa.Pes_dataNascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pessoa.Pes_sexo));
+            //fim Pessoa
+            //Responsavel
+            objCommand.Parameters.Add(Mapped.Parameter("?res_email", responsavel.Res_email));
+            objCommand.Parameters.Add(Mapped.Parameter("?res_senha", responsavel.Res_senha));
+            //Fim Responsavel
+
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int InsertResponsavel(Responsaveis responsavel)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            
+            string sql = "INSERT INTO res_responsaveis(res_email, res_senha,pes_id) VALUES(?res_email,?res_senha, ?pes_id); ";
 
 
             objConnection = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConnection);
-            objCommand = Mapped.Command(sql2, objConnection);
 
             //parametrização
-            objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pessoa.Pes_nome));
-            objCommand.Parameters.Add(Mapped.Parameter("?pes_dataNascimento", pessoa.Pes_dataNascimento));
-            objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pessoa.Pes_sexo));
-
             objCommand.Parameters.Add(Mapped.Parameter("?res_email", responsavel.Res_email));
             objCommand.Parameters.Add(Mapped.Parameter("?res_senha", responsavel.Res_senha));
 

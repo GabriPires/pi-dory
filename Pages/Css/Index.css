@@ -128,8 +128,6 @@
 
 /* Começo CSS Direita */  
 
-.bagulhoamarelo {
-    width: 120px;
     position: absolute;
     top: 0;
     right: 0;
@@ -143,6 +141,8 @@
 
 .estatisticas {
     text-align: center;
+.bagulhoamarelo {
+    width: 120px;
     color: #706f6f;
     font-size: 1.5em;
 }
