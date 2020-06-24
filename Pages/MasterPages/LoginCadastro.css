@@ -8,14 +8,17 @@ form#form1 {
 }
 
 .left-side {
-    background-color: #262525;
+    background-color: #3755c4;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .right-side {
-    height:100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-logincadastro {

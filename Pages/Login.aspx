@@ -25,19 +25,19 @@
             </div>
             <div class="form-group">
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnEntrar" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Entrar" OnClick="btnEntrar_Click" />
+                    <asp:Button ID="btnEntrar" runat="server" CssClass="btn btn-primary btn-logincadastro" Text="Entrar" OnClick="btnEntrar_Click" />
                 </div>
                 <div class="d-flex justify-content-center mt-2">
                     <p>ou</p>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <asp:Button ID="btnLoginFacebook" runat="server" CssClass="btn btn-dark btn-login-facebook" Text="Entre com o Facebook" />
+                    <asp:Button ID="btnLoginFacebook" runat="server" CssClass="btn btn-primary btn-login-facebook" Text="Entre com o Facebook" />
                 </div>
 
                 <hr />
                 <div class="d-flex justify-content-center">
                     <!-- <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-cadastro" Text="Crie uma Conta"/> -->
-                    <a href="CadastroInicialResponsavel.aspx" class="btn btn-dark btn-cadastro text-white">Crie uma Conta</a>
+                    <a href="CadastroInicialResponsavel.aspx" class="btn btn-primary btn-cadastro text-white">Crie uma Conta</a>
                 </div>
             </div>
         </div>
