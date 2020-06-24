@@ -51,10 +51,6 @@ public class ResponsavelBD
         return retorno;
     }
 
-
-
-    
-
     public static DataSet SelectLogin(string email, string senha)
     {
         DataSet ds = new DataSet();
@@ -127,4 +123,39 @@ public class ResponsavelBD
 
         return ds;
     }
+    public static Boolean ValidaEmail(string email)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select res_email from res_responsaveis where res_email = ?res_email;";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?res_email", email));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        Boolean controlador;
+        if (ds.Tables[0].Rows.Count != 0)
+        {
+            controlador = false;
+        }
+        else
+        {
+            controlador = true;
+        }
+
+        return controlador;
+        
+    }
+
 }

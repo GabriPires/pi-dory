@@ -21,8 +21,6 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
         p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
         p.Pes_dataNascimento = txtData.Text;
 
-        r.Res_email = txtEmail.Text;
-        r.Res_senha = txtSenha.Text;
 
         if (ddlSexo.SelectedValue == "1") {
 
@@ -38,18 +36,45 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
 
         }
 
-        switch (ResponsavelBD.Insert(p, r))
+        if (ResponsavelBD.ValidaEmail(txtEmail.Text))
         {
-            case 0:
-                Response.Redirect("Login.aspx");
-                break;
-            case -2:
-                ltl.Text = "<div class='alert alert-danger'>";
-                ltl.Text += ">>>>>>>>>> ERRO Insert Pessoa <<<<<<<<<<";
-                ltl.Text += "</div>";
-                break;
+            if (txtEmail.Text == txtConfirmaEmail.Text)
+            {
+                r.Res_email = txtEmail.Text;
+
+                if (txtSenha.Text == txtConfirmaSenha.Text)
+                {
+                    r.Res_senha = txtSenha.Text;
+                    switch (ResponsavelBD.Insert(p, r))
+                    {
+                        case 0:
+                            Response.Redirect("Login.aspx");
+                            break;
+                        case -2:
+
+                            break;
+                    }
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroCadastroSenha').modal('show');</script>", false);
+
+                }
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroCadastroEmail').modal('show');</script>", false);
+            }
         }
-        
+        else
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroCadastroEmailJaCadastrado').modal('show');</script>", false);
+        }
+
+
+
+
+
     }
         
 }
