@@ -6,7 +6,7 @@
 
 
     <div class="row justify-content-center">
-        <div class="col-12 text-center mb-5 mt-5 pt-5">
+        <div class="col-12 text-center">
             <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center mb-3 mt-4 mb-5">
