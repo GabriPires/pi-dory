@@ -2,14 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.Security.Cryptography;
+using System.IO;
+using System.Text;
 using System.Data;
+
 /// <summary>
 /// Descrição resumida de Responsavel
 /// </summary>
 public class ResponsavelBD
 {
-    
+    public static string CriptoSenha(string senha)
+    {
+        UnicodeEncoding UE = new UnicodeEncoding();
+        byte[] HashValue, MessageBytes = UE.GetBytes(senha);
+        SHA512Managed SHhash = new SHA512Managed();
+        string strHex = "";
+
+        HashValue = SHhash.ComputeHash(MessageBytes);
+        foreach (byte b in HashValue)
+        {
+            strHex += String.Format("{0:x2}", b);
+        }
+        return strHex;
+    }
+
     public static int Insert(Pessoas pessoa, Responsaveis responsavel)
     {
         int retorno = 0;

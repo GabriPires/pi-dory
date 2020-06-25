@@ -1,18 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/LoginCadastro.master" AutoEventWireup="true" CodeFile="CadastroInicialResponsavel.aspx.cs" Inherits="Pages_CadastroInicialResponsavel" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    
+
     <div class="row justify-content-center">
-          
-        
+
+
         <div class="col-12 text-center mb-3">
-            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%; " />
+            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center mb-5 mt-2 ">
             <h1>Cadastro</h1>
+            <p>Informe seus dados pessoais</p>
         </div>
 
         <div class="col-8">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg" placeholder="Sexo:">
+                        <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg" placeholder="Sexo">
                             <asp:ListItem Enabled="true" Text="Sexo" Value="-1"></asp:ListItem>
                             <asp:ListItem Text="Masculino" Value="1"></asp:ListItem>
                             <asp:ListItem Text="Feminino" Value="2"></asp:ListItem>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de Nascimento" type="date"/>
+                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de Nascimento" type="date" />
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Email" required="true" />
             </div>
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtConfirmaEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Confirme o Email" required="true" />
+                <asp:TextBox ID="txtConfirmaEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Confirme o email" required="true" />
             </div>
             <div class="row">
                 <div class="col-6">
@@ -57,15 +57,18 @@
                 </div>
                 <div class="col-6">
                     <div class="form-group">
-                        <asp:TextBox ID="txtConfirmaSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Confirme sua Senha" required="true" />
+                        <asp:TextBox ID="txtConfirmaSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Confirme sua senha" required="true" />
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="d-flex justify-content-center mt-2">
-                <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar Cadastro" onClick="btn_Click"/>
+        <div class="col-12">
+            <div class="form-group">
+                <div class="d-flex justify-content-center mt-2">
+                    <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar cadastro" onClick="btn_Click" />
+                </div>
             </div>
+
         </div>
 
     </div>
@@ -81,7 +84,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4>Emails Diferentes. Digite Novamente.</h4>
+                    <h4>Emails diferentes. Digite novamente.</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -102,7 +105,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4>Senhas Diferentes. Digite Novamente.</h4>
+                    <h4>Senhas diferentes. digite Novamente.</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -123,7 +126,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4>Email ja Cadastrado. Tente fazer o login.</h4>
+                    <h4>Email já cadastrado. Tente efetuar login.</h4>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

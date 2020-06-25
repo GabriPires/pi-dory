@@ -9,14 +9,13 @@
     <div class="row justify-content-center">
         <div class="col-11"></div>
         <div class="col-1 text-center mt-2">
-            <img src="../Images/menu.png" class="img-fluid" style="width: 100%;" />
         </div>
         <div class="col-12 text-center mb-3">
-            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%; filter: grayscale(100%);" />
+            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center mb-2 mt-2 mb-5">
-            <h1 class="text-monospace" >Cadastro</h1>
-            <p >Estamos quase acabando</p>
+            <h1>Cadastro</h1>
+            <p>Estamos quase acabando</p>
         </div>
 
         <div class="col-8">
@@ -26,34 +25,34 @@
 
 
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço:" required="true" tooltip="Adicione o seu Endereço"/>
+                <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço" required="true" tooltip="Adicione o seu Endereço"/>
             </div>
             <div class="row justify-content-center">
                 <div class="col-4">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control form-control-lg" placeholder="Numero:" required="true" tooltip="Adicione o numero da sua casa"/>
+                        <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control form-control-lg" placeholder="Número" required="true" tooltip="Adicione o numero da sua casa"/>
                     </div>
                 </div>
                 <div class="col-8">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control form-control-lg" placeholder="Complemento(*):" required="true" tooltip="Opcional"/>
+                        <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control form-control-lg" placeholder="Complemento*" tooltip="Opcional"/>
                     </div>
                 </div>
             </div>
 
             <div class="form-group mb-2">
-                <asp:TextBox ID="txtReferencia" runat="server" CssClass="form-control form-control-lg" placeholder="Referencia(*):" tooltip="Opcional"/>
+                <asp:TextBox ID="txtReferencia" runat="server" CssClass="form-control form-control-lg" placeholder="Referência*" tooltip="Opcional"/>
             </div>
 
             <div class="row justify-content-center">
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control form-control-lg" placeholder="Celular:" required="true" tooltip="Adicione o seu Celular" />
+                        <asp:TextBox ID="txtCelular" runat="server" CssClass="form-control form-control-lg" placeholder="Celular" required="true" tooltip="Adicione o seu Celular" />
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control form-control-lg" placeholder="Telefone(*):" tooltip="Opcional"/>
+                        <asp:TextBox ID="txtTelefone" runat="server" CssClass="form-control form-control-lg" placeholder="Telefone*" tooltip="Opcional"/>
                     </div>
                 </div>
             </div>
@@ -63,7 +62,7 @@
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
                     <!-- <asp:Button ID="btnFimCadastro" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Finalizar Cadastro" /> -->
-                    <a href="Login.aspx" class="btn btn-dark btn-logincadastro text-white">Finalizar Cadastro</a>
+                    <a href="Login.aspx" class="btn btn-primary btn-logincadastro text-white">Finalizar Cadastro</a>
                 </div>
             </div>
 
