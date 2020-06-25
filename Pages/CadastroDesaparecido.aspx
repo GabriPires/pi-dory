@@ -1,15 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/LoginCadastro.master" AutoEventWireup="true" CodeFile="CadastroDesaparecido.aspx.cs" Inherits="Pages_CadastroDesaparecido" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
 
     <div class="row justify-content-center">
-          
-        
+
+
         <div class="col-12 text-center mb-3">
-            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%; " />
+            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center mb-5 mt-2 ">
             <h1>Cadastro de Desaparecido</h1>
@@ -40,13 +40,13 @@
                 <div class="col-6">
                     <div class="form-group mb-2">
                         <asp:DropDownList ID="ddlCutis" runat="server" CssClass="form-control form-control-lg" placeholder="Etnia:">
-                            <asp:ListItem Enabled="true" Text="Etnia" Value="-1" ></asp:ListItem>
+                            <asp:ListItem Enabled="true" Text="Etnia" Value="-1"></asp:ListItem>
                             <asp:ListItem Text="Amarela" Value="1"></asp:ListItem>
                             <asp:ListItem Text="Branca" Value="2"></asp:ListItem>
                             <asp:ListItem Text="Indígena" Value="3"></asp:ListItem>
                             <asp:ListItem Text="Negra" Value="4"></asp:ListItem>
                             <asp:ListItem Text="Parda" Value="5"></asp:ListItem>
-                            
+
                         </asp:DropDownList>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtCorDosOlhos" runat="server" CssClass="form-control form-control-lg"  placeholder="Cor Dos Olhos" required="true" />
+                        <asp:TextBox ID="txtCorDosOlhos" runat="server" CssClass="form-control form-control-lg" placeholder="Cor Dos Olhos" required="true" />
                     </div>
                 </div>
                 <div class="col-6">
@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-6">
                     <div class="form-group mb-2">
-                        <asp:DropDownList ID="ddlSangue" runat="server" CssClass="form-control form-control-lg" >
+                        <asp:DropDownList ID="ddlSangue" runat="server" CssClass="form-control form-control-lg">
                             <asp:ListItem Enabled="true" Text="Tipo Sanguineo" Value="-1"></asp:ListItem>
                             <asp:ListItem Text="A+" Value="1"></asp:ListItem>
                             <asp:ListItem Text="A-" Value="2"></asp:ListItem>
@@ -87,7 +87,7 @@
                         <div class="col-6">
                             <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control form-control-lg" placeholder="Peso" required="true" />
                         </div>
-                    
+
                     </div>
                 </div>
             </div>
@@ -99,9 +99,11 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="d-flex justify-content-center mt-2">
-               <asp:Button ID="btnContinuaCadastroDesaparecido" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar Cadastro" />
+        <div class="col-12">
+            <div class="form-group">
+                <div class="d-flex justify-content-center mt-2">
+                    <asp:Button ID="btnContinuaCadastroDesaparecido" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar Cadastro" />
+                </div>
             </div>
         </div>
 
