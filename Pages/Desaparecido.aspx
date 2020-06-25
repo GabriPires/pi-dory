@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="Desaparecido.aspx.cs" Inherits="Pages_Desaparecido" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="Css/Desaparecido.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 mt-5">
@@ -63,87 +63,89 @@
             </div>
             <div class="col-6 mx-5 my-5 container-left">
                 <div class="row justify-content-center">
-                      <div class="col-6 ">
-                          <div class="imagem mx-auto my-5">
-                                <img src="../Images/malucorandom.jpg" class="imagem" />
-                          </div>
-                      </div>
+                    <div class="col-6 ">
+                        <div class="imagem mx-auto my-5">
+                            <img src="../Images/malucorandom.jpg" class="imagem" />
+                        </div>
+                    </div>
                 </div>
                 <div class="row justify-content-center container-left m-3">
                     <div class="col-12 ">
-                            <h2>Informações Basicas:</h2>
-                        <hr/>
-                      </div>
-                      <div class="col-12 ">
-                            <p><strong>Nome:</strong> José Eduardo</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Idade:</strong> 39 Anos</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Tipo Sanguineo:</strong> A+</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Sexo:</strong> Masculino</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Etnia:</strong> Branca</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Cor do Cabelo:</strong> Preto</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Cor dos Olhos:</strong> Castanho</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Altura:</strong> 1,68</p>
-                      </div>
-                    <div class="col-6 ">
-                            <p><strong>Peso:</strong>  80Kg</p>
-                      </div>
+                        <h2 class="mt-2">Informações básicas</h2>
+                        <hr />
+                    </div>
                     <div class="col-12 ">
-                            <p><strong>Descrição:</strong>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sollicitudin leo, at tincidunt est volutpat eu. Maecenas eu tellus elit. Aenean dignissim erat felis, et porttitor tortor eleifend id. Sed id nunc tempor justo posuere pretium. Donec sit amet metus sapien. Ut volutpat magna sed dapibus sagittis. Vestibulum sed purus felis.</p>
-                      </div>
+                        <p><strong>Nome</strong> José Eduardo</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Idade</strong> 39 Anos</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Tipo sanguíneo</strong> A+</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Sexo</strong> Masculino</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Etnia</strong> Branca</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Cor do cabelo</strong> Preto</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Cor dos olhos</strong> Castanho</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Altura</strong> 1,68m</p>
+                    </div>
+                    <div class="col-6 ">
+                        <p><strong>Peso</strong> 80Kg</p>
+                    </div>
+                    <div class="col-12 ">
+                        <p><strong>Descrição</strong>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sollicitudin leo, at tincidunt est volutpat eu. Maecenas eu tellus elit. Aenean dignissim erat felis, et porttitor tortor eleifend id. Sed id nunc tempor justo posuere pretium. Donec sit amet metus sapien. Ut volutpat magna sed dapibus sagittis. Vestibulum sed purus felis.</p>
+                    </div>
                 </div>
-               <div class="row justify-content-center container-left m-3 mb-4">
+                <div class="row justify-content-center container-left m-3 mb-4">
                     <div class="col-12 ">
-                            <h2>Informações sobre a saúde da pessoa:</h2>
-                        <hr/>
-                      </div>
-                      <div class="col-12 ">
-                            <p><strong>Restrições Alimentares:</strong> Nenhuma ou não foi informado</p>
-                      </div>
+                        <h2 class="mt-2">Informações sobre a saúde da pessoa</h2>
+                        <hr />
+                    </div>
                     <div class="col-12 ">
-                            <p><strong>Restrições a medicamentos:</strong> Dipirona</p>
-                      </div>
+                        <p><strong>Restrições alimentares</strong> Nenhuma ou não foi informado</p>
+                    </div>
                     <div class="col-12 ">
-                            <p><strong>Deficiencia Mental:</strong> Autismo</p>
-                      </div>
+                        <p><strong>Restrições a medicamentos</strong> Dipirona</p>
+                    </div>
+                    <div class="col-12 ">
+                        <p><strong>Deficiência mental</strong> Autismo</p>
+                    </div>
                     <div class="col-12">
-                            <p><strong>Deficiencia Física:</strong> Nenhuma ou não foi informado</p>
-                      </div>
+                        <p><strong>Deficiência física</strong> Nenhuma ou não foi informado</p>
+                    </div>
                     <div class="col-12">
-                            <p><strong>Doenças:</strong> Nenhuma ou não foi informado</p>
-                      </div>
-                    
+                        <p><strong>Doenças</strong> Nenhuma ou não foi informado</p>
+                    </div>
+
                 </div>
                 <div class="row justify-content-center mb-3">
 
                     <div class="col-10 pr-1" align="center">
                         <div>
-                            <asp:Button ID="btnCadastrar" runat="server" CssClass="btn-encontrei" Text="Encontrei esta pessoa"/>
+                            <asp:Button ID="btnEncontrei" runat="server" CssClass="btn-encontrei" Text="Vi esta pessoa" OnClick="btnEncontrei_Click"/>
                         </div>
-                     </div>
-                    
-                    <div class="col-1 pr-1">
-                        <button class="aviso">
-                            <i class="fa fa-exclamation-triangle fa-fw "></i>
-                        </button>
                     </div>
-                   
-                    
+
+                    <div class="col-1 pr-1">
+                        <asp:LinkButton ID="btnReport" runat="server" Text="" OnClick="btnReport_Click">
+                        <div class="aviso">
+                            <i class="fa fa-exclamation-triangle fa-fw "></i>
+                        </div>
+                        </asp:LinkButton>
+                    </div>
+
+
                 </div>
-                   
+
 
 
             </div>
@@ -177,6 +179,104 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de report -->
+    <div class="modal" id="report">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Denunciar</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <h6>Título da denúncia</h6>
+                                    <asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control" placeholder="Título"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Título da denúncia</h6>
+                                    <asp:DropDownList ID="ddlMotivo" runat="server" CssClass="form-control" placeholder="Motivo da denúncia">
+                                        <asp:ListItem Enabled="true" Text="Motivo" Value="-1"></asp:ListItem>
+                                        <asp:ListItem Text="Pessoa já encontrada" Value="1"></asp:ListItem>
+                                        <asp:ListItem Text="Anúncio mentiroso" Value="2"></asp:ListItem>
+                                        <asp:ListItem Text="Anúncio com conteúdo ofensivo" Value="3"></asp:ListItem>
+                                        <asp:ListItem Text="Outro" Value="3"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Descrição da denúncia</h6>
+                                    <textarea id="txtDescricao" runat="server" class="form-control" placeholder="Breve descrição"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Enviar</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de encontrei a pessoa -->
+    <div class="modal" id="encontrei">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Você viu esta pessoa?</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="alert alert-warning" role="alert">
+                                    <p><strong>Caso você esteja com o desaparecido por perto</strong></p>
+                                    Entre em contato imediatamente com o responsável por ele.
+                                </div>
+                                <div class="form-group">
+                                    <h6>Onde você o viu pela última vez?</h6>
+                                    <asp:TextBox ID="txtUltimoLocal" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Em qual cidade o viu?</h6>
+                                    <asp:TextBox ID="txtUltimaLocalizacao" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Qual roupa ele estava usando quando o viu?</h6>
+                                    <asp:TextBox ID="txtUltimaRoupa" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Que horas você o viu?</h6>
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                                <div class="form-group">
+                                    <h6>Informações adicionais</h6>
+                                    <textarea id="Textarea1" runat="server" class="form-control" placeholder="Utilize este campo para descrever melhor a situação e dar informações adicionais para o responsável."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Enviar</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+                </div>
+
             </div>
         </div>
     </div>

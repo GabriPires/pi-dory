@@ -85,7 +85,7 @@
                                         <p class="idade">Idade: 39 Anos</p>
 
                                         <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
+                                            <a href="Desaparecido.aspx" class="buttonMenuTexto">ver +</a>
                                         </button>
 
                                     </div>
