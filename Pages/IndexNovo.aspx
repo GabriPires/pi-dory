@@ -61,10 +61,11 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-6 mx-5">
-
-                <div class="row">
-
+                
+                <div class="row container-left">
+                    
                     <div class="col-12">
                         <h2 class="PessoasDesaparecidas mb-4">Pessoas Desaparecidas</h2>
                     </div>
@@ -207,6 +208,7 @@
                         </div>
                     </div>
 
+                
                 </div>
 
 

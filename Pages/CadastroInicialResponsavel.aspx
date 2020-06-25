@@ -6,15 +6,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     
     <div class="row justify-content-center">
-          <div class="col-11"></div>
-        <div class="col-1 text-center mt-2">
-            <img src="../Images/menu.png" class="img-fluid" style="width: 100%;" />
-        </div>
+          
+        
         <div class="col-12 text-center mb-3">
             <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%; " />
         </div>
         <div class="col-12 text-center mb-5 mt-2 ">
-            <h1 class="text-monospace">Cadastro</h1>
+            <h1>Cadastro</h1>
         </div>
 
         <div class="col-8">

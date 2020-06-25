@@ -8,18 +8,18 @@
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 mt-5">
             <div class="col-6">
-                <div class="row">
-                    <div class="col-4 pr-1" align="center">
+                <div class="row justify-content-center">
+                    <div class="col-1 pr-1" align="center">
                         <button class="buttonMenu">
                             <i class="fa fa-info fa-fw "></i>
                         </button>
                     </div>
-                    <div class="col-4 pr-1" align="center">
+                    <div class="col-1 pr-1" align="center">
                         <button class="buttonMenu">
                             <i class="fa fa-newspaper-o fa-fw "></i>
                         </button>
                     </div>
-                    <div class="col-4 pr-1" align="center">
+                    <div class="col-1 pr-1" align="center">
                         <button class="buttonMenu">
                             <i class="fa fa-heart fa-fw"></i>
                         </button>
@@ -63,7 +63,7 @@
             </div>
             <div class="col-6 mx-5">
 
-                <div class="row">
+                <div class="row ">
 
                     <div class="col-12">
                         <h2 class="PessoasDesaparecidas mb-4">Pessoas Desaparecidas</h2>
