@@ -1,18 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/LoginCadastro.master" AutoEventWireup="true" CodeFile="MaisInfosDesaparecido.aspx.cs" Inherits="Pages_MaisInfosDesaparecido" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/LoginCadastro.master" AutoEventWireup="true" CodeFile="MaisInfosVulneravel.aspx.cs" Inherits="Pages_MaisInfosVulneravel" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    
-    
-     
-    <div class="row justify-content-center">
+     <div class="row justify-content-center">
         <div class="col-12 text-center">
             <img src="../Images/Logo_3.0.png" class="img-fluid " style="width: 17%; " />
         </div>
         <div class="col-12 text-center ">
-            <h1 class="titulo">Adicione Informações sobre o desaparecido</h1>
+            <h1 class="titulo">Adicione Informações sobre o Vulneravel</h1>
             <p class="subtitulo">Quanto mais Informações mais fácil a identificação da pessoa!</p>
         </div>
 
@@ -79,7 +76,7 @@
                             </div>
                         </div>
                         <div class="col-7">
-                            <asp:TextBox ID="txtRestricaoAlimentar" runat="server" CssClass="form-control form-control-lg" placeholder="Descreva aqui"  />
+                            <asp:TextBox ID="txtRestricaoAlimentar" runat="server" CssClass="form-control form-control-lg" placeholder="Descreva aqui" />
                         </div>
                     </div>
                     </div>
@@ -135,13 +132,10 @@
         </div>
         <div class="form-group">
             <div class="">
-               <asp:Button ID="btnContinuaCadastroDesaparecido2" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Realizar Cadastro" OnClick="btnContinuaCadastroDesaparecido2_Click"/>
+               <asp:Button ID="btnTerminarCadastroVulneravel" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Realizar Cadastro" OnClick="btnTerminarCadastroVulneravel_Click"/>
             </div>
         </div>
 
     </div>
-        
-            
-
 </asp:Content>
 

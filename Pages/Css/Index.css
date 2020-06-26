@@ -11,6 +11,19 @@
     
 }
 
+.button{
+    width: 40px;
+    height: 40px;
+    background: #475ac0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 100%;
+    border: none; 
+    transition: 0.2s;
+    align-items: center;
+    
+}
 
 /* Começo CSS menu  */
 
@@ -20,22 +33,26 @@
     background: #475ac0;
     color: #fff;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 40px;
     border-radius: 100%;
     border: none;
     transition: 0.2s;
     align-items: center;
+    padding:10px;
+    text-align:center;
 }
 
-    .buttonMenu:hover {
-        -webkit-filter: contrast(2);
-        transition: 0.2s;
-    }
+.buttonMenu:hover {
+    -webkit-filter: contrast(2);
+    transition: 0.2s;
+}
 
+.espacamento{
+    margin-right:50px;
+    margin-left:50px;
+}
 /* Fim CSS Menu */
-
 /* Começo CSS centro */
-
 .PessoasDesaparecidas {
     text-align: center;
     color: #706f6f;

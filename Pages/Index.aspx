@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="IndexNovo.aspx.cs" Inherits="Pages_IndexNovo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Pages_Index" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="Css/Index.css" rel="stylesheet" type="text/css" />
@@ -7,22 +7,22 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 mt-5">
-            <div class="col-6">
-                <div class="row justify-content-center">
-                    <div class="col-1 pr-1" align="center">
-                        <button class="buttonMenu">
-                            <i class="fa fa-info fa-fw "></i>
-                        </button>
+            <div class="col-6 ">
+                <div class="row justify-content-center mx-auto">
+                    <div class="col-1 " >
+                        <asp:LinkButton ID="Dicas" runat="server"  CssClass="buttonMenu ">
+                                <i class="fa fa-info fa-fw "></i>
+                        </asp:LinkButton>
                     </div>
-                    <div class="col-1 pr-1" align="center">
-                        <button class="buttonMenu">
-                            <i class="fa fa-newspaper-o fa-fw "></i>
-                        </button>
+                    <div class="col-1 espacamento" >
+                        <asp:LinkButton ID="Notícias" runat="server"  CssClass="buttonMenu ">
+                                <i class="fa fa-newspaper-o fa-fw "></i>
+                        </asp:LinkButton>
                     </div>
-                    <div class="col-1 pr-1" align="center">
-                        <button class="buttonMenu">
-                            <i class="fa fa-heart fa-fw"></i>
-                        </button>
+                    <div class="col-1 " >
+                        <asp:LinkButton ID="PessoasEncontradas" runat="server" OnClick="PessoasEncontradas_Click" CssClass="buttonMenu">
+                                <i class="fa fa-heart fa-fw "></i>
+                        </asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -35,23 +35,38 @@
                         <h3 class="tituloSocial">Confira as Redes Sociais</h3>
                         <div class="row">
                             <div class="col-3 p-2 pl-3">
+                                <asp:LinkButton ID="Facebook" runat="server" CssClass="button" onclientclick="window.open('https://www.facebook.com/asp.net')">
+                                    <div class="social">
+                                             <i class="fa fa-facebook-f fa-fw"></i>
+                                    </div>
+                                </asp:LinkButton>
+                            </div>
+                            <div class="col-3 p-2 pl-3">
                                 <div class="social">
-                                    <i class="fa fa-facebook-f fa-fw"></i>
+                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" onclientclick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
+                                        <div class="social">
+                                                 <i class="fa fa-youtube-play fa-fw"></i>
+                                        </div>
+                                    </asp:LinkButton>
+                                    
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3">
                                 <div class="social">
-                                    <i class="fa fa-youtube-play fa-fw"></i>
-                                </div>
-                            </div>
-                            <div class="col-3 p-2 pl-3">
-                                <div class="social">
-                                    <i class="fa fa-twitter fa-fw"></i>
+                                    <asp:LinkButton ID="twitter" runat="server" CssClass="button" onclientclick="window.open('https://twitter.com/aspnet')">
+                                        <div class="social">
+                                                 <i class="fa fa-twitter fa-fw"></i>
+                                        </div>
+                                    </asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3 pr-0">
                                 <div class="social">
-                                    <i class="fa fa-instagram fa-fw"></i>
+                                    <asp:LinkButton ID="instagram" runat="server" CssClass="button" onclientclick="window.open('https://www.instagram.com/asp.net_learning/')">
+                                        <div class="social">
+                                                 <i class="fa fa-instagram fa-fw"></i>
+                                        </div>
+                                    </asp:LinkButton>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +233,9 @@
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
                         <div class="plus">
-                            <i class="fa fa-plus fa-fw"></i>
+                            <asp:LinkButton ID="CadastrarVulneravel" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
+                                <i class="fa fa-plus fa-fw"></i>
+                            </asp:LinkButton>
                         </div>
                     </div>
 
@@ -227,7 +244,9 @@
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Desaparecidos Ativos</h3>
                         <div class="plus">
-                            <i class="fa fa-plus fa-fw"></i>
+                            <asp:LinkButton ID="CadastrarDesaparecido" runat="server" CssClass="button" OnClick="CadastrarDesaparecido_Click">
+                                <i class="fa fa-plus fa-fw"></i>
+                            </asp:LinkButton>
                         </div>
                     </div>
                 </div>

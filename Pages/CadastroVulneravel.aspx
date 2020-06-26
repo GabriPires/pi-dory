@@ -1,18 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/LoginCadastro.master" AutoEventWireup="true" CodeFile="CadastroDesaparecido.aspx.cs" Inherits="Pages_CadastroDesaparecido" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/LoginCadastro.master" AutoEventWireup="true" CodeFile="CadastroVulneravel.aspx.cs" Inherits="Pages_CadastroVulneravel" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-
-    <div class="row justify-content-center">
+     <div class="row justify-content-center">
 
 
         <div class="col-12 text-center mb-3">
             <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center mb-5 mt-2 ">
-            <h1>Cadastro de Desaparecido</h1>
+            <h1>Cadastro de Vulneravel</h1>
         </div>
 
         <div class="col-8">
@@ -94,7 +93,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control form-control-lg" placeholder="Adicione uma breve descrição do desaparecido" required="true" />
+                        <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control form-control-lg" placeholder="Adicione uma breve descrição da pessoa" required="true" />
                     </div>
                 </div>
             </div>
@@ -102,7 +101,7 @@
         <div class="col-12">
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
-                    <asp:Button ID="btnContinuaCadastroDesaparecido" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar Cadastro" OnClick="btnContinuaCadastroDesaparecido_Click"/>
+                    <asp:Button ID="btnContinuaCadastroVulneravel" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar Cadastro" OnClick="btnContinuaCadastroVulneravel_Click" />
                 </div>
             </div>
         </div>

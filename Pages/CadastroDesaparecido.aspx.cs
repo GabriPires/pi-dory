@@ -11,4 +11,9 @@ public partial class Pages_CadastroDesaparecido : System.Web.UI.Page
     {
 
     }
+
+    protected void btnContinuaCadastroDesaparecido_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("MaisInfosDesaparecido.aspx");
+    }
 }

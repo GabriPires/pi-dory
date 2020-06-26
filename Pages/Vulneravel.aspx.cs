@@ -5,31 +5,35 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Desaparecido : System.Web.UI.Page
+public partial class Pages_Vulneravel : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+
     }
 
-    protected void btnReport_Click(object sender, EventArgs e)
-    {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#report').modal('show');</script>", false);
-    }
 
-    protected void btnEncontrei_Click(object sender, EventArgs e)
-    {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontrei').modal('show');</script>", false);
-    }
-
-    protected void CadastroDesaparecido_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("CadastroDesaparecido.aspx");
-    }
 
     protected void CadastrarVulneravel_Click(object sender, EventArgs e)
     {
         Response.Redirect("CadastroVulneravel.aspx");
+    }
+
+    protected void CadastrarDesaparecido_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CadastroDesaparecido.aspx");
+    }
+
+
+
+    protected void btnSim_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Index.aspx");
+    }
+
+    protected void temporario_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTornarDesaparecido').modal('show');</script>", false);
     }
 
     protected void Facebook_Click(object sender, EventArgs e)
