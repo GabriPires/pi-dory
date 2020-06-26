@@ -14,11 +14,11 @@
             <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center">
-            <h2>Estamos Quase acabando ...</h2>
+            <h2>Estamos quase acabando...</h2>
         </div>
         
         <div class="col-12 text-center container">
-            <p>Informe o boletim de ocorrencia feito em uma delegacia mais proxima para evitar situações indesejadas</p>
+            <p>Informe o boletim de ocorrência feito em uma delegacia mais próxima para evitar situações indesejadas</p>
         </div>
         <div class="col-8">
             
