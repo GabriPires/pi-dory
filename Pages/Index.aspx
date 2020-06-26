@@ -9,19 +9,19 @@
         <div class="row justify-content-center mb-5 mt-5">
             <div class="col-6 ">
                 <div class="row justify-content-center mx-auto">
-                    <div class="col-1 " >
-                        <asp:LinkButton ID="Dicas" runat="server"  CssClass="buttonMenu ">
-                                <i class="fa fa-info fa-fw "></i>
+                    <div class="col-1 ">
+                        <asp:LinkButton ID="Dicas" runat="server" CssClass="buttonMenu ">
+                            <i class="fa fa-info fa-fw "></i>
                         </asp:LinkButton>
                     </div>
-                    <div class="col-1 espacamento" >
-                        <asp:LinkButton ID="Notícias" runat="server"  CssClass="buttonMenu ">
-                                <i class="fa fa-newspaper-o fa-fw "></i>
+                    <div class="col-1 espacamento">
+                        <asp:LinkButton ID="Notícias" runat="server" CssClass="buttonMenu ">
+                            <i class="fa fa-newspaper-o fa-fw "></i>
                         </asp:LinkButton>
                     </div>
-                    <div class="col-1 " >
+                    <div class="col-1 ">
                         <asp:LinkButton ID="PessoasEncontradas" runat="server" OnClick="PessoasEncontradas_Click" CssClass="buttonMenu">
-                                <i class="fa fa-heart fa-fw "></i>
+                            <i class="fa fa-heart fa-fw "></i>
                         </asp:LinkButton>
                     </div>
                 </div>
@@ -35,36 +35,33 @@
                         <h3 class="tituloSocial">Confira as Redes Sociais</h3>
                         <div class="row">
                             <div class="col-3 p-2 pl-3">
-                                <asp:LinkButton ID="Facebook" runat="server" CssClass="button" onclientclick="window.open('https://www.facebook.com/asp.net')">
-                                    <div class="social">
-                                             <i class="fa fa-facebook-f fa-fw"></i>
-                                    </div>
-                                </asp:LinkButton>
-                            </div>
-                            <div class="col-3 p-2 pl-3">
-                                <div class="social">
-                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" onclientclick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
-                                        <div class="social">
-                                                 <i class="fa fa-youtube-play fa-fw"></i>
-                                        </div>
+                                <div class="plus">
+                                    <asp:LinkButton ID="facebook" runat="server" CssClass="button" onclientclick="window.open('https://www.facebook.com/asp.net')">
+                                        <i class="fa fa-facebook-f fa-fw"></i>
                                     </asp:LinkButton>
-                                    
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3">
-                                <div class="social">
+                                <div class="plus">
+                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" onclientclick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
+                                        <i class="fa fa-youtube-play fa-fw"></i>
+                                    </asp:LinkButton>
+                                </div>
+                            </div>
+                            <div class="col-3 p-2 pl-3">
+                                <div class="plus">
                                     <asp:LinkButton ID="twitter" runat="server" CssClass="button" onclientclick="window.open('https://twitter.com/aspnet')">
                                         <div class="social">
-                                                 <i class="fa fa-twitter fa-fw"></i>
+                                            <i class="fa fa-twitter fa-fw"></i>
                                         </div>
                                     </asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3 pr-0">
-                                <div class="social">
+                                <div class="plus">
                                     <asp:LinkButton ID="instagram" runat="server" CssClass="button" onclientclick="window.open('https://www.instagram.com/asp.net_learning/')">
                                         <div class="social">
-                                                 <i class="fa fa-instagram fa-fw"></i>
+                                            <i class="fa fa-instagram fa-fw"></i>
                                         </div>
                                     </asp:LinkButton>
                                 </div>

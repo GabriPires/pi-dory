@@ -51,4 +51,9 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
     {
         Response.Redirect("https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw");
     }
+
+    protected void PessoasEncontradas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("PessoasEncontradas.aspx");
+    }
 }
