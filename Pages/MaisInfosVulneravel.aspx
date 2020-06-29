@@ -126,14 +126,13 @@
                     </div>
                 </div>
 
-                <div class="col-12">
 
                     <div class="form-group">
                         <div class="">
                             <asp:Button ID="btnTerminarCadastroVulneravel" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Realizar Cadastro" OnClick="btnTerminarCadastroVulneravel_Click" />
                         </div>
                     </div>
-                </div>
+
             </div>
 
 
