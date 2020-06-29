@@ -121,3 +121,7 @@ drop table tut_tutorias;
 select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id);
 select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id);
 select con_contato, con_tipo from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id) where pes_id = 1;
+
+select * from pes_pessoas where pes_id = last_insert_id();
+
+INSERT INTO pes_pessoas(pes_nome, pes_sexo, pes_cutis) VALUES("Nome","M","Branca");

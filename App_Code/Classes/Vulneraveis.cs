@@ -8,7 +8,7 @@ public class Vulneraveis
     private int vul_id;
     private string vul_observacoes;
     private Boolean vul_status;
-    private Pessoas pes_cpf;
+    private Pessoas pes_id;
 
     public int Vul_id
     {
@@ -49,16 +49,16 @@ public class Vulneraveis
         }
     }
 
-    public Pessoas Pes_cpf
+    public Pessoas Pes_id
     {
         get
         {
-            return pes_cpf;
+            return pes_id;
         }
 
         set
         {
-            pes_cpf = value;
+            pes_id = value;
         }
     }
 }
