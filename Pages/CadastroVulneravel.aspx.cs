@@ -17,6 +17,7 @@ public partial class Pages_CadastroVulneravel : System.Web.UI.Page
         Pessoas p = new Pessoas();
         Vulneraveis v = new Vulneraveis();
         Mais_Informacoes minfo = new Mais_Informacoes();
+        Tutorias tut = new Tutorias();
 
         p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
         
@@ -124,11 +125,26 @@ public partial class Pages_CadastroVulneravel : System.Web.UI.Page
         switch (VulneravelBD.InsertVulneravel(p, v, minfo))
         {
             case 0:
-                Response.Redirect("MaisInfosVulneravel.aspx");
+                tut.Pes_id = 1; /* Busca do ID do Vulneravel VulneravelBD.SelectPesIdVulneravel();*/
+                tut.Res_id = Convert.ToInt32(Session["idResponsavel"]);
+                tut.Tut_cadastro = DateTime.Today;
+                tut.Tut_ativo = false;
+
+                switch (VulneravelBD.insertTutorias(tut))
+                {
+                    case 0:
+                        Response.Redirect("MaisInfosVulneravel.aspx");
+                        break;
+                    case -2:
+                        Response.Redirect("Index.aspx");
+                        break;
+                }
                 break;
             case -2:
-
+                Response.Redirect("Index.aspx");
                 break;
         }
+
+        
     }
 }

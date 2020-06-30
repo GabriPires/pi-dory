@@ -125,3 +125,5 @@ select con_contato, con_tipo from pes_pessoas pessoas inner join res_responsavei
 select * from pes_pessoas where pes_id = last_insert_id();
 
 INSERT INTO pes_pessoas(pes_nome, pes_sexo, pes_cutis) VALUES("Nome","M","Branca");
+INSERT INTO min_mais_informacoes(min_cor_cabelo, min_cor_olhos, min_altura, min_peso, 
+min_descricao, min_tipo_sanguineo, vul_id) VALUES();

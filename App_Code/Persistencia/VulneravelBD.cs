@@ -60,4 +60,89 @@ public class VulneravelBD
         }
         return retorno;
     }
+
+    /* public static DataSet SelectIdVulneravel()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select vul_id from min_mais_informacoes where min_codigo = last_insert_id()";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static int SelectPesIdVulneravel()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select pes_id from vul_vulneraveis where vul_id = ?vul_id";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        DataSet buscaid = SelectIdVulneravel();
+        int vulId = Convert.ToInt32(buscaid.Tables[0].Rows[0]["vul_id"]);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        int id = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
+
+        return id;
+    } */
+
+    public static int insertTutorias(Tutorias tutorias)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "INSERT INTO tut_tutorias(res_id, pes_id, tut_cadastro, tut_ativo) VALUES(?res_id,?pes_id,?tut_cadastro,?tut_ativo);";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            objCommand.Parameters.Add(Mapped.Parameter("?res_id", tutorias.Res_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", tutorias.Pes_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?tut_cadastro", tutorias.Tut_cadastro));
+            objCommand.Parameters.Add(Mapped.Parameter("?tut_ativo", tutorias.Tut_ativo));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }
