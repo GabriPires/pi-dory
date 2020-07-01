@@ -130,3 +130,5 @@ min_descricao, min_tipo_sanguineo, vul_id) VALUES();
 
 select vul_id from min_mais_informacoes where min_codigo = 1;
 select pes_id from vul_vulneraveis where vul_id = 2;
+
+select * from vul_vulneraveis where vul_id = (select * from vul_vulneraveis order by pes_id desc limit 1);

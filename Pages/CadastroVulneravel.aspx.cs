@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 public partial class Pages_CadastroVulneravel : System.Web.UI.Page
 {
@@ -125,7 +126,8 @@ public partial class Pages_CadastroVulneravel : System.Web.UI.Page
         switch (VulneravelBD.InsertVulneravel(p, v, minfo))
         {
             case 0:
-                tut.Pes_id = 1; /* Busca do ID do Vulneravel VulneravelBD.SelectPesIdVulneravel();*/
+                DataSet ds = VulneravelBD.SelectPesIdVulneravel();
+                tut.Pes_id = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
                 tut.Res_id = Convert.ToInt32(Session["idResponsavel"]);
                 tut.Tut_cadastro = DateTime.Today;
                 tut.Tut_ativo = false;

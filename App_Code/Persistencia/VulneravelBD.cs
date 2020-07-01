@@ -61,14 +61,14 @@ public class VulneravelBD
         return retorno;
     }
 
-    /* public static DataSet SelectIdVulneravel()
+    public static DataSet SelectPesIdVulneravel()
     {
         DataSet ds = new DataSet();
         IDbConnection objConnection;
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select vul_id from min_mais_informacoes where min_codigo = last_insert_id()";
+        string sql = "select * from vul_vulneraveis order by pes_id desc limit 1;";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
@@ -81,36 +81,7 @@ public class VulneravelBD
         objCommand.Dispose();
 
         return ds;
-    }
-
-    public static int SelectPesIdVulneravel()
-    {
-        DataSet ds = new DataSet();
-        IDbConnection objConnection;
-        IDbCommand objCommand;
-        IDataAdapter objDataAdapter;
-
-        string sql = "select pes_id from vul_vulneraveis where vul_id = ?vul_id";
-
-        objConnection = Mapped.Connection();
-        objCommand = Mapped.Command(sql, objConnection);
-
-        DataSet buscaid = SelectIdVulneravel();
-        int vulId = Convert.ToInt32(buscaid.Tables[0].Rows[0]["vul_id"]);
-
-        objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
-
-        objDataAdapter = Mapped.Adapter(objCommand);
-        objDataAdapter.Fill(ds);
-
-        objConnection.Close();
-        objConnection.Dispose();
-        objCommand.Dispose();
-
-        int id = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
-
-        return id;
-    } */
+    } 
 
     public static int insertTutorias(Tutorias tutorias)
     {
