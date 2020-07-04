@@ -142,11 +142,11 @@
                 </div>
                 <div class="row justify-content-center mb-3">
                     <div class="custom-control custom-switch">
-                        <asp:TextBox ID="customSwitch1" runat="server"  Cssclass="custom-control-input" type="checkbox"></asp:TextBox>
-                        <label class="custom-control-label" for="customSwitch1">Tornar esta pessoa um desaparecido</label>
-                        <asp:LinkButton ID="temporario" runat="server" CssClass="button" OnClick="temporario_Click">
+                        <asp:CheckBox ID="customSwitch1" runat="server" ></asp:CheckBox>
+                        <label  for="customSwitch1">Tornar esta pessoa um desaparecido</label>
+                        <%--<asp:LinkButton ID="temporario" runat="server" CssClass="button" OnClick="temporario_Click">
                                 <i class="fa fa-plus fa-fw"></i>
-                        </asp:LinkButton>
+                        </asp:LinkButton>--%>
                     </div>
                 </div>
 

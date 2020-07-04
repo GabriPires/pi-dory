@@ -9,7 +9,7 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        customSwitch1.Checked = true; // Para deixar selecionado o botão
     }
 
 
