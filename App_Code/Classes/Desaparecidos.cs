@@ -8,8 +8,8 @@ public class Desaparecidos
 {
     private int des_id;
     private DateTime des_encontrado;
-    private Pessoas pes_cpf;
-    private Vulneraveis vul_id;
+    private int pes_id;
+    private int vul_id;
 
     public int Des_id
     {
@@ -37,20 +37,20 @@ public class Desaparecidos
         }
     }
 
-    public Pessoas Pes_cpf
+    public int Pes_id
     {
         get
         {
-            return pes_cpf;
+            return pes_id;
         }
 
         set
         {
-            pes_cpf = value;
+            pes_id = value;
         }
     }
 
-    public Vulneraveis Vul_id
+    public int Vul_id
     {
         get
         {
