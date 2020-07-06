@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS dory;
 USE dory;
 
-
 CREATE TABLE IF NOT EXISTS end_endereco (
 	end_id integer primary key not null auto_increment,
     end_logradouro varchar(180) not null,
@@ -137,4 +136,4 @@ select * from vul_vulneraveis order by pes_id desc limit 1;
 
 select * from des_desaparecidos order by pes_id desc limit 1;
 
-UPDATE min_mais_informacoes set min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;
+UPDATE min_mais_informacoes SET min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;

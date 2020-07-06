@@ -6,9 +6,7 @@
     <div class="container bootstrap snippet">
         <div class="row mb-4">
             <div class="col-sm-12">
-                <h1>
-                    Nome do Usuário                  
-                </h1>
+                <asp:Literal ID="ltlTitulo" runat="server"></asp:Literal>
             </div>
         </div>
         <div class="row">
@@ -82,15 +80,15 @@
                                     <div class="form-group">
                                         <h6>Sexo</h6>
                                         <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg">
-                                            <asp:ListItem>Masculino</asp:ListItem>
-                                            <asp:ListItem>Feminino</asp:ListItem>
+                                            <asp:ListItem Value="1">Masculino</asp:ListItem>
+                                            <asp:ListItem Value="2">Feminino</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h6>Data de nascimento</h6>
-                                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control form-control-lg" type="date"></asp:TextBox>
+                                        <asp:TextBox ID="txtDataNascimento" runat="server" CssClass="form-control form-control-lg" type="date"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">
