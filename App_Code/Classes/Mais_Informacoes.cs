@@ -20,8 +20,8 @@ public class Mais_Informacoes
     private string min_deficiencia_fisica;
     private string min_restricao_alimentar;
     private string min_restricao_medicamento;
-    private Desaparecidos des_id;
-    private Vulneraveis vul_id;
+    private int des_id;
+    private int vul_id;
 
     public int Min_codigo
     {
@@ -179,7 +179,7 @@ public class Mais_Informacoes
         }
     }
 
-    public Desaparecidos Des_id
+    public int Des_id
     {
         get
         {
@@ -192,7 +192,7 @@ public class Mais_Informacoes
         }
     }
 
-    public Vulneraveis Vul_id
+    public int Vul_id
     {
         get
         {

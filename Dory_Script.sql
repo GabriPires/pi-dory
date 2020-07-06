@@ -132,3 +132,9 @@ select vul_id from min_mais_informacoes where min_codigo = 1;
 select pes_id from vul_vulneraveis where vul_id = 2;
 
 select * from vul_vulneraveis where vul_id = (select * from vul_vulneraveis order by pes_id desc limit 1);
+
+select * from vul_vulneraveis order by pes_id desc limit 1;
+
+select * from des_desaparecidos order by pes_id desc limit 1;
+
+UPDATE min_mais_informacoes set min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;
