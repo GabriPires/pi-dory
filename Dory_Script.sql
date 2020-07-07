@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS end_endereco (
     end_numero varchar(10) not null,
     end_bairro varchar(180) not null,
     end_cidade varchar(180) not null,
-    end_municipio char(2) not null,
+    end_estado char(2) not null,
     end_pais varchar(50) 
 )engine= innoDB;
 
@@ -143,3 +143,5 @@ select * from des_desaparecidos order by pes_id desc limit 1;
 
 UPDATE min_mais_informacoes SET min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;
 */
+
+select * from end_endereco enderecos left join pes_pessoas pessoas using(end_id) where pes_id = 1;

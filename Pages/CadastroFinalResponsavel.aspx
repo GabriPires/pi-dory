@@ -35,26 +35,39 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="row justify-content-center">
+                    <div class="col-9">
+                        <div class="form-group mb-2">
+                            <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço" required="true" ToolTip="Adicione o seu Endereço" />
+                        </div>
 
-            <div class="form-group mb-2">
-                <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço" required="true" tooltip="Adicione o seu Endereço"/>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-group mb-2">
+                            <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control form-control-lg" placeholder="Número" required="true" tooltip="Adicione o numero da sua casa"/>
+                        </div>
+
+                    </div>
+                </div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-4">
+                <div class="col-5">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtNumero" runat="server" CssClass="form-control form-control-lg" placeholder="Número" required="true" tooltip="Adicione o numero da sua casa"/>
+                        <asp:TextBox ID="txtBairro" runat="server" CssClass="form-control form-control-lg" placeholder="Bairro" required="true" ToolTip="Adicione o seu bairro" />
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-5">
                     <div class="form-group mb-2">
-                        <asp:TextBox ID="txtComplemento" runat="server" CssClass="form-control form-control-lg" placeholder="Complemento*" tooltip="Opcional"/>
+                        <asp:TextBox ID="txtCidade" runat="server" CssClass="form-control form-control-lg" placeholder="Cidade"  required="true"/>
                     </div>
                 </div>
-            </div>
-
-            <div class="form-group mb-2">
-                <asp:TextBox ID="txtReferencia" runat="server" CssClass="form-control form-control-lg" placeholder="Referência*" tooltip="Opcional"/>
-            </div>
+                <div class="col-2">
+                    <div class="form-group mb-2">
+                        <asp:TextBox ID="txtEstado" runat="server" CssClass="form-control form-control-lg" placeholder="UF"  required="true"/>
+                    </div>
+                </div>
+            </div>  
 
             <div class="row justify-content-center">
                 <div class="col-6">

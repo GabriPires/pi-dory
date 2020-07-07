@@ -19,6 +19,7 @@ public partial class Pages_VerificaDocumentos : System.Web.UI.Page
 
                 string cpf = "";
                 string rg = "";
+                Boolean end = false;
 
                 if (ds.Tables[0].Rows[0]["pes_cpf"] != null)
                 {
@@ -30,9 +31,14 @@ public partial class Pages_VerificaDocumentos : System.Web.UI.Page
                     rg = ds.Tables[0].Rows[0]["pes_rg"].ToString();
                 }
 
+                if (ds.Tables[0].Rows[0]["end_id"] != null)
+                {
+                    end = true;
+                }
+
                 txtAguarde.Text = "Redirecionando";
 
-                if (rg == "" || cpf == "")
+                if (rg == "" || cpf == "" || end == false)
                 {
                     Response.Redirect("CadastroFinalResponsavel.aspx");
                     txtAguarde.Text = rg +" e "+ cpf;
