@@ -9,78 +9,80 @@ using System.Web.UI.WebControls;
 public partial class Pages_TelaBO : System.Web.UI.Page
 {
 
-    string resCpf = "";
-    string resRg = "";
-    string desCpf = "";
-    string desRg = "";
-
     protected void Page_Load(object sender, EventArgs e)
     {
-        DataSet ds = DesaparecidoBD.SelectPesIdDesaparecido();
-
-        //if (Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]) != null)
-        //{
-        //    int vulId = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
-        //}
-
-        int desId = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
-        int resId = Convert.ToInt32(Session["idPessoa"]);
-
-        DataSet dsR = ResponsavelBD.SelectDados(resId);
-        DataSet dsDd = DesaparecidoBD.SelectDados(desId);
-
-        
-
-        if (dsR.Tables[0].Rows[0]["pes_cpf"] != null)
+        if(!IsPostBack)
         {
-            txtCPF.Text = resCpf;
-        }
+            DataSet ds = DesaparecidoBD.SelectPesIdDesaparecido();
 
-        if (dsR.Tables[0].Rows[0]["pes_rg"] != null)
-        {
-            txtRG.Text = resRg;
-        }
+            int desId = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
+            int resId = Convert.ToInt32(Session["idPessoa"]);
 
-        if (dsDd.Tables[0].Rows[0]["pes_cpf"] != null)
-        {
-            txtCPFDesaparecido.Text = desCpf;
-        }
+            DataSet dsR = ResponsavelBD.SelectDados(resId);
+            DataSet dsDd = DesaparecidoBD.SelectDados(desId);
 
-        if (dsDd.Tables[0].Rows[0]["pes_rg"] != null)
-        {
-            //desRg = dsDd.Tables[0].Rows[0]["pes_rg"].ToString();
-            txtRGDesaparecido.Text = desRg;
-        }
+            if (dsR.Tables[0].Rows[0]["pes_cpf"] != null)
+            {
+                txtCPF.Text = dsR.Tables[0].Rows[0]["pes_cpf"].ToString();
+            }
 
-        if(desRg == "")
-        {
-            txtRGDesaparecido.Text = "Nao tem";
+            if (dsR.Tables[0].Rows[0]["pes_rg"] != null)
+            {
+                txtRG.Text = dsR.Tables[0].Rows[0]["pes_rg"].ToString();
+            }
+
+            if (dsDd.Tables[0].Rows[0]["pes_cpf"] != null)
+            {
+                txtCPFDesaparecido.Text = dsDd.Tables[0].Rows[0]["pes_cpf"].ToString();
+            }
+
+            if (dsDd.Tables[0].Rows[0]["pes_rg"] != null)
+            {
+                //desRg = dsDd.Tables[0].Rows[0]["pes_rg"].ToString();
+                txtRGDesaparecido.Text = dsDd.Tables[0].Rows[0]["pes_rg"].ToString();
+            }
         }
     }
 
     protected void btnFinalizarCadastro_Click(object sender, EventArgs e)
     {
-        /* if(resCpf != "")
+        DataSet ds = DesaparecidoBD.SelectPesIdDesaparecido();
+        int desId = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
+
+        int resId = Convert.ToInt32(Session["idPessoa"]);
+        DataSet dsR = ResponsavelBD.SelectDados(resId);
+
+        string cpfDigitado = txtCPF.Text;
+        string rgDigitado = txtRG.Text;
+
+        string cpfCadastrado = dsR.Tables[0].Rows[0]["pes_cpf"].ToString();
+        string rgCadastrado = dsR.Tables[0].Rows[0]["pes_rg"].ToString();
+
+        if (cpfCadastrado != cpfDigitado && rgCadastrado != rgDigitado)
         {
-            string cpfDigitado = txtCPF.Text;
-            string rgDigitado = txtRG.Text;
+            // ERRO
+        }
+        else
+        {
+            //TODO VERIFICAR SE CPF DO DESAPARECIDO JA NAO ESTA CADASTRADO
+            Pessoas pessoaD = new Pessoas();
 
-            if(cpfDigitado != resCpf || rgDigitado != resRg)
-            {
-                // CHAMA A MODAL
-            }
-            else
-            {
-                Pessoas pessoaD = new Pessoas();
-                Pessoas pessoaR = new Pessoas();
+            pessoaD.Pes_cpf = txtCPFDesaparecido.Text;
+            pessoaD.Pes_rg = txtRGDesaparecido.Text;
 
-                pessoaD.Pes_cpf = txtCPFDesaparecido.Text;
+            switch (DesaparecidoBD.UpdateDocumentos(pessoaD, desId))
+            {
+                case 0:
+                    Response.Redirect("Desaparecido.aspx");
+                    break;
+                case -2:
+                    Response.Redirect("ExibirPerfil.aspx");
+                    break;
             }
-        } */
-        Response.Redirect("Desaparecido.aspx");
+        }
     }
 
-   
+
 
     protected void Pergunta_Click(object sender, EventArgs e)
     {

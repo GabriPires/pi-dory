@@ -96,32 +96,28 @@ public class DesaparecidoBD
         return retorno;
     }
 
-    public static int UpdateDocumentos(Pessoas p)
+    public static int UpdateDocumentos(Pessoas p, int pesId)
     {
         int retorno = 0;
-        /* 
 
         try
         {
             IDbConnection objConnection;
             IDbCommand objCommand;
 
-            string sql = "UPDATE min_mais_informacoes SET min_doencas = ?min_doencas, min_deficiencia_mental = ?min_deficiencia_mental, min_deficiencia_fisica = ?min_deficiencia_fisica, min_restricao_alimentar = ?min_restricao_alimentar, min_restricao_medicamento = ?min_restricao_medicamento WHERE des_id = ?des_id;";
+            string sql = "UPDATE pes_pessoas SET pes_cpf = ?pes_cpf, pes_rg = ?pes_rg WHERE pes_id = ?pes_id;";
 
             objConnection = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConnection);
 
             // Parametrização
 
-            // Mais informações
-            objCommand.Parameters.Add(Mapped.Parameter("?min_doencas", minfo.Min_doencas));
-            objCommand.Parameters.Add(Mapped.Parameter("?min_deficiencia_mental", minfo.Min_deficiencia_mental));
-            objCommand.Parameters.Add(Mapped.Parameter("?min_deficiencia_fisica", minfo.Min_deficiencia_fisica));
-            objCommand.Parameters.Add(Mapped.Parameter("?min_restricao_alimentar", minfo.Min_restricao_alimentar));
-            objCommand.Parameters.Add(Mapped.Parameter("?min_restricao_medicamento", minfo.Min_restricao_medicamento));
+            // Dados
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_cpf", p.Pes_cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_rg", p.Pes_rg));
 
-            // Vulneravel
-            objCommand.Parameters.Add(Mapped.Parameter("?des_id", minfo.Des_id));
+            // Desaparecido
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pesId));
 
             objCommand.ExecuteNonQuery();
 
@@ -133,7 +129,6 @@ public class DesaparecidoBD
         {
             retorno = -2;
         }
-        */
         return retorno;
 
     }
