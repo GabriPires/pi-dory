@@ -199,4 +199,80 @@ public class ResponsavelBD
         
     }
 
+    public static int UpdateResponsavel(Pessoas p, int pesId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE pes_pessoas SET pes_cpf = ?pes_cpf, pes_rg = ?pes_rg WHERE pes_id = ?pes_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Documentos
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_cpf", p.Pes_cpf));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_rg", p.Pes_rg));
+
+            // Pessoa
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pesId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int UpdateEnderecoResponsavel(Endereco e, int endId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE end_endereco SET end_logradouro = ?end_logradouro, end_numero = ?end_numero, end_bairro = ?end_bairro, end_cidade = ?end_cidade, end_estado = ?end_estado, end_pais = ?end_pais WHERE end_id = ?end_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Dados
+            objCommand.Parameters.Add(Mapped.Parameter("?end_logradouro", e.End_logradouro));
+            objCommand.Parameters.Add(Mapped.Parameter("?end_numero", e.End_numero));
+            objCommand.Parameters.Add(Mapped.Parameter("?end_bairro", e.End_bairro));
+            objCommand.Parameters.Add(Mapped.Parameter("?end_cidade", e.End_cidade));
+            objCommand.Parameters.Add(Mapped.Parameter("?end_estado", e.End_estado));
+            objCommand.Parameters.Add(Mapped.Parameter("?end_pais", e.End_pais));
+
+            // Endereco
+            objCommand.Parameters.Add(Mapped.Parameter("?end_id", endId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
 }

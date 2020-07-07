@@ -8,7 +8,9 @@
 
 
         <div class="col-12 text-center mb-3">
-            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
+            <a href="Index.aspx">
+                <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
+            </a>
         </div>
         <div class="col-12 text-center mb-5 mt-2 ">
             <h1>Cadastro de Vulneravel</h1>

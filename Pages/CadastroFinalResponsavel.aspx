@@ -86,8 +86,7 @@
             </div>
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
-                    <!-- <asp:Button ID="btnFimCadastro" runat="server" CssClass="btn btn-dark btn-logincadastro" Text="Finalizar Cadastro" /> -->
-                    <a href="Login.aspx" class="btn btn-primary btn-logincadastro text-white">Finalizar Cadastro</a>
+                    <asp:Button ID="btnFimCadastro" runat="server" CssClass="btn btn-primary btn-logincadastro" Text="Finalizar Cadastro" OnClick="btnFimCadastro_Click" />
                 </div>
             </div>
 

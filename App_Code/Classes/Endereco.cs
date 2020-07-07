@@ -10,8 +10,8 @@ public class Endereco
     private string end_logradouro;
     private string end_numero;
     private string end_bairro;
-    private int end_cidade;
-    private string end_municipio;
+    private string end_cidade;
+    private string end_estado;
     private string end_pais;
 
     public int End_id
@@ -66,7 +66,7 @@ public class Endereco
         }
     }
 
-    public int End_cidade
+    public string End_cidade
     {
         get
         {
@@ -79,16 +79,16 @@ public class Endereco
         }
     }
 
-    public string End_municipio
+    public string End_estado
     {
         get
         {
-            return end_municipio;
+            return end_estado;
         }
 
         set
         {
-            end_municipio = value;
+            end_estado = value;
         }
     }
 
