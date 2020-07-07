@@ -6,7 +6,7 @@
 public class Pessoas
 {
     private int pes_id;
-    private int pes_cpf;
+    private string pes_cpf;
     private string pes_nome;
     private string pes_dataNascimento;
     private string pes_sexo;
@@ -28,7 +28,7 @@ public class Pessoas
         }
     }
 
-    public int Pes_cpf
+    public string Pes_cpf
     {
         get
         {

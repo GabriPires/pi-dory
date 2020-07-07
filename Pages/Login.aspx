@@ -7,10 +7,13 @@
 
     <div class="row justify-content-center">
         <div class="col-12 text-center">
-            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
+            <a href="Index.aspx">
+                <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
+            </a>
         </div>
         <div class="col-12 text-center mb-3 mt-4 mb-5">
             <h1>Bem Vindo(a)</h1>
+            <p>Efetue seu login</p>
         </div>
 
         <div class="col-6">
@@ -34,10 +37,12 @@
                     <asp:Button ID="btnLoginFacebook" runat="server" CssClass="btn btn-primary btn-login-facebook" Text="Entre com o Facebook" />
                 </div>
 
-                <hr />
+                <hr /><div class="d-flex justify-content-center">
+                    <p>Não tem uma conta? Crie uma!</p>
+                </div>
                 <div class="d-flex justify-content-center">
                     <!-- <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-dark btn-cadastro" Text="Crie uma Conta"/> -->
-                    <a href="CadastroInicialResponsavel.aspx" class="btn btn-primary btn-cadastro text-white">Crie uma Conta</a>
+                    <a href="CadastroInicialResponsavel.aspx" class="btn btn-primary btn-cadastro text-white">Criar uma Conta</a>
                 </div>
             </div>
         </div>

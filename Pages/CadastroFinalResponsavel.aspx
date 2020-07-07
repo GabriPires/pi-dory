@@ -14,8 +14,9 @@
             <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
         </div>
         <div class="col-12 text-center mb-2 mt-2 mb-5">
-            <h1>Cadastro</h1>
-            <p>Estamos quase acabando</p>
+            <h1>Complete seu cadastro!</h1>
+            <p>Precisamos de mais algumas informações sobre você</p>
+            <span>É rapidinho</span>
         </div>
 
         <div class="col-8">

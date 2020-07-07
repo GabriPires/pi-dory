@@ -13,12 +13,13 @@ public partial class Pages_Index : System.Web.UI.Page
     }
     protected void CadastrarDesaparecido_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CadastroDesaparecido.aspx");
+        // Response.Redirect("CadastroDesaparecido.aspx");
+        Response.Redirect("VerificaDocumentosDesaparecido.aspx");
     }
 
     protected void CadastrarVulneravel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CadastroVulneravel.aspx");
+        Response.Redirect("VerificaDocumentosVulneravel.aspx");
     }
 
     protected void PessoasEncontradas_Click(object sender, EventArgs e)

@@ -9,6 +9,8 @@ public partial class Pages_MasterPages_Menu : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Session["isLoggedIn"] = false;
+
         if(Session["nomeResponsavel"] == null)
         {
             ltlTextoLogado.Text = "<li class='list-inline-item text'>";

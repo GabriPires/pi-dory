@@ -96,6 +96,48 @@ public class DesaparecidoBD
         return retorno;
     }
 
+    public static int UpdateDocumentos(Pessoas p)
+    {
+        int retorno = 0;
+        /* 
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE min_mais_informacoes SET min_doencas = ?min_doencas, min_deficiencia_mental = ?min_deficiencia_mental, min_deficiencia_fisica = ?min_deficiencia_fisica, min_restricao_alimentar = ?min_restricao_alimentar, min_restricao_medicamento = ?min_restricao_medicamento WHERE des_id = ?des_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Mais informações
+            objCommand.Parameters.Add(Mapped.Parameter("?min_doencas", minfo.Min_doencas));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_deficiencia_mental", minfo.Min_deficiencia_mental));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_deficiencia_fisica", minfo.Min_deficiencia_fisica));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_restricao_alimentar", minfo.Min_restricao_alimentar));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_restricao_medicamento", minfo.Min_restricao_medicamento));
+
+            // Vulneravel
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", minfo.Des_id));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        */
+        return retorno;
+
+    }
+
     public static int insertTutorias(Tutorias tutorias)
     {
         int retorno = 0;
@@ -141,6 +183,30 @@ public class DesaparecidoBD
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectDados(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select * from pes_pessoas pessoas inner join des_desaparecidos responsaveis using(pes_id) where pes_id = ?pes_id";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?pes_id", id));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
