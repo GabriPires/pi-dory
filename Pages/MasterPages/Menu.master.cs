@@ -9,7 +9,6 @@ public partial class Pages_MasterPages_Menu : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Session["isLoggedIn"] = false;
 
         if(Session["nomeResponsavel"] == null)
         {
@@ -21,11 +20,12 @@ public partial class Pages_MasterPages_Menu : System.Web.UI.MasterPage
             ltlTextoLogado.Text += "<a href='CadastroInicialResponsavel.aspx' class='mb-0 btn-entrarCadastrar'>Cadastrar</a>";
             ltlTextoLogado.Text += "</li>";
 
-            
+            Session["isLoggedIn"] = false;
         }
         else
         {
             ltlNomeUsuario.Text = Session["nomeResponsavel"].ToString();
+            Session["isLoggedIn"] = true;
         }
     }
 

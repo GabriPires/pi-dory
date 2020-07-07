@@ -11,7 +11,9 @@
         <div class="col-1 text-center mt-2">
         </div>
         <div class="col-12 text-center mb-3">
-            <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
+            <a href="Index.aspx">
+                <img src="../Images/Logo_3.0.png" class="img-fluid" style="width: 17%;" />
+            </a>
         </div>
         <div class="col-12 text-center mb-2 mt-2 mb-5">
             <h1>Complete seu cadastro!</h1>
@@ -20,10 +22,19 @@
         </div>
 
         <div class="col-8">
-            <div class="form-group mb-2">
-                <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="CPF" required="true" tooltip="Adicione o seu CPF"/>
-            </div>
 
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group mb-2">
+                        <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="CPF" required="true" ToolTip="Adicione o seu CPF" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group mb-2">
+                        <asp:TextBox ID="txtRG" runat="server" CssClass="form-control form-control-lg" placeholder="RG" required="true" ToolTip="Adicione o seu RG" />
+                    </div>
+                </div>
+            </div>
 
             <div class="form-group mb-2">
                 <asp:TextBox ID="txtEndereco" runat="server" CssClass="form-control form-control-lg" placeholder="Endereço" required="true" tooltip="Adicione o seu Endereço"/>

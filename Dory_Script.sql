@@ -1,6 +1,8 @@
 CREATE DATABASE IF NOT EXISTS dory;
 USE dory;
 
+/*drop database dory;*/
+
 CREATE TABLE IF NOT EXISTS end_endereco (
 	end_id integer primary key not null auto_increment,
     end_logradouro varchar(180) not null,
@@ -18,7 +20,10 @@ CREATE TABLE IF NOT EXISTS pes_pessoas(
     pes_dataNascimento date not null,
     pes_sexo char(1) not null,
     pes_rg varchar(12),
-    pes_cutis varchar(50)
+    pes_cutis varchar(50),
+    end_id int,
+    
+	foreign key (end_id) references end_endereco (end_id)
     
 )engine = innoDB;
 
@@ -114,7 +119,7 @@ drop table pes_pessoas;
 drop table res_responsaveis;
 drop table vul_vulneraveis;
 drop table tut_tutorias;
-*/
+
 
 
 select * from pes_pessoas pessoas inner join res_responsaveis responsaveis using(pes_id) inner join con_contato using(pes_id);
@@ -137,3 +142,4 @@ select * from vul_vulneraveis order by pes_id desc limit 1;
 select * from des_desaparecidos order by pes_id desc limit 1;
 
 UPDATE min_mais_informacoes SET min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;
+*/

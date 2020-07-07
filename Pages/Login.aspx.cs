@@ -26,7 +26,7 @@ public partial class Pages_LoginCadastro : System.Web.UI.Page
             Session["emailResponsavel"] = dsD.Tables[0].Rows[0]["res_email"].ToString();
             Session["idResponsavel"] = Convert.ToInt32(dsD.Tables[0].Rows[0]["res_id"]);
             Session["idPessoa"] = Convert.ToInt32(dsD.Tables[0].Rows[0]["pes_id"]);
-            Session["isLoggedIn"] = true;
+            Session["isLoggedIn"] = "true";
 
             Response.Redirect("Index.aspx");
         }
