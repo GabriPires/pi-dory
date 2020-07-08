@@ -73,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mx-5">
+            <div class="col-6 mx-5" style="max-width: 37%">
                 <div class="col-12">
                         <h2 class="PessoasDesaparecidas mb-4">Pessoas Desaparecidas</h2>
                     </div>
@@ -101,7 +101,7 @@
                                 </p>
                                 <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
                                     CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                    style="width: 20%;"
+                                    style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
                                     onClick="btnVer_Mais_Click"
                                 />
                             </div>
@@ -139,8 +139,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 container-left">
-                        <div class="bagulhoamarelo"></div>
-                        <h2 class="estatisticas mt-3">Estatísticas</h2>
+                        <h2 class="estatisticas mt-2">Estatísticas</h2>
                         <h3 class="subTituloEstatistivas">Estados com maior numeros de casos</h3>
                         <img src="../Images/grafico.jpg" class="img-fluid" />
                         <div class="text-center">
