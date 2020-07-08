@@ -74,154 +74,44 @@
                 </div>
             </div>
             <div class="col-6 mx-5">
-
-                <div class="row ">
-
-                    <div class="col-12">
+                <div class="col-12">
                         <h2 class="PessoasDesaparecidas mb-4">Pessoas Desaparecidas</h2>
                     </div>
-                    <div class="col-12">
+                <div class="col-12">
                         <div class="search">
                             <input type="text" class="searchTerm" placeholder="Pesquisar">
                         </div>
                     </div>
-                    <div class="col-12 mt-5">
-                        <div class="container">
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: José Eduardo</p>
-                                        <p class="idade">Idade: 39 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="Desaparecido.aspx" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
+               
+        
+            <asp:Repeater runat="server" ID="rptCard">
+            <ItemTemplate>
+                <div class="col-12">
+                    <div class="row mt-3">
+                        <div class="cardPessoa mb-2">
+                            <div class="imagem">
+                                <img src="../Images/malucorandom4.jpg" class="imagem" />
                             </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Ana Clara</p>
-                                        <p class="idade">Idade: 25 Anos</p>
+                            <div class="infos">
+                                <p class="nome">
+                                    Nome: <%#Eval("pes_nome") %>
+                                </p>
+                                <p class="idade">
+                                    Idade: <%#Eval("pes_dataNascimento") %>
+                                </p>
+                                <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
+                                CssClass="btn btn-primary btn-block rounded-pill buttonVerMais " 
+                                    onClick="btnVer_Mais_Click"
+                                />
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
                             </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom2.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Roberto Amaral</p>
-                                        <p class="idade">Idade: 27 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom2.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Roberta Silva</p>
-                                        <p class="idade">Idade: 35 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom3.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Enzo</p>
-                                        <p class="idade">Idade: 21 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom3.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Perola Ribeiro</p>
-                                        <p class="idade">Idade: 39 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom4.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Francisco Oliveira</p>
-                                        <p class="idade">Idade: 53 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa mb-2">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom4.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Valentina</p>
-                                        <p class="idade">Idade: 7 Anos</p>
-
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
-
+                    
                 </div>
 
-
+            </ItemTemplate>
+        </asp:Repeater>
 
             </div>
             <div class="col-2">

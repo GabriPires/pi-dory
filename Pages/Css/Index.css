@@ -126,14 +126,13 @@
 
 .buttonVerMais {
     height: 35px;
-    width: 70px;
+    width: 10%;
     background: #475ac0;
     cursor: pointer;
     border-radius: 30px;
     border: none;
     transition: 0.2s;
-    margin-left: 80%;
-    margin-top: -70px;
+
 }
 
 .buttonMenuTexto {

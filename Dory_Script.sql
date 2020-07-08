@@ -144,4 +144,8 @@ select * from des_desaparecidos order by pes_id desc limit 1;
 UPDATE min_mais_informacoes SET min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;
 */
 
-select * from end_endereco enderecos left join pes_pessoas pessoas using(end_id) where pes_id = 1;
+select * from end_endereco enderecos left join pes_pessoas pessoas using(end_id) where pes_id = 6;
+
+select des_id, pes_nome, pes_dataNascimento from pes_pessoas inner join des_desaparecidos using (pes_id);
+
+select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join min_mais_informacoes using (des_id) where des_id = 2	;

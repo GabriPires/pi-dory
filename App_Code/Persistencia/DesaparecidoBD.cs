@@ -212,4 +212,54 @@ public class DesaparecidoBD
 
         return ds;
     }
+
+
+    public static DataSet SelectDadosDesaparecido()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join min_mais_informacoes using (des_id) where des_id = 1; ";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectNomeIdadeIdDesaparecidos()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+
+        string sql = " select des_id, pes_nome, pes_dataNascimento from pes_pessoas inner join des_desaparecidos using (pes_id) ;";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+
 }
