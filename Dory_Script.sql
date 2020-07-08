@@ -148,4 +148,6 @@ select * from end_endereco enderecos left join pes_pessoas pessoas using(end_id)
 
 select des_id, pes_nome, pes_dataNascimento from pes_pessoas inner join des_desaparecidos using (pes_id);
 
-select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join min_mais_informacoes using (des_id) where des_id = 2	;
+select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join min_mais_informacoes using (des_id) where des_id = 2;
+
+insert into end_endereco (end_pais) values ("Brasil");

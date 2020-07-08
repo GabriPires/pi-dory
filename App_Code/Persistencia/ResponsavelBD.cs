@@ -36,8 +36,8 @@ public class ResponsavelBD
             IDbConnection objConnection;
             IDbCommand objCommand;
 
-            string sql  =  "INSERT INTO pes_pessoas(pes_nome, pes_dataNascimento, pes_sexo) VALUES(?pes_nome,?pes_dataNascimento,?pes_sexo);";
-                   sql  += "INSERT INTO res_responsaveis(res_email, res_senha,pes_id) VALUES(?res_email,?res_senha, last_insert_id()); ";
+            string sql = "INSERT INTO pes_pessoas(pes_nome, pes_dataNascimento, pes_sexo) VALUES(?pes_nome,?pes_dataNascimento,?pes_sexo);";
+            sql += "INSERT INTO res_responsaveis(res_email, res_senha,pes_id) VALUES(?res_email,?res_senha, last_insert_id()); ";
 
             objConnection = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConnection);
@@ -54,6 +54,39 @@ public class ResponsavelBD
             objCommand.Parameters.Add(Mapped.Parameter("?res_senha", responsavel.Res_senha));
             //Fim Responsavel
 
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int InsertInicialEndereco(int id)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "INSERT INTO end_endereco (end_pais) VALUES ('Brasil');";
+            sql += "UPDATE pes_pessoas SET end_id = last_insert_id() WHERE pes_id = ?pes_id; ";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            //parametrização
+
+            //Pessoa
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", id));
 
             objCommand.ExecuteNonQuery();
 
