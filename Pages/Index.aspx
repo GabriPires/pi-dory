@@ -88,7 +88,7 @@
             <ItemTemplate>
                 <div class="col-12">
                     <div class="row mt-3">
-                        <div class="cardPessoa mb-2">
+                        <div class="cardPessoa mb-2 flex-row">
                             <div class="imagem">
                                 <img src="../Images/malucorandom4.jpg" class="imagem" />
                             </div>
@@ -100,10 +100,10 @@
                                     Idade: <%#Eval("pes_dataNascimento") %>
                                 </p>
                                 <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
-                                CssClass="btn btn-primary btn-block rounded-pill buttonVerMais " 
+                                    CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                    style="width: 20%;"
                                     onClick="btnVer_Mais_Click"
                                 />
-
                             </div>
                         </div>
                     </div>

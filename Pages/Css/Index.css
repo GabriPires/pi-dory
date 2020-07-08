@@ -133,6 +133,8 @@
     border: none;
     transition: 0.2s;
 
+    margin-left: 75%;
+    margin-top: -3%;
 }
 
 .buttonMenuTexto {
