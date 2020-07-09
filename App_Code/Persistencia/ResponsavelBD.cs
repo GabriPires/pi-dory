@@ -173,6 +173,7 @@ public class ResponsavelBD
 
         return ds;
     }
+
     public static DataSet SelectContatos(int id)
     {
         DataSet ds = new DataSet();
@@ -196,6 +197,7 @@ public class ResponsavelBD
 
         return ds;
     }
+
     public static Boolean ValidaEmail(string email)
     {
         DataSet ds = new DataSet();
@@ -230,6 +232,7 @@ public class ResponsavelBD
         return controlador;
         
     }
+
     public static int UpdateResponsavel(Pessoas p, int pesId)
     {
         int retorno = 0;
@@ -330,6 +333,41 @@ public class ResponsavelBD
 
             // Endereco
             objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pesId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int UpdateEmailResponsavel(Responsaveis r, int resId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE res_responsaveis SET res_email = ?res_email WHERE res_id = ?res_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Dados
+            objCommand.Parameters.Add(Mapped.Parameter("?res_email", r.Res_email));
+
+            // Endereco
+            objCommand.Parameters.Add(Mapped.Parameter("?res_id", resId));
 
             objCommand.ExecuteNonQuery();
 

@@ -127,7 +127,7 @@
                                 <h6>Novo email</h6>
                                 <asp:TextBox ID="txtEmailNovo" runat="server" CssClass="form-control form-control-lg" placeholder="Novo email"></asp:TextBox>
                             </div>
-                            <asp:Button ID="btnAlterarEmail" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar email"/>
+                            <asp:Button ID="btnAlterarEmail" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar email" OnClick="btnAlterarEmail_Click"/>
                         </div>
                     </div>
 
@@ -163,8 +163,47 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h4>Oops!</h4>
                     <p>Algo deu errado, favor verifique as informações e tente novamente.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Email antigo errado -->
+    <div class="modal fade" id="modalEmailAntigoErrado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ops!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Email antigo informado está incorreto.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Email novo em uso -->
+    <div class="modal fade" id="modalEmailNovoEmUso" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ops!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Email novo já está em uso.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
