@@ -62,7 +62,7 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
                 Response.Redirect("ExibirPerfil.aspx");
                 break;
             case -2:
-                // MODAL DE ERRO
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroInformações').modal('show');</script>", false);
                 break;
         }
     }

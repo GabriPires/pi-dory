@@ -58,7 +58,6 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
                 else
                 {
                     Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroCadastroSenha').modal('show');</script>", false);
-
                 }
             }
             else
