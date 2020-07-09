@@ -133,15 +133,19 @@
 
                     <div class="tab-pane" id="senha">
                         <div class="col-12 p-4">
+                            <div class="alert alert-warning" role="alert">
+                                <p><strong>Mantenha sua senha em sigilo!</strong></p>
+                                Após a alteração, você será levado para a tela de login novamente, para efetuar logon com a nova senha.
+                            </div>
                             <div class="form-group">
                                 <h6>Senha antiga</h6>
-                                <asp:TextBox ID="txtSenhaAntiga" runat="server" CssClass="form-control form-control-lg" placeholder="Senha antiga"></asp:TextBox>
+                                <asp:TextBox ID="txtSenhaAntiga" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Senha antiga"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <h6>Nova senha</h6>
-                                <asp:TextBox ID="txtNovaSenha" runat="server" CssClass="form-control form-control-lg" placeholder="Nova senha"></asp:TextBox>
+                                <asp:TextBox ID="txtNovaSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Nova senha"></asp:TextBox>
                             </div>
-                            <asp:Button ID="btnSalvarSenha" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar senha" />
+                            <asp:Button ID="btnSalvarSenha" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar senha" OnClick="btnSalvarSenha_Click"/>
                         </div>
                     </div>
 
@@ -204,6 +208,26 @@
                 </div>
                 <div class="modal-body">
                     <p>Email novo já está em uso.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal senha antiga errada -->
+    <div class="modal fade" id="modalSenhaAntigaErrada" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ops!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Senha antiga informada está incorreta.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

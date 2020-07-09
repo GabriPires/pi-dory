@@ -381,4 +381,39 @@ public class ResponsavelBD
         }
         return retorno;
     }
+
+    public static int UpdateSenhaResponsavel(Responsaveis r, int resId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE res_responsaveis SET res_senha = ?res_senha WHERE res_id = ?res_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Dados
+            objCommand.Parameters.Add(Mapped.Parameter("?res_senha", r.Res_senha));
+
+            // Endereco
+            objCommand.Parameters.Add(Mapped.Parameter("?res_id", resId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }

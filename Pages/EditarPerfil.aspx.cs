@@ -101,4 +101,33 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
             Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalEmailAntigoErrado').modal('show');</script>", false);
         }
     }
+
+    protected void btnSalvarSenha_Click(object sender, EventArgs e)
+    {
+        Responsaveis r = new Responsaveis();
+        int pesId = Convert.ToInt32(Session["idPessoa"]);
+        DataSet ds = ResponsavelBD.SelectDados(pesId);
+        string senhaAntiga = ds.Tables[0].Rows[0]["res_senha"].ToString();
+
+        if (txtSenhaAntiga.Text == senhaAntiga)
+        {
+            int resId = Convert.ToInt32(Session["idResponsavel"]);
+            r.Res_senha = txtNovaSenha.Text;
+
+            switch (ResponsavelBD.UpdateSenhaResponsavel(r, resId))
+            {
+                case 0:
+                    Response.Redirect("Login.aspx");
+                    break;
+                case -2:
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalErroInformações').modal('show');</script>", false);
+                    break;
+            }
+
+        }
+        else
+        {
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalSenhaAntigaErrada').modal('show');</script>", false);
+        }
+    }
 }
