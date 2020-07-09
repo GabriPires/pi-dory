@@ -23,7 +23,7 @@
             <div class="form-group mb-4">
                 <asp:TextBox ID="txtSenha" runat="server" CssClass="form-control form-control-lg" type="password" placeholder="Digite sua senha"></asp:TextBox>
                 <div class="form-group text-right">
-                    <a href="#">Esqueceu a senha?</a>
+                    <a href="EsqueciASenhaInicial.aspx">Esqueceu a senha?</a>
                 </div>
             </div>
             <div class="form-group">
