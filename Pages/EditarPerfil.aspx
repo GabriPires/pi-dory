@@ -82,6 +82,7 @@
                                         <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg">
                                             <asp:ListItem Value="1">Masculino</asp:ListItem>
                                             <asp:ListItem Value="2">Feminino</asp:ListItem>
+                                            <asp:ListItem Value="3">Outro</asp:ListItem>
                                         </asp:DropDownList>
                                     </div>
                                 </div>
@@ -92,7 +93,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <asp:Button ID="btnSalvarDados" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar dados" />
+                                    <asp:Button ID="btnSalvarDados" runat="server" CssClass="btn btn-success btn-lg mb-2" Text="Alterar dados" OnClick="btnSalvarDados_Click"/>
                                 </div>
                             </div>
                         </div>

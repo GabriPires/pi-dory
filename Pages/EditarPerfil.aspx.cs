@@ -21,10 +21,9 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
                 txtNome.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
                 txtCPF.Text = ds.Tables[0].Rows[0]["pes_cpf"].ToString();
                 txtRG.Text = ds.Tables[0].Rows[0]["pes_rg"].ToString();
+                ddlSexo.SelectedValue = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? "1" : "2";
 
-                //ddlSexo.SelectedItem = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? 1 : 2;
-
-                //txtDataNascimento = Convert.ToDateTime(ds.Tables[0].Rows[0]["pes_dataNascimento"]);
+                // txtDataNascimento.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString();
 
                 // FAZER OS CONTATOS
             }
@@ -32,6 +31,39 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
             {
                 // ERRO
             }
+        }
+    }
+
+    protected void btnSalvarDados_Click(object sender, EventArgs e)
+    {
+        Pessoas p = new Pessoas();
+
+        int pesId = Convert.ToInt32(Session["idPessoa"]);
+        p.Pes_nome = txtNome.Text;
+        p.Pes_cpf = txtCPF.Text;
+        p.Pes_rg = txtRG.Text;
+
+        if (ddlSexo.SelectedValue == "1")
+        {
+            p.Pes_sexo = "Masculino";
+        }
+        else if (ddlSexo.SelectedValue == "2")
+        {
+            p.Pes_sexo = "Feminino";
+        }
+        else if (ddlSexo.SelectedValue == "3")
+        {
+            p.Pes_sexo = "Outro";
+        }
+
+        switch (ResponsavelBD.UpdateDadosPessoais(p, pesId))
+        {
+            case 0:
+                Response.Redirect("ExibirPerfil.aspx");
+                break;
+            case -2:
+                // MODAL DE ERRO
+                break;
         }
     }
 }
