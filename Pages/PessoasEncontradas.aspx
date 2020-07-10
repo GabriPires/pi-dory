@@ -37,21 +37,21 @@
                         <div class="row">
                             <div class="col-3 p-2 pl-3">
                                 <div class="plus">
-                                    <asp:LinkButton ID="facebook" runat="server" CssClass="button" onclientclick="window.open('https://www.facebook.com/asp.net')">
+                                    <asp:LinkButton ID="facebook" runat="server" CssClass="button" OnClientClick="window.open('https://www.facebook.com/asp.net')">
                                         <i class="fa fa-facebook-f fa-fw"></i>
                                     </asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3">
                                 <div class="plus">
-                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" onclientclick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
+                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" OnClientClick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
                                         <i class="fa fa-youtube-play fa-fw"></i>
                                     </asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3">
                                 <div class="plus">
-                                    <asp:LinkButton ID="twitter" runat="server" CssClass="button" onclientclick="window.open('https://twitter.com/aspnet')">
+                                    <asp:LinkButton ID="twitter" runat="server" CssClass="button" OnClientClick="window.open('https://twitter.com/aspnet')">
                                         <div class="social">
                                             <i class="fa fa-twitter fa-fw"></i>
                                         </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-3 p-2 pl-3 pr-0">
                                 <div class="plus">
-                                    <asp:LinkButton ID="instagram" runat="server" CssClass="button" onclientclick="window.open('https://www.instagram.com/asp.net_learning/')">
+                                    <asp:LinkButton ID="instagram" runat="server" CssClass="button" OnClientClick="window.open('https://www.instagram.com/asp.net_learning/')">
                                         <div class="social">
                                             <i class="fa fa-instagram fa-fw"></i>
                                         </div>
@@ -74,19 +74,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mx-5">
+            <div class="col-6 mx-5" style="max-width: 37%">
 
                 <div class="row">
 
                     <div class="col-12">
-                        <h2 class="PessoasDesaparecidas">Pessoas Encontradas</h2>
+                        <h2 class="PessoasDesaparecidas mb-4">Pessoas Encontradas</h2>
                     </div>
                     <div class="col-12">
                         <div class="search">
                             <input type="text" class="searchTerm" placeholder="Pesquisar">
                         </div>
                     </div>
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-4">
                         <div class="container">
                             <div class="row mt-3">
                                 <div class="cardPessoa">
@@ -97,9 +97,10 @@
                                         <p class="nome">Nome: José Eduardo</p>
                                         <p class="idade">Idade: 39 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button1"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -113,9 +114,10 @@
                                         <p class="nome">Nome: Ana Clara</p>
                                         <p class="idade">Idade: 25 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -129,9 +131,10 @@
                                         <p class="nome">Nome: Roberto Amaral</p>
                                         <p class="idade">Idade: 27 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button2"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -145,9 +148,10 @@
                                         <p class="nome">Nome: Roberta Silva</p>
                                         <p class="idade">Idade: 35 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button3"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -161,9 +165,10 @@
                                         <p class="nome">Nome: Enzo</p>
                                         <p class="idade">Idade: 21 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button4"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -177,9 +182,10 @@
                                         <p class="nome">Nome: Perola Ribeiro</p>
                                         <p class="idade">Idade: 39 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button5"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -193,9 +199,10 @@
                                         <p class="nome">Nome: Francisco Oliveira</p>
                                         <p class="idade">Idade: 53 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button6"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
@@ -209,9 +216,10 @@
                                         <p class="nome">Nome: Valentina</p>
                                         <p class="idade">Idade: 7 Anos</p>
 
-                                        <button class="buttonVerMais ">
-                                            <a href="#" class="buttonMenuTexto">ver +</a>
-                                        </button>
+                                        <asp:Button runat="server" Text="Ver+" ID="Button7"
+                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
+                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
+                                         />
 
                                     </div>
                                 </div>
