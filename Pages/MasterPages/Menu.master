@@ -51,27 +51,27 @@
                 </div>
                 <div class="col-2 my-auto h-100">
                     
-                        <asp:Literal ID="ltlTextoLogado" runat="server" />
-                        <% if (Session["nomeResponsavel"] != null)
-                            {
-                        %>                        
-                        <div class='btn-group'>
-                        <a href='ExibirPerfil.aspx' class='btn btn-light'><asp:Literal ID="ltlNomeUsuario" runat="server"></asp:Literal></a>
+                    <asp:Literal ID="ltlTextoLogado" runat="server" />
+                    <% if (Session["nomeResponsavel"] != null)
+                        {
+                    %>
+                    <div class='btn-group'>
+                        <a href='ExibirPerfil.aspx' class='btn btn-light'>
+                            <asp:Literal ID="ltlNomeUsuario" runat="server"></asp:Literal></a>
                         <button type='button' class='btn btn-light dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                        <span class='sr-only'></span>
-                        
+                            <span class='sr-only'></span>
+
                         </button>
                         <div class='dropdown-menu'>
-                        <a class='dropdown-item' href='#'>Perfil</a>
-                        <a class='dropdown-item' href='#'>Configuração</a>
-                        <a class='dropdown-item' href='#'>Ajuda</a>
-                        <div class='dropdown-divider'></div>
-                        <asp:LinkButton ID='btnLogout' runat='server' CssClass='dropdown-item' Text='Logout' OnClick='btnLogout_Click' />
+                            <a class='dropdown-item' href='#'>Configuração</a>
+                            <a class='dropdown-item' href='#'>Ajuda</a>
+                            <div class='dropdown-divider'></div>
+                            <asp:LinkButton ID='btnLogout' runat='server' CssClass='dropdown-item' Text='Logout' OnClick='btnLogout_Click' />
                         </div>
-                        </div>
-                        <%
-                            }
-                        %>
+                    </div>
+                    <%
+                        }
+                    %>
                     
 
                 </div>
