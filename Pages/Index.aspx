@@ -90,7 +90,7 @@
                     <div class="row mt-3">
                         <div class="cardPessoa mb-2 flex-row">
                             <div class="imagem">
-                                <img src="../Images/malucorandom4.jpg" class="imagem" />
+                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="imagem" />
                             </div>
                             <div class="infos">
                                 <p class="nome">
