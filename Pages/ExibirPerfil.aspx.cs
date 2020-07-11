@@ -20,7 +20,7 @@ public partial class Pages_ExibirPerfil : System.Web.UI.Page
             ltlCPF.Text = ds.Tables[0].Rows[0]["pes_cpf"].ToString();
             ltlRG.Text = ds.Tables[0].Rows[0]["pes_rg"].ToString();
             ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? "Masculino" : "Feminino";
-            ltlDataNascimento.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString();
+            ltlDataNascimento.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString().Substring(0, 10);
 
             DataSet dsC = ResponsavelBD.SelectContatos(id);
             ltlEmail.Text = ds.Tables[0].Rows[0]["res_email"].ToString();
