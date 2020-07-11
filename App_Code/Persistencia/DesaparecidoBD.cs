@@ -18,7 +18,7 @@ public class DesaparecidoBD
             IDbConnection objConnection;
             IDbCommand objCommand;
 
-            string sql = "INSERT INTO pes_pessoas(pes_nome, pes_sexo, pes_cutis) VALUES(?pes_nome,?pes_sexo,?pes_cutis);";
+            string sql = "INSERT INTO pes_pessoas(pes_nome, pes_sexo, pes_cutis, pes_dataNascimento) VALUES(?pes_nome, ?pes_sexo, ?pes_cutis, ?pes_dataNascimento);";
             sql += "INSERT INTO des_desaparecidos(pes_id) VALUES(last_insert_id());";
             sql += "INSERT INTO min_mais_informacoes(min_cor_cabelo, min_cor_olhos, min_altura, min_peso, min_descricao, min_tipo_sanguineo, des_id)";
             sql += "VALUES(?min_cor_cabelo, ?min_cor_olhos, ?min_altura, ?min_peso, ?min_descricao, ?min_tipo_sanguineo, last_insert_id());";
@@ -32,7 +32,7 @@ public class DesaparecidoBD
             objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pessoa.Pes_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pessoa.Pes_sexo));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_cutis", pessoa.Pes_cutis));
-
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_dataNascimento", pessoa.Pes_dataNascimento));
             // Desaparecido
             //objCommand.Parameters.Add(Mapped.Parameter("?vul_status", vulneravel.Vul_status));
 

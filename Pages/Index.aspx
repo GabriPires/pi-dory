@@ -83,7 +83,7 @@
                         </div>
                     </div>
                
-        
+            
             <asp:Repeater runat="server" ID="rptCard">
             <ItemTemplate>
                 <div class="col-12">
@@ -102,7 +102,8 @@
                                 <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
                                     CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
                                     style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                    onClick="btnVer_Mais_Click"
+                                    OnClick="btnVer_Mais_Click"
+                                    CommandArgument='<%#Eval("vag_codigo")%>' 
                                 />
                             </div>
                         </div>
@@ -112,7 +113,7 @@
 
             </ItemTemplate>
         </asp:Repeater>
-
+    
             </div>
             <div class="col-2">
 

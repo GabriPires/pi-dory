@@ -20,18 +20,18 @@
         <div class="col-8">
             <div class="row justify-content-center">
                 <div class="col-6">
-                    <div class="form-group mb-2">
-                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control form-control-lg" placeholder="Nome" required="true" />
+                    <div class=" mb-2">
+                        <asp:TextBox ID="txtNome" runat="server" CssClass="form-control " placeholder="Nome" required />
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="form-group mb-2">
-                        <asp:TextBox ID="txtSobrenome" runat="server" CssClass="form-control form-control-lg" placeholder="Sobrenome" required="true" />
+                    <div class=" mb-2">
+                        <asp:TextBox ID="txtSobrenome" runat="server" CssClass="form-control " required />
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="form-group mb-2">
-                        <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control form-control-lg" placeholder="Sexo">
+                    <div class=" mb-2">
+                        <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control ">
                             <asp:ListItem Enabled="true" Text="Sexo" Value="-1"></asp:ListItem>
                             <asp:ListItem Text="Masculino" Value="1"></asp:ListItem>
                             <asp:ListItem Text="Feminino" Value="2"></asp:ListItem>
@@ -40,16 +40,16 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="form-group mb-2">
-                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de Nascimento" type="date" />
+                    <div class=" mb-2">
+                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" TextMode="Date"/>
                     </div>
                 </div>
             </div>
-            <div class="form-group mb-2">
-                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Email" required="true" />
+            <div class=" mb-2">
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Email" required />
             </div>
-            <div class="form-group mb-2">
-                <asp:TextBox ID="txtConfirmaEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Confirme o email" required="true" />
+            <div class=" mb-2">
+                <asp:TextBox ID="txtConfirmaEmail" runat="server" CssClass="form-control form-control-lg" type="email" placeholder="Confirme o email" required />
             </div>
             <div class="row">
                 <div class="col-6">
@@ -67,7 +67,7 @@
         <div class="col-12">
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
-                    <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar cadastro" onClick="btn_Click" />
+                    <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar cadastro" OnClick="btn_Click" />
                 </div>
             </div>
 
@@ -140,6 +140,7 @@
 
     <script src="../Scripts/jquery-3.0.0.min.js"></script>
     <script src="../Scripts/bootstrap.min.js"></script>
-
+    <script  src="../Scripts/jquery.maskedinput.js"></script>
+    
 </asp:Content>
 

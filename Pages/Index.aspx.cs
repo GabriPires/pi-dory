@@ -11,7 +11,7 @@ public partial class Pages_Index : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+
         try
         {
             DataSet ds = DesaparecidoBD.SelectNomeIdadeIdDesaparecidos();
@@ -51,10 +51,17 @@ public partial class Pages_Index : System.Web.UI.Page
         Response.Redirect("PessoasEncontradas.aspx");
     }
 
+    //protected void btnVer_Mais_Click(object sender, EventArgs e)
+    //{
+
+
+    //    Response.Redirect("PessoasEncontradas.aspx");
+    //}
+
+
+
     protected void btnVer_Mais_Click(object sender, EventArgs e)
     {
-
-
         Response.Redirect("PessoasEncontradas.aspx");
     }
 }

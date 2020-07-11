@@ -82,8 +82,13 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="form-group mb-2">
+                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de Nascimento" type="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                        <div class="col-6 mb-2">
                             <asp:TextBox ID="txtAltura" runat="server" CssClass="form-control form-control-lg" placeholder="Altura" required="true" />
                         </div>
                         <div class="col-6">
@@ -91,8 +96,6 @@
                         </div>
 
                     </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">

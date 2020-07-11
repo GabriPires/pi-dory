@@ -17,6 +17,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Menu.css" rel="stylesheet" />
+    <script src="../../Scripts/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input.data").mask("99/99/9999");
+            $("input.cpf").mask("999.999.999-99");
+            $("input.cep").mask("99.999-999");
+        });
+    </script>
 </head>
 <body>
     <form runat="server">

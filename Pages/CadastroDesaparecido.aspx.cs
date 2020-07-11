@@ -21,7 +21,7 @@ public partial class Pages_CadastroDesaparecido : System.Web.UI.Page
         Tutorias tut = new Tutorias();
 
         p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
-
+        p.Pes_dataNascimento = txtData.Text;
         // Switch do sexo
         switch (ddlSexo.SelectedValue)
         {

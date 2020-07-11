@@ -18,7 +18,16 @@ public partial class Pages_DesaparecidoComBanco : System.Web.UI.Page
         if (ds.Tables[0].Rows.Count >= 1)
         {
             ltlNomeDesaparecido.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
-            ltlIdadeDesaparecido.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString();
+
+            DateTime dataInicial = (DateTime)ds.Tables[0].Rows[0]["pes_dataNascimento"];
+            DateTime dataFinal = DateTime.Now;
+            int ano = dataFinal.Year;
+            int anoInicial = dataInicial.Year;
+            int idade = ano - anoInicial;
+
+
+            ltlIdadeDesaparecido.Text = idade.ToString();
+
             ltlTipoSanguineo.Text = ds.Tables[0].Rows[0]["min_tipo_sanguineo"].ToString();
             ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
             ltlEtnia.Text = ds.Tables[0].Rows[0]["pes_cutis"].ToString();
