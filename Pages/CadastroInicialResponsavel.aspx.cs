@@ -19,7 +19,7 @@ public partial class Pages_CadastroInicialResponsavel : System.Web.UI.Page
         Responsaveis r = new Responsaveis();
 
         p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
-        p.Pes_dataNascimento = txtData.Text;
+        p.Pes_dataNascimento = Convert.ToDateTime(txtData.Text);
 
 
         if (ddlSexo.SelectedValue == "1") {

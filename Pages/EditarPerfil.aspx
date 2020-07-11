@@ -89,7 +89,7 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <h6>Data de nascimento</h6>
-                                        <asp:TextBox ID="txtDataNascimento" runat="server" CssClass="form-control form-control-lg" type="date"></asp:TextBox>
+                                        <asp:TextBox ID="txtDataNascimento" runat="server" CssClass="form-control form-control-lg"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="col-12">

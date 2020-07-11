@@ -342,7 +342,7 @@ public class ResponsavelBD
             IDbConnection objConnection;
             IDbCommand objCommand;
 
-            string sql = "UPDATE pes_pessoas SET pes_nome = ?pes_nome, pes_cpf = ?pes_cpf, pes_rg = ?pes_rg, pes_sexo = ?pes_sexo WHERE pes_id = ?pes_id;";
+            string sql = "UPDATE pes_pessoas SET pes_nome = ?pes_nome, pes_cpf = ?pes_cpf, pes_rg = ?pes_rg, pes_sexo = ?pes_sexo, pes_dataNascimento = ?pes_dataNascimento WHERE pes_id = ?pes_id;";
 
             objConnection = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConnection);
@@ -354,6 +354,7 @@ public class ResponsavelBD
             objCommand.Parameters.Add(Mapped.Parameter("?pes_cpf", p.Pes_cpf));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_rg", p.Pes_rg));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", p.Pes_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_dataNascimento", p.Pes_dataNascimento));
 
             // Endereco
             objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pesId));

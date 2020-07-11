@@ -23,7 +23,7 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
                 txtRG.Text = ds.Tables[0].Rows[0]["pes_rg"].ToString();
                 ddlSexo.SelectedValue = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? "1" : "2";
 
-                // txtDataNascimento.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString();
+                txtDataNascimento.Text = ds.Tables[0].Rows[0]["pes_dataNascimento"].ToString().Substring(0,10);
 
                 // FAZER OS CONTATOS
             }
@@ -42,6 +42,9 @@ public partial class Pages_EditarPerfil : System.Web.UI.Page
         p.Pes_nome = txtNome.Text;
         p.Pes_cpf = txtCPF.Text;
         p.Pes_rg = txtRG.Text;
+
+        DateTime dataN = Convert.ToDateTime(txtDataNascimento.Text);
+        p.Pes_dataNascimento = dataN;
 
         if (ddlSexo.SelectedValue == "1")
         {

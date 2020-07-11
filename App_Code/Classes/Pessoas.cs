@@ -8,7 +8,7 @@ public class Pessoas
     private int pes_id;
     private string pes_cpf;
     private string pes_nome;
-    private string pes_dataNascimento;
+    private DateTime pes_dataNascimento;
     private string pes_sexo;
     private string pes_rg;
     private string pes_cutis;
@@ -54,7 +54,7 @@ public class Pessoas
         }
     }
 
-    public string Pes_dataNascimento
+    public DateTime Pes_dataNascimento
     {
         get
         {
