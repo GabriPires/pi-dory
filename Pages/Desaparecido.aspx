@@ -88,34 +88,34 @@
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Nome</strong> José Eduardo</p>
+                        <p><strong>Nome:</strong><asp:Literal ID="ltlNomeDesaparecido" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Idade</strong> 39 Anos</p>
+                        <p><strong>Idade:</strong> <asp:Literal ID="ltlIdadeDesaparecido" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Tipo sanguíneo</strong> A+</p>
+                        <p><strong>Tipo sanguíneo:</strong> <asp:Literal ID="ltlTipoSanguineo" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Sexo</strong> Masculino</p>
+                        <p><strong>Sexo:</strong> <asp:Literal ID="ltlSexo" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Etnia</strong> Branca</p>
+                        <p><strong>Etnia:</strong> <asp:Literal ID="ltlEtnia" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Cor do cabelo</strong> Preto</p>
+                        <p><strong>Cor do cabelo:</strong> <asp:Literal ID="ltlCabelo" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Cor dos olhos</strong> Castanho</p>
+                        <p><strong>Cor dos olhos:</strong> <asp:Literal ID="ltlOlhos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Altura</strong> 1,68m</p>
+                        <p><strong>Altura:</strong> <asp:Literal ID="ltlAltura" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Peso</strong> 80Kg</p>
+                        <p><strong>Peso:</strong> <asp:Literal ID="ltlPeso" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Descrição</strong>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sollicitudin leo, at tincidunt est volutpat eu. Maecenas eu tellus elit. Aenean dignissim erat felis, et porttitor tortor eleifend id. Sed id nunc tempor justo posuere pretium. Donec sit amet metus sapien. Ut volutpat magna sed dapibus sagittis. Vestibulum sed purus felis.</p>
+                        <p><strong>Descrição:</strong><asp:Literal ID="ltlDescricao" runat="server"></asp:Literal></p>
                     </div>
                 </div>
                 <div class="row justify-content-center container-left m-3 mb-4">
@@ -124,19 +124,19 @@
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Restrições alimentares</strong> Nenhuma ou não foi informado</p>
+                        <p><strong>Restrições alimentares:</strong><asp:Literal ID="ltlAlimentos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Restrições a medicamentos</strong> Dipirona</p>
+                        <p><strong>Restrições a medicamentos:</strong> <asp:Literal ID="ltlMedicamentos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Deficiência mental</strong> Autismo</p>
+                        <p><strong>Deficiência mental:</strong> <asp:Literal ID="ltlDeficienciaMental" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Deficiência física</strong> Nenhuma ou não foi informado</p>
+                        <p><strong>Deficiência física:</strong> <asp:Literal ID="ltlDeficienciaFisica" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Doenças</strong> Nenhuma ou não foi informado</p>
+                        <p><strong>Doenças:</strong><asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
                     </div>
 
                 </div>
@@ -164,31 +164,65 @@
             </div>
             <div class="col-2">
 
-                <div class="row mt-5">
+                <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
-                        <div class="plus">
-                            <asp:LinkButton ID="CadastrarVulneravel" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
+                        <div class="cardPessoa mb-2 flex-row">
+                         <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand" >
+                            <ItemTemplate>
+                                <div class="plus mr-3">
+                                    <asp:ImageButton 
+                                        ID="btnvulneravel" 
+                                        runat="server" 
+                                        CssClass="button" 
+                                        CommandArgument='<%#Eval("pes_id")%>' 
+                                        CommandName="vulneravel"
+                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        >
+                                    </asp:ImageButton >
+                                </div>
+                            </ItemTemplate>
+                          </asp:Repeater>
+
+                        <div class="plus2">
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
                                 <i class="fa fa-plus fa-fw"></i>
                             </asp:LinkButton>
                         </div>
+                            </div>
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Desaparecidos Ativos</h3>
-                        <div class="plus">
+                        <div class="cardPessoa mb-2 flex-row">
+                         <asp:Repeater runat="server" ID="rptDesaparecidos" OnItemCommand="rptDesaparecidos_ItemCommand">
+                            <ItemTemplate>
+                                <div class="plus mr-3">
+                                    <asp:ImageButton 
+                                        ID="btndesaparecido" 
+                                        runat="server" 
+                                        CssClass="button" 
+                                        CommandName="desaparecido"
+                                        CommandArgument='<%#Eval("des_id")%>' 
+                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        >
+                                    </asp:ImageButton >
+                                </div>
+                            </ItemTemplate>
+                          </asp:Repeater>
+
+                        <div class="plus2">
                             <asp:LinkButton ID="CadastrarDesaparecido" runat="server" CssClass="button" OnClick="CadastroDesaparecido_Click">
                                 <i class="fa fa-plus fa-fw"></i>
                             </asp:LinkButton>
                         </div>
+                            </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 container-left">
-                        <div class="bagulhoamarelo"></div>
-                        <h2 class="estatisticas mt-3">Estatísticas</h2>
+                        <h2 class="estatisticas mt-2">Estatísticas</h2>
                         <h3 class="subTituloEstatistivas">Estados com maior numeros de casos</h3>
                         <img src="../Images/grafico.jpg" class="img-fluid" />
                         <div class="text-center">

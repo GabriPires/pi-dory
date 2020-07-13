@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-6">
                     <div class=" mb-2">
-                        <asp:TextBox ID="txtSobrenome" runat="server" CssClass="form-control " required />
+                        <asp:TextBox ID="txtSobrenome" runat="server" CssClass="form-control " required placeholder="Sobrenome"/>
                     </div>
                 </div>
                 <div class="col-6">

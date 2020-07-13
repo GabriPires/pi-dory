@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using System.Security.Cryptography;
 
 /// <summary>
 /// Descrição resumida de DesaparecidoBD
@@ -214,18 +215,19 @@ public class DesaparecidoBD
     }
 
 
-    public static DataSet SelectDadosDesaparecido()
+    public static DataSet SelectDadosDesaparecido(int id)
     {
         DataSet ds = new DataSet();
         IDbConnection objConnection;
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join min_mais_informacoes using (des_id) where des_id = 1; ";
+        string sql = "select * from des_desaparecidos inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (des_id) inner join tut_tutorias using (pes_id) where des_id = ?des_id; ";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
 
+        objCommand.Parameters.Add(Mapped.Parameter("?des_id", id));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);
@@ -250,6 +252,31 @@ public class DesaparecidoBD
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
 
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+
+    public static DataSet SelectDesaparecidoporPessoa(int res_id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select des_id from tut_tutorias inner join des_desaparecidos using (pes_id) where res_id = ?res_id; ";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?res_id", res_id));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);

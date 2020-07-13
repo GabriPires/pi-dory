@@ -4,12 +4,109 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 public partial class Pages_Desaparecido : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+        if (!Page.IsPostBack)
+        {
+           
+
+            try
+            {
+                int id = Convert.ToInt32(Session["idResponsavel"]);
+
+                DataSet ds2 = DesaparecidoBD.SelectDesaparecidoporPessoa(id);
+                int qtd = ds2.Tables[0].Rows.Count;
+
+                if (qtd > 0)
+                {
+                    rptDesaparecidos.DataSource = ds2;
+                    rptDesaparecidos.DataBind();
+                }
+                else
+                {
+                    // Caso nao tenha nenhum desaparecido
+                }
+
+
+            }
+            catch (Exception)
+            {
+                //erro
+
+            }
+
+            try
+            {
+                int id = Convert.ToInt32(Session["idResponsavel"]);
+
+                DataSet ds2 = VulneravelBD.SelectVulneravelporPessoa(id);
+                int qtd = ds2.Tables[0].Rows.Count;
+
+                if (qtd > 0)
+                {
+                    rptVulneravel.DataSource = ds2;
+                    rptVulneravel.DataBind();
+                }
+                else
+                {
+                    // Caso nao tenha nenhum desaparecido
+                }
+
+
+            }
+            catch (Exception)
+            {
+                //erro
+
+            }
+        }
+
+        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);;
+        DataSet ds = DesaparecidoBD.SelectDadosDesaparecido(idDesaparecido);
+
+
+        //Ta aki o que vc pediu
+        int idResponsavel = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
+        int idLogado = Convert.ToInt32(Session["idResponsavel"]);
+        //Olha essa merda
+
+
+        if (ds.Tables[0].Rows.Count >= 1)
+        {
+            ltlNomeDesaparecido.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
+
+            DateTime dataInicial = (DateTime)ds.Tables[0].Rows[0]["pes_dataNascimento"];
+            DateTime dataFinal = DateTime.Now;
+            int ano = dataFinal.Year;
+            int anoInicial = dataInicial.Year;
+            int idade = ano - anoInicial;
+
+
+            ltlIdadeDesaparecido.Text = idade.ToString();
+
+            ltlTipoSanguineo.Text = ds.Tables[0].Rows[0]["min_tipo_sanguineo"].ToString();
+            ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
+            ltlEtnia.Text = ds.Tables[0].Rows[0]["pes_cutis"].ToString();
+            ltlCabelo.Text = ds.Tables[0].Rows[0]["min_cor_cabelo"].ToString();
+            ltlOlhos.Text = ds.Tables[0].Rows[0]["min_cor_olhos"].ToString();
+            ltlAltura.Text = ds.Tables[0].Rows[0]["min_altura"].ToString();
+            ltlPeso.Text = ds.Tables[0].Rows[0]["min_peso"].ToString();
+            ltlDescricao.Text = ds.Tables[0].Rows[0]["min_descricao"].ToString();
+
+            ltlAlimentos.Text = ds.Tables[0].Rows[0]["min_restricao_alimentar"].ToString();
+            ltlMedicamentos.Text = ds.Tables[0].Rows[0]["min_restricao_medicamento"].ToString();
+            ltlDeficienciaMental.Text = ds.Tables[0].Rows[0]["min_deficiencia_mental"].ToString();
+            ltlDeficienciaFisica.Text = ds.Tables[0].Rows[0]["min_deficiencia_fisica"].ToString();
+            ltlDoencas.Text = ds.Tables[0].Rows[0]["min_doencas"].ToString();
+        }
+        else
+        {
+            // ERRO
+        }
     }
 
     protected void btnReport_Click(object sender, EventArgs e)
@@ -24,12 +121,12 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
 
     protected void CadastroDesaparecido_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CadastroDesaparecido.aspx");
+        Response.Redirect("VerificaDocumentosDesaparecido.aspx");
     }
 
     protected void CadastrarVulneravel_Click(object sender, EventArgs e)
     {
-        Response.Redirect("CadastroVulneravel.aspx");
+        Response.Redirect("VerificaDocumentosVulneravel.aspx");
     }
 
     protected void Facebook_Click(object sender, EventArgs e)
@@ -55,5 +152,27 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
     protected void PessoasEncontradas_Click(object sender, EventArgs e)
     {
         Response.Redirect("PessoasEncontradas.aspx");
+    }
+
+    protected void rptVulneravel_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+
+        if (e.CommandName == "vulneravel")
+        {
+            //ltlTest.Text = e.CommandArgument.ToString();
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTest').modal('show');</script>", false);
+            Response.Redirect("Vulneravel.aspx?id=" + e.CommandArgument.ToString());
+        }
+
+    }
+
+    protected void rptDesaparecidos_ItemCommand(object source, RepeaterCommandEventArgs e)
+    {
+        if (e.CommandName == "desaparecido")
+        {
+            //ltlTest.Text = e.CommandArgument.ToString();
+            //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTest').modal('show');</script>", false);
+            Response.Redirect("Desaparecido.aspx?id=" + e.CommandArgument.ToString());
+        }
     }
 }

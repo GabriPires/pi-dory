@@ -18,13 +18,7 @@
     <link href="../../Content/font-awesome.min.css" rel="stylesheet" />
     <link href="Menu.css" rel="stylesheet" />
     <script src="../../Scripts/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("input.data").mask("99/99/9999");
-            $("input.cpf").mask("999.999.999-99");
-            $("input.cep").mask("99.999-999");
-        });
-    </script>
+    
 </head>
 <body>
     <form runat="server">

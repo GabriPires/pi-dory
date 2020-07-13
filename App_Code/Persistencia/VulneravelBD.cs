@@ -155,4 +155,28 @@ public class VulneravelBD
         }
         return retorno;
     }
+
+    public static DataSet SelectVulneravelporPessoa(int res_id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select pes_id from tut_tutorias inner join vul_vulneraveis using (pes_id) where res_id = ?res_id; ";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?res_id", res_id));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
 }

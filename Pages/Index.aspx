@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Pages_Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="Index.aspx.cs" Inherits="Pages_Index" enableEventValidation="true" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="Css/Index.css" rel="stylesheet" type="text/css" />
@@ -84,7 +85,7 @@
                     </div>
                
             
-            <asp:Repeater runat="server" ID="rptCard">
+            <asp:Repeater runat="server" ID="rptCard" OnItemCommand="rptCard_ItemCommand">
             <ItemTemplate>
                 <div class="col-12">
                     <div class="row mt-3">
@@ -93,6 +94,7 @@
                                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="imagem" />
                             </div>
                             <div class="infos">
+                                 
                                 <p class="nome">
                                     Nome: <%#Eval("pes_nome") %>
                                 </p>
@@ -102,40 +104,74 @@
                                 <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
                                     CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
                                     style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                    OnClick="btnVer_Mais_Click"
-                                    CommandArgument='<%#Eval("vag_codigo")%>' 
+                                    CommandName="vermais"
+                                    CommandArgument='<%#Eval("des_id")%>' 
                                 />
                             </div>
                         </div>
                     </div>
-                    
                 </div>
 
             </ItemTemplate>
-        </asp:Repeater>
+          </asp:Repeater>
     
             </div>
             <div class="col-2">
 
-                <div class="row mt-5">
+                <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
-                        <div class="plus">
-                            <asp:LinkButton ID="CadastrarVulneravel" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
+                        <div class="cardPessoa mb-2 flex-row">
+                         <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand" >
+                            <ItemTemplate>
+                                <div class="plus mr-3">
+                                    <asp:ImageButton 
+                                        ID="btnvulneravel" 
+                                        runat="server" 
+                                        CssClass="button" 
+                                        CommandArgument='<%#Eval("pes_id")%>' 
+                                        CommandName="vulneravel"
+                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        >
+                                    </asp:ImageButton >
+                                </div>
+                            </ItemTemplate>
+                          </asp:Repeater>
+
+                        <div class="plus2">
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
                                 <i class="fa fa-plus fa-fw"></i>
                             </asp:LinkButton>
                         </div>
+                            </div>
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Desaparecidos Ativos</h3>
-                        <div class="plus">
+                        <div class="cardPessoa mb-2 flex-row">
+                         <asp:Repeater runat="server" ID="rptDesaparecidos" OnItemCommand="rptDesaparecidos_ItemCommand">
+                            <ItemTemplate>
+                                <div class="plus mr-3">
+                                    <asp:ImageButton 
+                                        ID="btndesaparecido" 
+                                        runat="server" 
+                                        CssClass="button" 
+                                        CommandName="desaparecido"
+                                        CommandArgument='<%#Eval("des_id")%>' 
+                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        >
+                                    </asp:ImageButton >
+                                </div>
+                            </ItemTemplate>
+                          </asp:Repeater>
+
+                        <div class="plus2">
                             <asp:LinkButton ID="CadastrarDesaparecido" runat="server" CssClass="button" OnClick="CadastrarDesaparecido_Click">
                                 <i class="fa fa-plus fa-fw"></i>
                             </asp:LinkButton>
                         </div>
+                            </div>
                     </div>
                 </div>
                 <div class="row">
@@ -151,6 +187,29 @@
             </div>
         </div>
     </div>
+    <!-- The Modal -->
+<div class="modal" id="modalTest">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Atenção</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <asp:Literal runat="server" ID="ltlTest"></asp:Literal>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 </asp:Content>
 
