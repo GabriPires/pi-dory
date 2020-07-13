@@ -1,36 +1,62 @@
-# Dory - Reconectando Vidas
+﻿
 
-> O que é o Dory?
+
+# Dory
+
+![Logo Dory](https://raw.githubusercontent.com/GabriPires/pi-dory/master/Images/Logo_3.0.png)
+  <p align="center">
+  <a href="#computer-tecnologias-utilizadas">
+    Tecnologias usadas
+  </a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#octocat-project-description">
+    Descrição do projeto
+  </a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#fire-contribua">
+    Contribua
+  </a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#team">
+    Equipe
+  </a>
+</p>
+
+<p align="center">
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=7159c1&labelColor=000000" alt="PRs welcome!" />
+</p>
+
+<br>
+
+## :camera: Capturas de Tela
+<p align="center">
+	Em breve 😅
+    <!-- <image src=".github/screenshots1.png"> -->
+</p>
+
+## :computer: Tecnologías Utilizadas
+
+- [ASP.NET](https://dotnet.microsoft.com/apps/aspnet)
+- [Bootstrap](https://getbootstrap.com/)
+- [MySQL](https://www.mysql.com/)
+
+## :fire: Contribua
+
+Você pode realizar fork do projeto, ajudar a implementar novas funcionalidades e criar PR's.
+Caso o projeto ainda não tenha um nome, por que não começar ajudando a dar um? 😆
+
+## 🔎 Descrição do Projeto
 
 O sistema Dory visa proporcionar facilidade de acesso, com uma ferramenta que disponibilize às pessoas a possibilidade e oportunidade de obterem maiores resultados nas buscas por seus entes queridos que vieram a se desprender do meio familiar contra a sua vontade.
 
-![alt text](https://github.com/GabriPires/pi-dory/blob/master/Images/Logo_3.0.png)
+## 🥇 Equipe
 
-## Exemplo de uso
+Gabriel Pires –  [gabriel.santos.pes@gmail.com](mailto:gabriel.santos.pes@gmail.com)
 
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado. Adicione blocos de códigos e, se necessário, screenshots.
+Luis Fellipe –  [fe.fellipelima14@gmail.com](mailto:fe.fellipelima14@gmail.com)
 
-*Para mais exemplos, consulte a [Wiki](https://github.com/seunome/seuprojeto/wiki).*
+Matheus Filho –  [matheusrodrigofilho@outlook.com](mailto:matheusrodrigofilho@outlook.com)
 
-## Histórico
+---
 
-- [x]  Elaboração do projeto
-- [x]  Análises e levantamentos de requisitos
-- [x]  Validações de viabilidade
-- [ ]  Desenvolvimento
-
-## Equipe
-
-Gabriel Pires – gabriel.santos.pes@gmail.com
-
-Luis Fellipe – fe.fellipelima14@gmail.com
-
-Matheus Filho – matheusrodrigofilho@outlook.com
-
-## Contribua
-
-1. Faça o *fork* do projeto ([https://github.com/GabriPires/pi-dory/fork](https://github.com/GabriPires/pi-dory))
-2. Crie uma *branch* para sua modificação (`git checkout -b feature/fooBar`)
-3. Faça o *commit* (`git commit -am 'Add some fooBar'`)
-4. *Push* (`git push origin feature/fooBar`)
-5. Crie um novo *Pull Request*
+Feito com :heart: pelo [Champs](https://gtihub.com/GabriPires)
