@@ -121,57 +121,55 @@
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
-                        <div class="cardPessoa mb-2 flex-row">
-                         <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand" >
-                            <ItemTemplate>
-                                <div class="plus mr-3">
-                                    <asp:ImageButton 
-                                        ID="btnvulneravel" 
-                                        runat="server" 
-                                        CssClass="button" 
-                                        CommandArgument='<%#Eval("pes_id")%>' 
-                                        CommandName="vulneravel"
-                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                        >
-                                    </asp:ImageButton >
-                                </div>
-                            </ItemTemplate>
-                          </asp:Repeater>
+                        <div class="repetidorPessoas flex-row">
+                            <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand">
+                                <ItemTemplate>
+                                    <div class="plus mr-3 mb-3">
+                                        <asp:ImageButton
+                                            ID="btnvulneravel"
+                                            runat="server"
+                                            CssClass="button"
+                                            CommandArgument='<%#Eval("pes_id")%>'
+                                            CommandName="vulneravel"
+                                            ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"></asp:ImageButton>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-                        <div class="plus2">
-                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
+                            <div class="plus2">
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
                                 <i class="fa fa-plus fa-fw"></i>
-                            </asp:LinkButton>
-                        </div>
+                                </asp:LinkButton>
                             </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Desaparecidos Ativos</h3>
-                        <div class="cardPessoa mb-2 flex-row">
-                         <asp:Repeater runat="server" ID="rptDesaparecidos" OnItemCommand="rptDesaparecidos_ItemCommand">
-                            <ItemTemplate>
-                                <div class="plus mr-3">
-                                    <asp:ImageButton 
-                                        ID="btndesaparecido" 
-                                        runat="server" 
-                                        CssClass="button" 
-                                        CommandName="desaparecido"
-                                        CommandArgument='<%#Eval("des_id")%>' 
-                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                        >
-                                    </asp:ImageButton >
-                                </div>
-                            </ItemTemplate>
-                          </asp:Repeater>
+                        <div class="repetidorPessoas flex-row">
+                            <asp:Repeater runat="server" ID="rptDesaparecidos" OnItemCommand="rptDesaparecidos_ItemCommand">
+                                <ItemTemplate>
+                                    <div class="plus mr-3 mb-3">
+                                        <asp:ImageButton
+                                            ID="btndesaparecido"
+                                            runat="server"
+                                            CssClass="button"
+                                            CommandName="desaparecido"
+                                            CommandArgument='<%#Eval("des_id")%>'
+                                            ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"></asp:ImageButton>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-                        <div class="plus2">
-                            <asp:LinkButton ID="CadastrarDesaparecido" runat="server" CssClass="button" OnClick="CadastrarDesaparecido_Click">
+
+
+                            <div class="plus2">
+                                <asp:LinkButton ID="CadastrarDesaparecido" runat="server" CssClass="button" OnClick="CadastrarDesaparecido_Click">
                                 <i class="fa fa-plus fa-fw"></i>
-                            </asp:LinkButton>
-                        </div>
+                                </asp:LinkButton>
                             </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">

@@ -170,6 +170,12 @@
     margin-right: 10px;
 }
 
+.repetidorPessoas {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 /* Fim CSS centro */
 /* Começo CSS Direita */
 .bagulhoamarelo {

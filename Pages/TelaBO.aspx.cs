@@ -48,6 +48,7 @@ public partial class Pages_TelaBO : System.Web.UI.Page
     {
         DataSet ds = DesaparecidoBD.SelectPesIdDesaparecido();
         int desId = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
+        int desIdId = Convert.ToInt32(ds.Tables[0].Rows[0]["des_id"]);
 
         int resId = Convert.ToInt32(Session["idPessoa"]);
         DataSet dsR = ResponsavelBD.SelectDados(resId);
@@ -73,7 +74,7 @@ public partial class Pages_TelaBO : System.Web.UI.Page
             switch (DesaparecidoBD.UpdateDocumentos(pessoaD, desId))
             {
                 case 0:
-                    Response.Redirect("Desaparecido.aspx");
+                    Response.Redirect("Desaparecido.aspx?id=" + desIdId);
                     break;
                 case -2:
                     Response.Redirect("ExibirPerfil.aspx");

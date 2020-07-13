@@ -69,14 +69,11 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
         DataSet ds = DesaparecidoBD.SelectDadosDesaparecido(idDesaparecido);
 
 
-        //Ta aki o que vc pediu
-        Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
-        int idLogado = Convert.ToInt32(Session["idResponsavel"]);
-        //Olha essa merda
-
-
         if (ds.Tables[0].Rows.Count >= 1)
         {
+            Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
+            int idLogado = Convert.ToInt32(Session["idResponsavel"]);
+
             ltlNomeDesaparecido.Text = ds.Tables[0].Rows[0]["pes_nome"].ToString();
 
             DateTime dataInicial = (DateTime)ds.Tables[0].Rows[0]["pes_dataNascimento"];

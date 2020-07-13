@@ -95,8 +95,8 @@
                                 {
                             %>
                                     <div class="align-items-center interior">
-                                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-remove fa-fw"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
                                     </div>
                             <%  }
                                } %>
@@ -147,7 +147,7 @@
                                 {
                             %>
                                     <div class="align-items-center interior">
-                                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnEditarAdicional" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
                                     </div>
                             <%  }
                                } %>
@@ -199,28 +199,26 @@
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
                         <div class="cardPessoa mb-2 flex-row">
-                         <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand" >
-                            <ItemTemplate>
-                                <div class="plus mr-3">
-                                    <asp:ImageButton 
-                                        ID="btnvulneravel" 
-                                        runat="server" 
-                                        CssClass="button" 
-                                        CommandArgument='<%#Eval("pes_id")%>' 
-                                        CommandName="vulneravel"
-                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                        >
-                                    </asp:ImageButton >
-                                </div>
-                            </ItemTemplate>
-                          </asp:Repeater>
+                            <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand">
+                                <ItemTemplate>
+                                    <div class="plus mr-3">
+                                        <asp:ImageButton
+                                            ID="btnvulneravel"
+                                            runat="server"
+                                            CssClass="button"
+                                            CommandArgument='<%#Eval("pes_id")%>'
+                                            CommandName="vulneravel"
+                                            ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"></asp:ImageButton>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
 
-                        <div class="plus2">
-                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
+                            <div class="plus2">
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
                                 <i class="fa fa-plus fa-fw"></i>
-                            </asp:LinkButton>
-                        </div>
+                                </asp:LinkButton>
                             </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
