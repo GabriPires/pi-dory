@@ -70,7 +70,7 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
 
 
         //Ta aki o que vc pediu
-        int idResponsavel = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
+        Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
         int idLogado = Convert.ToInt32(Session["idResponsavel"]);
         //Olha essa merda
 
@@ -89,7 +89,7 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             ltlIdadeDesaparecido.Text = idade.ToString();
 
             ltlTipoSanguineo.Text = ds.Tables[0].Rows[0]["min_tipo_sanguineo"].ToString();
-            ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString();
+            ltlSexo.Text = ds.Tables[0].Rows[0]["pes_sexo"].ToString() == "M" ? "Masculino" : "Feminino";
             ltlEtnia.Text = ds.Tables[0].Rows[0]["pes_cutis"].ToString();
             ltlCabelo.Text = ds.Tables[0].Rows[0]["min_cor_cabelo"].ToString();
             ltlOlhos.Text = ds.Tables[0].Rows[0]["min_cor_olhos"].ToString();

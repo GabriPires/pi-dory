@@ -83,8 +83,24 @@
                     </div>
                 </div>
                 <div class="row justify-content-center container-left m-3">
-                    <div class="col-12 ">
-                        <h2 class="mt-2">Informações básicas</h2>
+                    <div class="col-12">
+                        <div class="flex-row cabecalhoEditar">
+                            <h2 class="mt-2">Informações básicas</h2>
+                            <% if (Session["isLoggedIn"].ToString() == "True")
+                                { %>
+                            <%
+                                int idRes = Convert.ToInt32(Session["idResponsavel"]);
+                                int resP = Convert.ToInt32(Session["ResposavelPor"]);
+                                if (idRes == resP)
+                                {
+                            %>
+                                    <div class="align-items-center interior">
+                                        <asp:LinkButton ID="LinkButton2" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-remove fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="LinkButton3" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                    </div>
+                            <%  }
+                               } %>
+                        </div>
                         <hr />
                     </div>
                     <div class="col-12 ">
@@ -119,8 +135,23 @@
                     </div>
                 </div>
                 <div class="row justify-content-center container-left m-3 mb-4">
-                    <div class="col-12 ">
-                        <h2 class="mt-2">Informações sobre a saúde da pessoa</h2>
+                    <div class="col-12">
+                        <div class="flex-row cabecalhoEditar">
+                            <h2 class="mt-2">Informações sobre a saúde da pessoa</h2>
+                            <% if (Session["isLoggedIn"].ToString() == "True")
+                                { %>
+                            <%
+                                int idRes = Convert.ToInt32(Session["idResponsavel"]);
+                                int resP = Convert.ToInt32(Session["ResposavelPor"]);
+                                if (idRes == resP)
+                                {
+                            %>
+                                    <div class="align-items-center interior">
+                                        <asp:LinkButton ID="LinkButton4" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                    </div>
+                            <%  }
+                               } %>
+                        </div>
                         <hr />
                     </div>
                     <div class="col-12 ">

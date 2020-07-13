@@ -153,9 +153,26 @@
         transition: 0.2s;
     }
 
+.cabecalhoEditar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.interior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnEditarRemover{
+    margin-right: 10px;
+}
+
 /* Fim CSS centro */
-    /* Começo CSS Direita */
-    .bagulhoamarelo {
+/* Começo CSS Direita */
+.bagulhoamarelo {
     width: 120px;
     position: absolute;
     top: 0;
