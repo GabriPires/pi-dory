@@ -236,4 +236,69 @@ public class VulneravelBD
         }
         return retorno;
     }
+
+    public static int InsertVulneravelDesaparecidos(Desaparecidos d)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "INSERT INTO des_desaparecidos(pes_id, vul_id) VALUES(?pes_id, ?vul_id);";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", d.Pes_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?vul_id", d.Vul_id));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
+    public static int UpdateMinfoVulneravelDesaparecido(Mais_Informacoes m, int vulId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE min_mais_informacoes SET des_id = ?des_id WHERE vul_id = ?vul_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", m.Des_id));
+
+            // Vulneravel
+            objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }

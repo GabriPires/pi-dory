@@ -175,7 +175,7 @@ public class DesaparecidoBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select * from des_desaparecidos order by pes_id desc limit 1;";
+        string sql = "select * from des_desaparecidos order by des_id desc limit 1;";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);

@@ -72,6 +72,7 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
 
         if (ds.Tables[0].Rows.Count >= 1)
         {
+            Session["pesIdVulneravel"] = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
             Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
             int idLogado = Convert.ToInt32(Session["idResponsavel"]);
 
@@ -196,7 +197,30 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
         switch (VulneravelBD.AlteraStatus(v, vulId))
         {
             case 0:
-                Response.Redirect("Vulneravel.aspx?id=" + vulId);
+                Desaparecidos d = new Desaparecidos();
+                d.Pes_id = Convert.ToInt32(Session["pesIdVulneravel"]);
+                d.Vul_id = vulId;
+                switch (VulneravelBD.InsertVulneravelDesaparecidos(d))
+                {
+                    case 0:
+                        Mais_Informacoes m = new Mais_Informacoes();
+                        DataSet ds = DesaparecidoBD.SelectPesIdDesaparecido();
+                        int desId = Convert.ToInt32(ds.Tables[0].Rows[0]["des_id"]);
+                        m.Des_id = desId;
+                        switch (VulneravelBD.UpdateMinfoVulneravelDesaparecido(m, vulId))
+                        {
+                            case 0:
+                                Response.Redirect("TelaBO.aspx");
+                                break;
+
+                            case -2:
+                                break;
+                        }
+                        break;
+
+                    case -2:
+                        break;
+                }
                 break;
 
             case -2:
