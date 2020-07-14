@@ -112,8 +112,8 @@ public partial class Pages_Index : System.Web.UI.Page
 
 
 
-    
-    
+
+
 
     protected void rptCard_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
@@ -121,7 +121,7 @@ public partial class Pages_Index : System.Web.UI.Page
         {
             //ltlTest.Text = e.CommandArgument.ToString();
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTest').modal('show');</script>", false);
-            Response.Redirect("Desaparecido.aspx?id="+e.CommandArgument.ToString());
+            Response.Redirect("Desaparecido.aspx?id=" + e.CommandArgument.ToString());
         }
     }
 
@@ -134,7 +134,7 @@ public partial class Pages_Index : System.Web.UI.Page
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTest').modal('show');</script>", false);
             Response.Redirect("Vulneravel.aspx?id=" + e.CommandArgument.ToString());
         }
-        
+
     }
 
     protected void rptDesaparecidos_ItemCommand(object source, RepeaterCommandEventArgs e)

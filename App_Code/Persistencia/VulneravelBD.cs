@@ -163,12 +163,36 @@ public class VulneravelBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select pes_id from tut_tutorias inner join vul_vulneraveis using (pes_id) where res_id = ?res_id; ";
+        string sql = "select vul_id from tut_tutorias inner join vul_vulneraveis using (pes_id) where res_id = ?res_id; ";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
 
         objCommand.Parameters.Add(Mapped.Parameter("?res_id", res_id));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectDadosDesaparecido(int id)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select * from vul_vulneraveis inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (vul_id) inner join tut_tutorias using (pes_id) where vul_id = ?vul_id; ";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?vul_id", id));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);

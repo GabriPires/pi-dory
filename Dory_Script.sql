@@ -151,3 +151,36 @@ select des_id, pes_nome, pes_dataNascimento from pes_pessoas inner join des_desa
 select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join min_mais_informacoes using (des_id) where des_id = 2;
 
 insert into end_endereco (end_pais) values ("Brasil");
+
+select * from pes_pessoas
+inner join des_desaparecidos using (pes_id)
+inner join tut_tutorias 
+where tut_tutorias.res_id = 2;
+
+select pes_id from tut_tutorias
+inner join tut_tutorias using (pes_id)
+inner join vul_vulneraveis using (pes_id)
+where res_id = 2 ;
+
+select * from des_desaparecidos
+inner join  pes_pessoas using (pes_id) 
+inner join min_mais_informacoes using (des_id) 
+inner join tut_tutorias using (pes_id)
+where des_id = 1;
+
+select * from vul_vulneraveis 
+inner join  pes_pessoas using (pes_id) 
+inner join min_mais_informacoes using (vul_id) 
+inner join tut_tutorias using (pes_id) where vul_id = 2;
+
+select * from vul_vulneraveis;
+
+SELECT TIMESTAMPDIFF (YEAR,'1913-10-19',CURDATE())
+      AS "Idade de Vinícius de Moraes";
+      
+SELECT NomeCliente AS Nome,
+     DATE_FORMAT(DataNascimentoCliente, '%d de %M de %Y') AS Nascimento,
+      TIMESTAMPDIFF(YEAR,pes_dataNascimento,CURDATE()) AS Idade
+      FROM CadastroClientes
+      WHERE YEAR(DataNascimentoCliente) > 1983;
+select des_id, pes_nome as Nome, TIMESTAMPDIFF(YEAR,pes_dataNascimento,CURDATE())as Idade  from pes_pessoas inner join des_desaparecidos using (pes_id) ;

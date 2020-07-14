@@ -96,10 +96,10 @@
                             <div class="infos">
                                  
                                 <p class="nome">
-                                    Nome: <%#Eval("pes_nome") %>
+                                    Nome: <%#Eval("Nome") %>
                                 </p>
                                 <p class="idade">
-                                    Idade: <%#Eval("pes_dataNascimento") %>
+                                    Idade: <%#Eval("Idade") %>
                                 </p>
                                 <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
                                     CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
@@ -129,7 +129,7 @@
                                             ID="btnvulneravel"
                                             runat="server"
                                             CssClass="button"
-                                            CommandArgument='<%#Eval("pes_id")%>'
+                                            CommandArgument='<%#Eval("vul_id")%>'
                                             CommandName="vulneravel"
                                             ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"></asp:ImageButton>
                                     </div>

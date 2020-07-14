@@ -247,7 +247,7 @@ public class DesaparecidoBD
         IDataAdapter objDataAdapter;
 
 
-        string sql = " select des_id, pes_nome, pes_dataNascimento from pes_pessoas inner join des_desaparecidos using (pes_id) ;";
+        string sql = "select des_id, pes_nome as Nome, TIMESTAMPDIFF(YEAR,pes_dataNascimento,CURDATE())as Idade  from pes_pessoas inner join des_desaparecidos using (pes_id) ;";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);

@@ -74,9 +74,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mx-5 my-5 container-left">
+            <div class="col-6 mx-5 my-5 container-left" style="max-width: 37%">
                 <div class="row justify-content-center">
                     <div class="col-6 ">
+                        <h2 class="PessoasDesaparecidas mt-3">Desaparecido</h2>
                         <div class="imagem mx-auto my-5">
                             <img src="../Images/malucorandom.jpg" class="imagem" />
                         </div>
@@ -198,15 +199,15 @@
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
-                        <div class="cardPessoa mb-2 flex-row">
+                        <div class="repetidorPessoas flex-row">
                             <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand">
                                 <ItemTemplate>
-                                    <div class="plus mr-3">
+                                    <div class="plus mr-3 mb-3">
                                         <asp:ImageButton
                                             ID="btnvulneravel"
                                             runat="server"
                                             CssClass="button"
-                                            CommandArgument='<%#Eval("pes_id")%>'
+                                            CommandArgument='<%#Eval("vul_id")%>'
                                             CommandName="vulneravel"
                                             ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"></asp:ImageButton>
                                     </div>
@@ -224,10 +225,10 @@
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Desaparecidos Ativos</h3>
-                        <div class="cardPessoa mb-2 flex-row">
+                        <div class="repetidorPessoas flex-row">
                          <asp:Repeater runat="server" ID="rptDesaparecidos" OnItemCommand="rptDesaparecidos_ItemCommand">
                             <ItemTemplate>
-                                <div class="plus mr-3">
+                                <div class="plus mr-3 mb-3">
                                     <asp:ImageButton 
                                         ID="btndesaparecido" 
                                         runat="server" 

@@ -20,9 +20,9 @@
                                 <i class="fa fa-newspaper-o fa-fw "></i>
                         </asp:LinkButton>
                     </div>
-                    <div class="col-1 " >
-                        <asp:LinkButton ID="PessoasEncontradas" runat="server" CssClass="buttonMenu">
-                                <i class="fa fa-heart fa-fw "></i>
+                    <div class="col-1 ">
+                        <asp:LinkButton ID="PessoasEncontradas" runat="server" OnClick="PessoasEncontradas_Click" CssClass="buttonMenu">
+                            <i class="fa fa-heart fa-fw "></i>
                         </asp:LinkButton>
                     </div>
                 </div>
@@ -74,69 +74,103 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 mx-5 my-5 container-left">
+            <div class="col-6 mx-5 my-5 container-left" style="max-width: 37%">
                 <div class="row justify-content-center">
                     <div class="col-6 ">
+                        
+                        <h2 class="PessoasDesaparecidas mt-3">Vulneravel</h2>
+                         
                         <div class="imagem mx-auto my-5">
                             <img src="../Images/malucorandom.jpg" class="imagem" />
                         </div>
                     </div>
                 </div>
                 <div class="row justify-content-center container-left m-3">
-                    <div class="col-12 ">
-                        <h2 class="mt-2">Informações básicas</h2>
+                    <div class="col-12">
+                        <div class="flex-row cabecalhoEditar">
+                            <h2 class="mt-2">Informações básicas</h2>
+                            <% if (Session["isLoggedIn"].ToString() == "True")
+                                { %>
+                            <%
+                                int idRes = Convert.ToInt32(Session["idResponsavel"]);
+                                int resP = Convert.ToInt32(Session["ResposavelPor"]);
+                                if (idRes == resP)
+                                {
+                            %>
+                                    <div class="align-items-center interior">
+                                        <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
+                                    </div>
+                            <%  }
+                               } %>
+                        </div>
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Nome</strong> José Eduardo</p>
+                        <p><strong>Nome:</strong><asp:Literal ID="ltlNome" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Idade</strong> 39 Anos</p>
+                        <p><strong>Idade:</strong> <asp:Literal ID="ltlIdade" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Tipo sanguíneo</strong> A+</p>
+                        <p><strong>Tipo sanguíneo:</strong> <asp:Literal ID="ltlTipoSanguineo" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Sexo</strong> Masculino</p>
+                        <p><strong>Sexo:</strong> <asp:Literal ID="ltlSexo" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Etnia</strong> Branca</p>
+                        <p><strong>Etnia:</strong> <asp:Literal ID="ltlEtnia" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Cor do cabelo</strong> Preto</p>
+                        <p><strong>Cor do cabelo:</strong> <asp:Literal ID="ltlCabelo" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Cor dos olhos</strong> Castanho</p>
+                        <p><strong>Cor dos olhos:</strong> <asp:Literal ID="ltlOlhos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Altura</strong> 1,68m</p>
+                        <p><strong>Altura:</strong> <asp:Literal ID="ltlAltura" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
-                        <p><strong>Peso</strong> 80Kg</p>
+                        <p><strong>Peso:</strong> <asp:Literal ID="ltlPeso" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Descrição</strong>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sodales sollicitudin leo, at tincidunt est volutpat eu. Maecenas eu tellus elit. Aenean dignissim erat felis, et porttitor tortor eleifend id. Sed id nunc tempor justo posuere pretium. Donec sit amet metus sapien. Ut volutpat magna sed dapibus sagittis. Vestibulum sed purus felis.</p>
+                        <p><strong>Descrição:</strong><asp:Literal ID="ltlDescricao" runat="server"></asp:Literal></p>
                     </div>
                 </div>
-                <div class="row justify-content-center container-left m-3 mb-4">
-                    <div class="col-12 ">
-                        <h2 class="mt-2">Informações sobre a saúde da pessoa</h2>
+                 <div class="row justify-content-center container-left m-3 mb-4">
+                    <div class="col-12">
+                        <div class="flex-row cabecalhoEditar">
+                            <h2 class="mt-2">Informações sobre a saúde da pessoa</h2>
+                            <% if (Session["isLoggedIn"].ToString() == "True")
+                                { %>
+                            <%
+                                int idRes = Convert.ToInt32(Session["idResponsavel"]);
+                                int resP = Convert.ToInt32(Session["ResposavelPor"]);
+                                if (idRes == resP)
+                                {
+                            %>
+                                    <div class="align-items-center interior">
+                                        <asp:LinkButton ID="btnEditarAdicional" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                    </div>
+                            <%  }
+                               } %>
+                        </div>
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Restrições alimentares</strong> Nenhuma ou não foi informado</p>
+                        <p><strong>Restrições alimentares:</strong><asp:Literal ID="ltlAlimentos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Restrições a medicamentos</strong> Dipirona</p>
+                        <p><strong>Restrições a medicamentos:</strong> <asp:Literal ID="ltlMedicamentos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Deficiência mental</strong> Autismo</p>
+                        <p><strong>Deficiência mental:</strong> <asp:Literal ID="ltlDeficienciaMental" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Deficiência física</strong> Nenhuma ou não foi informado</p>
+                        <p><strong>Deficiência física:</strong> <asp:Literal ID="ltlDeficienciaFisica" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Doenças</strong> Nenhuma ou não foi informado</p>
+                        <p><strong>Doenças:</strong><asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
                     </div>
 
                 </div>
@@ -155,25 +189,58 @@
             </div>
             <div class="col-2">
 
-                <div class="row mt-5">
+                <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Vulneraveis Ativos</h3>
-                        <div class="plus">
-                            <asp:LinkButton ID="CadastrarVulneravel" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
+                        <div class="repetidorPessoas flex-row">
+                            <asp:Repeater runat="server" ID="rptVulneravel" OnItemCommand="rptVulneravel_ItemCommand">
+                                <ItemTemplate>
+                                    <div class="plus mr-3 mb-3">
+                                        <asp:ImageButton
+                                            ID="btnvulneravel"
+                                            runat="server"
+                                            CssClass="button"
+                                            CommandArgument='<%#Eval("vul_id")%>'
+                                            CommandName="vulneravel"
+                                            ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"></asp:ImageButton>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                            <div class="plus2">
+                                <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" OnClick="CadastrarVulneravel_Click">
                                 <i class="fa fa-plus fa-fw"></i>
-                            </asp:LinkButton>
+                                </asp:LinkButton>
+                            </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="row">
                     <div class="col-12 container-left mb-3 pb-3">
                         <h3 class="tituloSocial mb-2">Desaparecidos Ativos</h3>
-                        <div class="plus">
+                        <div class="repetidorPessoas flex-row">
+                         <asp:Repeater runat="server" ID="rptDesaparecidos" OnItemCommand="rptDesaparecidos_ItemCommand">
+                            <ItemTemplate>
+                                <div class="plus mr-3 mb-3">
+                                    <asp:ImageButton 
+                                        ID="btndesaparecido" 
+                                        runat="server" 
+                                        CssClass="button" 
+                                        CommandName="desaparecido"
+                                        CommandArgument='<%#Eval("des_id")%>' 
+                                        ImageUrl="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                                        >
+                                    </asp:ImageButton >
+                                </div>
+                            </ItemTemplate>
+                          </asp:Repeater>
+
+                        <div class="plus2">
                             <asp:LinkButton ID="CadastrarDesaparecido" runat="server" CssClass="button" OnClick="CadastrarDesaparecido_Click">
                                 <i class="fa fa-plus fa-fw"></i>
                             </asp:LinkButton>
                         </div>
+                            </div>
                     </div>
                 </div>
                 <div class="row">
