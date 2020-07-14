@@ -164,7 +164,7 @@ public class VulneravelBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select vul_id from tut_tutorias inner join vul_vulneraveis using (pes_id) where res_id = ?res_id; ";
+        string sql = "select vul_id from tut_tutorias inner join vul_vulneraveis using (pes_id) where res_id = ?res_id and vul_status = 0; ";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);

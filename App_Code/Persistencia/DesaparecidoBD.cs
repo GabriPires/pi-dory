@@ -271,7 +271,7 @@ public class DesaparecidoBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select des_id from tut_tutorias inner join des_desaparecidos using (pes_id) where res_id = ?res_id; ";
+        string sql = "select des_id from tut_tutorias inner join des_desaparecidos using (pes_id) where res_id = ?res_id and des_encontrado is null; ";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
