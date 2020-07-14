@@ -78,7 +78,7 @@
                 <div class="row justify-content-center">
                     <div class="col-6 ">
                         
-                        <h2 class="PessoasDesaparecidas mt-3">Vulneravel</h2>
+                        <h2 class="PessoasDesaparecidas mt-3">Vulnerável</h2>
                          
                         <div class="imagem mx-auto my-5">
                             <img src="../Images/malucorandom.jpg" class="imagem" />
@@ -107,7 +107,7 @@
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Nome:</strong><asp:Literal ID="ltlNome" runat="server"></asp:Literal></p>
+                        <p><strong>Nome: </strong><asp:Literal ID="ltlNome" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
                         <p><strong>Idade:</strong> <asp:Literal ID="ltlIdade" runat="server"></asp:Literal></p>
@@ -134,7 +134,7 @@
                         <p><strong>Peso:</strong> <asp:Literal ID="ltlPeso" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Descrição:</strong><asp:Literal ID="ltlDescricao" runat="server"></asp:Literal></p>
+                        <p><strong>Descrição: </strong><asp:Literal ID="ltlDescricao" runat="server"></asp:Literal></p>
                     </div>
                 </div>
                  <div class="row justify-content-center container-left m-3 mb-4">
@@ -158,7 +158,7 @@
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Restrições alimentares:</strong><asp:Literal ID="ltlAlimentos" runat="server"></asp:Literal></p>
+                        <p><strong>Restrições alimentares: </strong><asp:Literal ID="ltlAlimentos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
                         <p><strong>Restrições a medicamentos:</strong> <asp:Literal ID="ltlMedicamentos" runat="server"></asp:Literal></p>
@@ -170,18 +170,31 @@
                         <p><strong>Deficiência física:</strong> <asp:Literal ID="ltlDeficienciaFisica" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Doenças:</strong><asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
+                        <p><strong>Doenças: </strong><asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
                     </div>
 
                 </div>
                 <div class="row justify-content-center mb-3">
-                    <div class="custom-control custom-switch">
-                        <asp:CheckBox ID="customSwitch1" runat="server" ></asp:CheckBox>
-                        <label  for="customSwitch1">Tornar esta pessoa um desaparecido</label>
-                        <%--<asp:LinkButton ID="temporario" runat="server" CssClass="button" OnClick="temporario_Click">
-                                <i class="fa fa-plus fa-fw"></i>
-                        </asp:LinkButton>--%>
+                    <% if (Session["isLoggedIn"].ToString() == "True")
+                        { %>
+                    <%
+                        int idRes = Convert.ToInt32(Session["idResponsavel"]);
+                        int resP = Convert.ToInt32(Session["ResposavelPor"]);
+                        if (idRes == resP)
+                        {
+                    %>
+                    <div class="align-items-center interior">
+                        <% if (Convert.ToInt32(Session["StatusVulneravel"]) == 0)
+                            { %>
+                        <asp:Button ID="btnDesapareceu" runat="server" CssClass="btn-encontrei p-0" Text="Este vulnerável desapareceu" OnClick="btnDesapareceu_Click"></asp:Button>
+                        <% }
+                        else
+                        { %>
+                        <asp:Button ID="btnEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este vulnerável foi encontrado" OnClick="btnEncontrado_Click"></asp:Button>
+                        <% } %>
                     </div>
+                    <%  }
+                        } %>
                 </div>
 
 
@@ -270,16 +283,41 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-warning" role="alert">
-                                <p><strong>Caso marcado essa opção irá alterar</strong></p>
-                                <ul>
-                                    <li>
-                                        Informações desta pessoa ficaram visiveis na pagina inicial
-                                    </li>
-                                </ul>
-                            </div>
+                            <p><strong>Atenção</strong></p>
+                            Após confirmar, você será levado para um formulário onde preencherá alguns dados para que possamos dar mais apoio as buscas,
+                                as informações de seu vulnerável ficarão disponíveis no sistema para que outras pessoas possam visualizar e ajudarem no reconhecimento desta pessoa.
+                            <p class="font-weight-bold mt-3 mb-0">Você confirma que seu vulverável desapareceu?</p>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="btnSim" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" onClick="btnSim_Click" />
+                        <asp:Button ID="btnConfirmaDesaparecimento" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmaDesaparecimento_Click"/>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Modal de Encontrei -->
+       <div class="modal fade" id="modalEncontrei" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning" role="alert">
+                            <p class="font-weight-bold">Ficamos felizes que pudemos reconectar mais vidas!</p>
+                            Após confirmar, as informações de seu vulnerável sairão das páginas de desaparecidos e dos resultados de buscas, 
+                            mas permanecerão no sistema para que você continue monitorando seu ente querido.
+                            <p class="font-weight-bold mt-3 mb-0">Você confirma que seu vulverável foi encontrado?</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="btnConfirmarEncontrei" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmarEncontrei_Click"/>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </div>
             </div>

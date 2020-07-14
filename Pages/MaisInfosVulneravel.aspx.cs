@@ -69,11 +69,12 @@ public partial class Pages_MaisInfosVulneravel : System.Web.UI.Page
 
         DataSet ds = VulneravelBD.SelectPesIdVulneravel();
         minfo.Vul_id = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
+        int vulId = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
 
         switch (VulneravelBD.UpdateVulneravel(minfo))
         {
             case 0:
-                Response.Redirect("Vulneravel.aspx");
+                Response.Redirect("Vulneravel.aspx?id=" + vulId);
                 break;
             case -2:
                 Response.Redirect("Index.aspx");

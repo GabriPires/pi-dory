@@ -65,8 +65,9 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
             }
         }
 
-        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]); ;
-        DataSet ds = VulneravelBD.SelectDadosDesaparecido(idDesaparecido);
+        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);
+        Session["idVulneravel"] = idDesaparecido;
+        DataSet ds = VulneravelBD.SelectDadosVulneravel(idDesaparecido);
 
 
         if (ds.Tables[0].Rows.Count >= 1)
@@ -99,6 +100,10 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
             ltlDeficienciaMental.Text = ds.Tables[0].Rows[0]["min_deficiencia_mental"].ToString();
             ltlDeficienciaFisica.Text = ds.Tables[0].Rows[0]["min_deficiencia_fisica"].ToString();
             ltlDoencas.Text = ds.Tables[0].Rows[0]["min_doencas"].ToString();
+
+            int status = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_status"]);
+
+            Session["StatusVulneravel"] = status;
         }
         else
         {
@@ -108,8 +113,6 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
 
     }
 
-
-
     protected void CadastrarVulneravel_Click(object sender, EventArgs e)
     {
         Response.Redirect("VerificaDocumentosVulneravel.aspx");
@@ -118,13 +121,6 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
     protected void CadastrarDesaparecido_Click(object sender, EventArgs e)
     {
         Response.Redirect("VerificaDocumentosDesaparecido.aspx");
-    }
-
-
-
-    protected void btnSim_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("Index.aspx");
     }
 
     protected void temporario_Click(object sender, EventArgs e)
@@ -178,5 +174,51 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
     protected void PessoasEncontradas_Click(object sender, EventArgs e)
     {
         Response.Redirect("PessoasEncontradas.aspx");
+    }
+
+    protected void btnDesapareceu_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTornarDesaparecido').modal('show');</script>", false);
+    }
+
+    protected void btnEncontrado_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalEncontrei').modal('show');</script>", false);
+    }
+
+    protected void btnConfirmaDesaparecimento_Click(object sender, EventArgs e)
+    {
+        Vulneraveis v = new Vulneraveis();
+
+        v.Vul_status = true;
+        int vulId = Convert.ToInt32(Session["idVulneravel"]);
+
+        switch (VulneravelBD.AlteraStatus(v, vulId))
+        {
+            case 0:
+                Response.Redirect("Vulneravel.aspx?id=" + vulId);
+                break;
+
+            case -2:
+                break;
+        }
+    }
+
+    protected void btnConfirmarEncontrei_Click(object sender, EventArgs e)
+    {
+        Vulneraveis v = new Vulneraveis();
+
+        v.Vul_status = false;
+        int vulId = Convert.ToInt32(Session["idVulneravel"]);
+
+        switch (VulneravelBD.AlteraStatus(v, vulId))
+        {
+            case 0:
+                Response.Redirect("Vulneravel.aspx?id=" + vulId);
+                break;
+
+            case -2:
+                break;
+        }
     }
 }

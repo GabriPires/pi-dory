@@ -180,14 +180,14 @@ public class VulneravelBD
         return ds;
     }
 
-    public static DataSet SelectDadosDesaparecido(int id)
+    public static DataSet SelectDadosVulneravel(int id)
     {
         DataSet ds = new DataSet();
         IDbConnection objConnection;
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select * from vul_vulneraveis inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (vul_id) inner join tut_tutorias using (pes_id) where vul_id = ?vul_id; ";
+        string sql = "select * from vul_vulneraveis inner join pes_pessoas using (pes_id) inner join min_mais_informacoes using (vul_id) inner join tut_tutorias using (pes_id) where vul_id = ?vul_id; ";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
@@ -202,5 +202,38 @@ public class VulneravelBD
         objCommand.Dispose();
 
         return ds;
+    }
+
+    public static int AlteraStatus(Vulneraveis v, int vulId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE vul_vulneraveis SET vul_status = ?vul_status WHERE vul_id = ?vul_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+            objCommand.Parameters.Add(Mapped.Parameter("?vul_status", v.Vul_status));
+
+            // Vulneravel
+            objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
     }
 }
