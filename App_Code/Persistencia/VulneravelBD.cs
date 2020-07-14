@@ -21,7 +21,7 @@ public class VulneravelBD
             IDbConnection objConnection;
             IDbCommand objCommand;
 
-            string sql = "INSERT INTO pes_pessoas(pes_nome, pes_sexo, pes_cutis) VALUES(?pes_nome,?pes_sexo,?pes_cutis);";
+            string sql = "INSERT INTO pes_pessoas(pes_nome, pes_sexo, pes_cutis, pes_dataNascimento) VALUES(?pes_nome,?pes_sexo,?pes_cutis, ?pes_dataNascimento);";
             sql += "INSERT INTO vul_vulneraveis(vul_status, vul_observacoes, pes_id) VALUES(?vul_status,?vul_observacoes, last_insert_id());";
             sql += "INSERT INTO min_mais_informacoes(min_cor_cabelo, min_cor_olhos, min_altura, min_peso, min_descricao, min_tipo_sanguineo, vul_id)";
             sql += "VALUES(?min_cor_cabelo, ?min_cor_olhos, ?min_altura, ?min_peso, ?min_descricao, ?min_tipo_sanguineo, last_insert_id());";
@@ -35,6 +35,7 @@ public class VulneravelBD
             objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", pessoa.Pes_nome));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", pessoa.Pes_sexo));
             objCommand.Parameters.Add(Mapped.Parameter("?pes_cutis", pessoa.Pes_cutis));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_dataNascimento", pessoa.Pes_dataNascimento));
 
             // Vulneravel
             objCommand.Parameters.Add(Mapped.Parameter("?vul_status", vulneravel.Vul_status));

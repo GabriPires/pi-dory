@@ -21,7 +21,8 @@ public partial class Pages_CadastroVulneravel : System.Web.UI.Page
         Tutorias tut = new Tutorias();
 
         p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
-        
+        p.Pes_dataNascimento = Convert.ToDateTime(txtData.Text);
+
         // Switch do sexo
         switch (ddlSexo.SelectedValue)
         {

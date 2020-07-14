@@ -22,6 +22,7 @@ public partial class Pages_CadastroDesaparecido : System.Web.UI.Page
 
         p.Pes_nome = txtNome.Text + " " + txtSobrenome.Text;
         p.Pes_dataNascimento = Convert.ToDateTime(txtData.Text);
+
         // Switch do sexo
         switch (ddlSexo.SelectedValue)
         {

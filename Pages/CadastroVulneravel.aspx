@@ -81,21 +81,24 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="row">
-                        <div class="col-6">
-                            <asp:TextBox ID="txtAltura" runat="server" CssClass="form-control form-control-lg" placeholder="Altura" required="true" />
-                        </div>
-                        <div class="col-6">
-                            <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control form-control-lg" placeholder="Peso" required="true" />
-                        </div>
-
+                    <div class="form-group mb-2">
+                        <asp:TextBox ID="txtData" runat="server" CssClass="form-control" required placeholder="Data de Nascimento" type="date" />
                     </div>
                 </div>
             </div>
             <div class="row">
+                <div class="col-6 mb-2">
+                    <asp:TextBox ID="txtAltura" runat="server" CssClass="form-control form-control-lg" placeholder="Altura" required="true" />
+                </div>
+                <div class="col-6">
+                    <asp:TextBox ID="txtPeso" runat="server" CssClass="form-control form-control-lg" placeholder="Peso" required="true" />
+                </div>
+
+            </div>
+            <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control form-control-lg" placeholder="Adicione uma breve descrição da pessoa" required="true" />
+                        <asp:TextBox ID="txtDescricao" runat="server" CssClass="form-control form-control-lg" placeholder="Adicione uma breve descrição do desaparecido" required="true" />
                     </div>
                 </div>
             </div>
