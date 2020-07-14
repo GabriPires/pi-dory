@@ -144,7 +144,7 @@ select * from des_desaparecidos order by pes_id desc limit 1;
 UPDATE min_mais_informacoes SET min_doencas = "Doenças", min_deficiencia_mental = "Mental" WHERE vul_id = 25;
 */
 
-select * from end_endereco enderecos left join pes_pessoas pessoas using(end_id) where pes_id = 6;
+select * from end_endereco enderecos left join pes_pessoas pessoas using(end_id) where pes_id = 1;
 
 select des_id, pes_nome, pes_dataNascimento from pes_pessoas inner join des_desaparecidos using (pes_id);
 
@@ -152,35 +152,11 @@ select * from pes_pessoas inner join des_desaparecidos using (pes_id) inner join
 
 insert into end_endereco (end_pais) values ("Brasil");
 
-select * from pes_pessoas
-inner join des_desaparecidos using (pes_id)
-inner join tut_tutorias 
-where tut_tutorias.res_id = 2;
+UPDATE pes_pessoas SET end_id = last_insert_id() WHERE pes_id = 1;
 
-select pes_id from tut_tutorias
-inner join tut_tutorias using (pes_id)
-inner join vul_vulneraveis using (pes_id)
-where res_id = 2 ;
+select * from des_desaparecidos order by des_id desc limit 1;
 
-select * from des_desaparecidos
-inner join  pes_pessoas using (pes_id) 
-inner join min_mais_informacoes using (des_id) 
-inner join tut_tutorias using (pes_id)
-where des_id = 1;
+select des_id from des_desaparecidos where vul_id = 1 order by des_id desc limit 1;
 
-select * from vul_vulneraveis 
-inner join  pes_pessoas using (pes_id) 
-inner join min_mais_informacoes using (vul_id) 
-inner join tut_tutorias using (pes_id) where vul_id = 2;
-
-select * from vul_vulneraveis;
-
-SELECT TIMESTAMPDIFF (YEAR,'1913-10-19',CURDATE())
-      AS "Idade de Vinícius de Moraes";
-      
-SELECT NomeCliente AS Nome,
-     DATE_FORMAT(DataNascimentoCliente, '%d de %M de %Y') AS Nascimento,
-      TIMESTAMPDIFF(YEAR,pes_dataNascimento,CURDATE()) AS Idade
-      FROM CadastroClientes
-      WHERE YEAR(DataNascimentoCliente) > 1983;
-select des_id, pes_nome as Nome, TIMESTAMPDIFF(YEAR,pes_dataNascimento,CURDATE())as Idade  from pes_pessoas inner join des_desaparecidos using (pes_id) ;
+select res_id from des_desaparecidos inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (des_id) inner join tut_tutorias using (pes_id) where des_id = 4;
+select * from vul_vulneraveis inner join pes_pessoas using (pes_id) inner join min_mais_informacoes using (vul_id) inner join tut_tutorias using (pes_id) where vul_id = 2;

@@ -238,7 +238,19 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
         switch (VulneravelBD.AlteraStatus(v, vulId))
         {
             case 0:
-                Response.Redirect("Vulneravel.aspx?id=" + vulId);
+                Desaparecidos d = new Desaparecidos();
+                d.Des_encontrado = Convert.ToDateTime(txtData.Text);
+                DataSet ds = DesaparecidoBD.SelectDesIdVulneravel(vulId);
+                int desId = Convert.ToInt32(ds.Tables[0].Rows[0]["des_id"]);
+                switch (DesaparecidoBD.UpdateVulneravelDesaparecidoEncontrado(d, desId))
+                {
+                    case 0:
+                        Response.Redirect("Vulneravel.aspx?id=" + vulId);
+                        break;
+
+                    case -2:
+                        break;
+                }
                 break;
 
             case -2:

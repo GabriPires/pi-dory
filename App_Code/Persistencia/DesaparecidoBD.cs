@@ -288,5 +288,63 @@ public class DesaparecidoBD
         return ds;
     }
 
+    public static DataSet SelectDesIdVulneravel(int vulId)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
 
+        string sql = "select des_id from des_desaparecidos where vul_id = ?vul_id order by des_id desc limit 1;";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static int UpdateVulneravelDesaparecidoEncontrado(Desaparecidos d, int desId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE des_desaparecidos SET des_encontrado = ?des_encontrado WHERE des_id = ?des_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Dados
+            objCommand.Parameters.Add(Mapped.Parameter("?des_encontrado", d.Des_encontrado));
+
+            // Desaparecido
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", desId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+
+    }
 }
