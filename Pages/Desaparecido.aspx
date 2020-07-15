@@ -186,7 +186,7 @@
                         <%--<div class="align-items-center interior">--%>
                         <% if (Convert.ToInt32(Session["vulIdDesaparecido"]) != 0)
                             { %>
-                        <asp:Button ID="btnVulEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este vulnerável foi encontrado" OnClick="btnVulEncontrado_Click"></asp:Button>
+                        <asp:Button ID="btnVulEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este vulnerável foi encontrado"></asp:Button>
                         <% }
                         else
                         { %>
@@ -213,7 +213,11 @@
                         </div>
                         </asp:LinkButton>
                     </div>
+
+
                 </div>
+
+
 
             </div>
             <div class="col-2">
@@ -402,36 +406,6 @@
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnEncontreiCadastro" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Efetuar meu cadastro" OnClick="btnEncontreiCadastro_Click"/>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de encontrei o vulneravel -->
-    <div class="modal fade" id="encontreiVulneravel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-warning" role="alert">
-                        <p class="font-weight-bold">Ficamos felizes que pudemos reconectar mais vidas!</p>
-                        Após confirmar, as informações de seu vulnerável sairão das páginas de desaparecidos e dos resultados de buscas, 
-                            mas permanecerão no sistema para que você continue monitorando seu ente querido.
-                            <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Informe quando seu vulverável foi encontrado</p>
-                                <asp:TextBox ID="txtData" runat="server" CssClass="form-control" type="date" />
-                            </div>
-                            <p class="font-weight-bold mt-3 mb-0">Você confirma que seu vulverável foi encontrado?</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="btnConfirmarEncontrei" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmarEncontrei_Click" />
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
