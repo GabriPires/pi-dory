@@ -12,8 +12,8 @@ public class Caso_De_Desaparecimento
     private string cde_ultima_roupa;
     private string cde_ultima_localizacao;
     private string cde_ultimo_encontrado;
-    private DateTime cde_ultimo_horario_visto;
-    private Desaparecidos des_id;
+    private string cde_ultimo_horario_visto;
+    private int des_id;
 
     public int Cde_id
     {
@@ -67,7 +67,7 @@ public class Caso_De_Desaparecimento
         }
     }
 
-    public DateTime Cde_ultimo_horario_visto
+    public string Cde_ultimo_horario_visto
     {
         get
         {
@@ -80,7 +80,7 @@ public class Caso_De_Desaparecimento
         }
     }
 
-    public Desaparecidos Des_id
+    public int Des_id
     {
         get
         {

@@ -368,7 +368,7 @@
                                 </div>
                                 <div class="form-group">
                                     <h6>Que horas você o viu?</h6>
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtUltimaHora" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <h6>Informações adicionais</h6>
@@ -380,7 +380,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Enviar</button>
+                    <asp:Button ID="btnViEssaPessoa" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Enviar" OnClick="btnViEssaPessoa_Click"/>
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
                 </div>
 

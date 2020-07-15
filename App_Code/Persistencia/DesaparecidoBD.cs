@@ -383,4 +383,40 @@ public class DesaparecidoBD
         return retorno;
 
     }
+
+    public static int InsertCasoDeDesaparecimento(Caso_De_Desaparecimento c)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "INSERT INTO cde_caso_de_desaparecimento(cde_ultima_roupa, cde_ultima_localizacao, cde_ultimo_local_encontrado, cde_ultimo_horario_visto, des_id) VALUES(?cde_ultima_roupa, ?cde_ultima_localizacao, ?cde_ultimo_local_encontrado, ?cde_ultimo_horario_visto, ?des_id);";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Pessoa
+            objCommand.Parameters.Add(Mapped.Parameter("?cde_ultima_roupa", c.Cde_ultima_roupa));
+            objCommand.Parameters.Add(Mapped.Parameter("?cde_ultima_localizacao", c.Cde_ultima_localizacao));
+            objCommand.Parameters.Add(Mapped.Parameter("?cde_ultimo_local_encontrado", c.Cde_ultimo_encontrado));
+            objCommand.Parameters.Add(Mapped.Parameter("?cde_ultimo_horario_visto", c.Cde_ultimo_horario_visto));
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", c.Des_id));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }

@@ -257,4 +257,56 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
         }
 
     }
+
+    protected void btnViEssaPessoa_Click(object sender, EventArgs e)
+    {
+        Caso_De_Desaparecimento c = new Caso_De_Desaparecimento();
+        c.Des_id = Convert.ToInt32(Session["idDesaparecido"]);
+
+        if (txtUltimaLocalizacao.Text != "")
+        {
+            c.Cde_ultima_localizacao = txtUltimaLocalizacao.Text;
+        }
+        else
+        {
+            c.Cde_ultima_localizacao = "Não foi informado";
+        }
+
+        if (txtUltimaRoupa.Text != "")
+        {
+            c.Cde_ultima_roupa = txtUltimaRoupa.Text;
+        }
+        else
+        {
+            c.Cde_ultima_roupa = "Não foi informado";
+        }
+
+        if (txtUltimoLocal.Text != "")
+        {
+            c.Cde_ultimo_encontrado = txtUltimoLocal.Text;
+        }
+        else
+        {
+            c.Cde_ultimo_encontrado = "Não foi informado";
+        }
+
+        if (txtUltimaHora.Text != "")
+        {
+            c.Cde_ultimo_horario_visto = txtUltimaHora.Text;
+        }
+        else
+        {
+            c.Cde_ultimo_horario_visto = "Não foi informado";
+        }
+
+        switch (DesaparecidoBD.InsertCasoDeDesaparecimento(c))
+        {
+            case 0:
+                Response.Redirect("Desaparecido.aspx?id=" + Convert.ToInt32(Session["idDesaparecido"]));
+                break;
+
+            case -2:
+                break;
+        }
+    }
 }
