@@ -347,4 +347,40 @@ public class DesaparecidoBD
         return retorno;
 
     }
+
+    public static int UpdateDesaparecidoEncontrado(Desaparecidos d, int desId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE des_desaparecidos SET des_encontrado = ?des_encontrado WHERE des_id = ?des_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+
+            // Dados
+            objCommand.Parameters.Add(Mapped.Parameter("?des_encontrado", d.Des_encontrado));
+
+            // Desaparecido
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", desId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+
+    }
 }

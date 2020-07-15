@@ -234,4 +234,27 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
         }
     }
 
+
+    protected void btnDesEncontrado_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontreiDesaparecido').modal('show');</script>", false);
+    }
+
+    protected void btnConfirmaEcontreiDesaparecido_Click(object sender, EventArgs e)
+    {
+
+        Desaparecidos d = new Desaparecidos();
+        d.Des_encontrado = Convert.ToDateTime(txtDataDes.Text);
+        int desId = Convert.ToInt32(Session["idDesaparecido"]);
+        switch (DesaparecidoBD.UpdateDesaparecidoEncontrado(d, desId))
+        {
+            case 0:
+                Response.Redirect("Desaparecido.aspx?id=" + desId);
+                break;
+
+            case -2:
+                break;
+        }
+
+    }
 }

@@ -105,7 +105,7 @@
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Nome:</strong><asp:Literal ID="ltlNomeDesaparecido" runat="server"></asp:Literal></p>
+                        <p><strong>Nome: </strong><asp:Literal ID="ltlNomeDesaparecido" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-6 ">
                         <p><strong>Idade:</strong> <asp:Literal ID="ltlIdadeDesaparecido" runat="server"></asp:Literal></p>
@@ -132,7 +132,7 @@
                         <p><strong>Peso:</strong> <asp:Literal ID="ltlPeso" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Descrição:</strong><asp:Literal ID="ltlDescricao" runat="server"></asp:Literal></p>
+                        <p><strong>Descrição: </strong><asp:Literal ID="ltlDescricao" runat="server"></asp:Literal></p>
                     </div>
                 </div>
                 <div class="row justify-content-center container-left m-3 mb-4">
@@ -156,7 +156,7 @@
                         <hr />
                     </div>
                     <div class="col-12 ">
-                        <p><strong>Restrições alimentares:</strong><asp:Literal ID="ltlAlimentos" runat="server"></asp:Literal></p>
+                        <p><strong>Restrições alimentares: </strong><asp:Literal ID="ltlAlimentos" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12 ">
                         <p><strong>Restrições a medicamentos:</strong> <asp:Literal ID="ltlMedicamentos" runat="server"></asp:Literal></p>
@@ -168,7 +168,7 @@
                         <p><strong>Deficiência física:</strong> <asp:Literal ID="ltlDeficienciaFisica" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Doenças:</strong><asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
+                        <p><strong>Doenças: </strong><asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
                     </div>
 
                 </div>
@@ -190,7 +190,7 @@
                         <% }
                         else
                         { %>
-                        <asp:Button ID="btnDesEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este desaparecido foi encontrado"></asp:Button>
+                        <asp:Button ID="btnDesEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este desaparecido foi encontrado" OnClick="btnDesEncontrado_Click"></asp:Button>
                         <% } %>
                         <%--</div>--%>
                         <%  }
@@ -350,7 +350,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="alert alert-warning" role="alert">
+                                <div class="" role="alert">
                                     <p><strong>Caso você esteja com o desaparecido por perto</strong></p>
                                     Entre em contato imediatamente com o responsável por ele.
                                 </div>
@@ -399,7 +399,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-warning" role="alert">
+                    <div class="" role="alert">
                         <p class="font-weight-bold">Sua ajuda é muito importante!</p>
                         Você será levado para nosso formulário de cadastro, para que possa ajudar na busca dessa pessoa!
                     </div>
@@ -423,7 +423,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-warning" role="alert">
+                    <div class="" role="alert">
                         <p class="font-weight-bold">Ficamos felizes que pudemos reconectar mais vidas!</p>
                         Após confirmar, as informações de seu vulnerável sairão das páginas de desaparecidos e dos resultados de buscas, 
                             mas permanecerão no sistema para que você continue monitorando seu ente querido.
@@ -436,6 +436,35 @@
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnConfirmarEncontrei" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmarEncontrei_Click" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de encontrei desaparecido -->
+    <div class="modal fade" id="encontreiDesaparecido" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="" role="alert">
+                        <p class="font-weight-bold">Ficamos felizes que pudemos reconectar mais vidas!</p>
+                        Após confirmar, as informações de seu desparecido sairão das páginas de desaparecidos e dos resultados de buscas.
+                            <div class="form-group">
+                                <p class="font-weight-bold mt-3 mb-0">Informe quando seu desaparecido foi encontrado</p>
+                                <asp:TextBox ID="txtDataDes" runat="server" CssClass="form-control" type="date" />
+                            </div>
+                            <p class="font-weight-bold mt-3 mb-0">Você confirma que seu desaparecido foi encontrado?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnConfirmaEcontreiDesaparecido" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmaEcontreiDesaparecido_Click"/>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

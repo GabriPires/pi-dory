@@ -295,7 +295,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-warning" role="alert">
+                    <div class="" role="alert">
                         <p><strong>Atenção</strong></p>
                         Após confirmar, você será levado para um formulário onde preencherá alguns dados para que possamos dar mais apoio as buscas,
                                 as informações de seu vulnerável ficarão disponíveis no sistema para que outras pessoas possam visualizar e ajudarem no reconhecimento desta pessoa.
@@ -321,7 +321,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-warning" role="alert">
+                    <div class="" role="alert">
                         <p class="font-weight-bold">Ficamos felizes que pudemos reconectar mais vidas!</p>
                         Após confirmar, as informações de seu vulnerável sairão das páginas de desaparecidos e dos resultados de buscas, 
                             mas permanecerão no sistema para que você continue monitorando seu ente querido.
