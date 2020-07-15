@@ -172,4 +172,9 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             Response.Redirect("Desaparecido.aspx?id=" + e.CommandArgument.ToString());
         }
     }
+
+    protected void Dicas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Dicas.aspx");
+    }
 }

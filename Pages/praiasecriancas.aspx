@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="QuemSomos.aspx.cs" Inherits="Pages_QuemSomos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="praiasecriancas.aspx.cs" Inherits="Pages_praiasecriancas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
     <link href="Css/Index.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+   
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 mt-5">
             <div class="col-6 ">
@@ -74,62 +74,27 @@
                 </div>
             </div>
             <div class="col-6 mx-5" style="max-width: 37%">
-                <div class="row">
-                    <div class="col-12 mb-5 p-3">
-                        <h3 class="PessoasDesaparecidas mb-2 p-3">O que é o Dory ?</h3>
-                        <div class="row mt-2">
-                            <div class=" col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Objetivo</h3>
-                                <p class="p-3" style="text-align: justify;">O sistema Dory visa proporcionar facilidade de acesso, com uma
-                                        ferramenta que disponibilize às pessoas a possibilidade e oportunidade de
-                                        obterem maiores resultados nas buscas por seus entes queridos que vieram
-                                        a se desprender do meio familiar contra a sua vontade, por meio de artifícios
-                                        dentro do sistema que possibilite a interação de responsáveis e usuários
-                                        externos, também objetiva trazer segurança para pais e responsáveis por
-                                        pessoas vulneráveis que realizam atividades cotidianas e corriqueiras, como
-                                        ir à escola, ao supermercado, à praia e entre outros momentos em que o
-                                        convívio social possa trazer algum risco para a integridade e segurança de
-                                        um vulnerável, que não tenha capacidade física/mental de se defender e/ou
-                                        buscar ajuda por seus meios próprios.</p>
-                            </div>
-                            <div class="col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Por que Dory</h3>
-                                <p class="p-3" style="text-align: justify;">
-                                    O nome do nosso sistema faz uma referencia direta com a personagem da disney Dory do filme "procurando o nemo" 
-                                    e "procurando Dory" uma personagem que durante o primeiro filme ajuda o Merlim um peixe-palhaço a encontrar o
-                                    seu filho até então sequestrado e isto seria o objetivo do nosso sistema
-                                    e neste mesmo filme nós é informado que ela sofre de perda de memória recente e está perdida isto seria o que o 
-                                    nosso sistema quer evitar.
-                                </p>
-                            </div>
-                            <div class="col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Equipe de Desenvolvimento</h3>
-                                <div class="row justify-content-center p-3">
-                                    <div class="col-4 justify-content-center">
-                                        <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos " />
-                                        </div>
-                                        <h4 class="equipe text-center">Luis Fellipe</h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos " />
-                                        </div>
-                                        <h4 class="equipe text-center">Gabriel Antonio</h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos" />
-                                        </div>
-                                        <h4 class="equipe text-center">Matheus Rodrigo</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-</p>
-                    </div>
-                </div>
-    
+                <h3 class="PessoasDesaparecidas mb-3 pb-5">Praias e Crianças</h3>
+                <p class="text-justify">Durante essas férias muitas familias vão a praia e isso causa um super lotamento nesses ambientes e normalmente todas as crianças gostam de ficar brincando por isso trazemos 5 dicas para que você e sua familia possa curtir a praia sem muitos problemas no futuro.</p>
+                <ul class="text-justify">
+                    <li><strong>Pulseiras de identificação</strong> <br />
+                        Na maioria dos estados do Brasil os bombeiros disponibilizam pulseiras de identificação tendo como preenchimento nome da criança, do responsavel e tambem o telefone com isso os bombeiros conseguem uma identificação maior do responsavel da criança
+                    </li>
+                    <li><strong>Tire uma foto da criança</strong> <br />
+                        Antes de sair de casa ou ao chegar na praia, tire uma foto de como a criança está vestida. Isso ajuda na hora da busca. Assim é possível ter mais de um grupo, em direções diferentes, buscando a criança e com a imagem dela exatamente como está naquele dia.
+                    </li>
+                    <li><strong>Vista a criança com roupas chamativas</strong> <br />
+
+                        Isso vale não apenas para praia, mas locais com aglomeração de pessoas. Se a criança estiver vestida com algo que destaque, que seja possível identificar com facilidade, será mais fácil será visualizar durante a estadia na praia e no caso dela se perder.
+                    </li>
+                    <li><strong>Bata Palmas</strong> <br />
+                        Essa tática você já deve ter visto alguma vez nas praias: e funciona! Tanto para chamar atenção dos pais, quanto da própria criança, que às vezes nem sabe que está perdida. Fica ali, brincando na areia, caminhando e se afastando cada vez mais, enquanto os pais ficam desesperados. É mais fácil ela responder a um sinal sonoro, que chama mais atenção, do que apenas pelo nome. O ideal é juntar os dois: gritar o nome e em seguida bater palmas. Unido a isso, o grupo ou a pessoa pode incluir alguma informação sobre a criança: característica da veste ou física.
+                    </li>
+                    <li><strong>Orientar a criança a procurar os bombeiros ou combinar ponto de encontro</strong> <br />
+                        Há pais que já procuram um espaço na areia em que o posto dos Bombeiros fica à vista - e essa pode ser uma boa estratégia. Parece que nunca vai acontecer, mas é melhor garantir: se a criança já consegue se localizar, oriente ela a ir direto pedir socorro aos Bombeiros ou então combine um local de encontro, como as arenas do Conexão Verão, que são coloridas e chamativas. As estruturas são montadas em praias do litoral catarinense, oferecendo diversas atividades, como aulas de dança e massagem. Ou seja, além de minimizar as chances de desencontros, é possível curtir a programação desses espaços.
+                    </li>
+                </ul>
+                <p>Fonte: https://gshow.globo.com/ </p>
             </div>
             <div class="col-2">
 

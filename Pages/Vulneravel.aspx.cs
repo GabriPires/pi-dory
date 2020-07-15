@@ -257,4 +257,9 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
                 break;
         }
     }
+
+    protected void Dicas_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Dicas.aspx");
+    }
 }

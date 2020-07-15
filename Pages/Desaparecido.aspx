@@ -11,7 +11,7 @@
             <div class="col-6 ">
                 <div class="row justify-content-center mx-auto">
                     <div class="col-1 " >
-                        <asp:LinkButton ID="Dicas" runat="server"  CssClass="buttonMenu ">
+                        <asp:LinkButton ID="Dicas" runat="server"  CssClass="buttonMenu " OnClick="Dicas_Click">
                                 <i class="fa fa-info fa-fw "></i>
                         </asp:LinkButton>
                     </div>
