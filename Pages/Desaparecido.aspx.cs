@@ -65,12 +65,18 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             }
         }
 
-        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);;
+        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);
+        Session["idDesaparecido"] = idDesaparecido;
         DataSet ds = DesaparecidoBD.SelectDadosDesaparecido(idDesaparecido);
 
 
         if (ds.Tables[0].Rows.Count >= 1)
         {
+            Session["pesIdDesaparecido"] = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
+            if (ds.Tables[0].Rows[0]["vul_id"].ToString() != "")
+            {
+                Session["vulIdDesaparecido"] = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
+            }
             Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
             int idLogado = Convert.ToInt32(Session["idResponsavel"]);
 
