@@ -65,23 +65,12 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             }
         }
 
-        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);
-        Session["idDesaparecido"] = idDesaparecido;
+        int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);;
         DataSet ds = DesaparecidoBD.SelectDadosDesaparecido(idDesaparecido);
 
 
         if (ds.Tables[0].Rows.Count >= 1)
         {
-            Session["pesIdDesaparecido"] = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
-            if (ds.Tables[0].Rows[0]["vul_id"].ToString() != "")
-            {
-                Session["vulIdDesaparecido"] = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
-            }
-            else
-            {
-                Session["vulIdDesaparecido"] = 0;
-            }
-
             Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
             int idLogado = Convert.ToInt32(Session["idResponsavel"]);
 
@@ -115,6 +104,16 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
         {
             // ERRO
         }
+    }
+
+    protected void btnReport_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#report').modal('show');</script>", false);
+    }
+
+    protected void btnEncontrei_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontrei').modal('show');</script>", false);
     }
 
     protected void CadastroDesaparecido_Click(object sender, EventArgs e)
@@ -174,23 +173,8 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
         }
     }
 
-    protected void btnReport_Click(object sender, EventArgs e)
+    protected void Dicas_Click(object sender, EventArgs e)
     {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#report').modal('show');</script>", false);
-    }
-
-    protected void btnEncontrei_Click(object sender, EventArgs e)
-    {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontrei').modal('show');</script>", false);
-    }
-
-    protected void btnEncontreiCadastro_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("CadastroInicialResponsavel.aspx");
-    }
-
-    protected void btnEncontreiDeslogado_Click(object sender, EventArgs e)
-    {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontreiDeslogado').modal('show');</script>", false);
+        Response.Redirect("Dicas.aspx");
     }
 }

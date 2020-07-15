@@ -1,10 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="QuemSomos.aspx.cs" Inherits="Pages_QuemSomos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/MasterPages/Menu.master" AutoEventWireup="true" CodeFile="dicadeficienciamental.aspx.cs" Inherits="Pages_dicadeficienciamental" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
     <link href="Css/Index.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+   
     <div class="container-fluid">
         <div class="row justify-content-center mb-5 mt-5">
             <div class="col-6 ">
@@ -74,62 +75,18 @@
                 </div>
             </div>
             <div class="col-6 mx-5" style="max-width: 37%">
-                <div class="row">
-                    <div class="col-12 mb-5 p-3">
-                        <h3 class="PessoasDesaparecidas mb-2 p-3">O que é o Dory ?</h3>
-                        <div class="row mt-2">
-                            <div class=" col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Objetivo</h3>
-                                <p class="p-3" style="text-align: justify;">O sistema Dory visa proporcionar facilidade de acesso, com uma
-                                        ferramenta que disponibilize às pessoas a possibilidade e oportunidade de
-                                        obterem maiores resultados nas buscas por seus entes queridos que vieram
-                                        a se desprender do meio familiar contra a sua vontade, por meio de artifícios
-                                        dentro do sistema que possibilite a interação de responsáveis e usuários
-                                        externos, também objetiva trazer segurança para pais e responsáveis por
-                                        pessoas vulneráveis que realizam atividades cotidianas e corriqueiras, como
-                                        ir à escola, ao supermercado, à praia e entre outros momentos em que o
-                                        convívio social possa trazer algum risco para a integridade e segurança de
-                                        um vulnerável, que não tenha capacidade física/mental de se defender e/ou
-                                        buscar ajuda por seus meios próprios.</p>
-                            </div>
-                            <div class="col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Por que Dory</h3>
-                                <p class="p-3" style="text-align: justify;">
-                                    O nome do nosso sistema faz uma referencia direta com a personagem da disney Dory do filme "procurando o nemo" 
-                                    e "procurando Dory" uma personagem que durante o primeiro filme ajuda o Merlim um peixe-palhaço a encontrar o
-                                    seu filho até então sequestrado e isto seria o objetivo do nosso sistema
-                                    e neste mesmo filme nós é informado que ela sofre de perda de memória recente e está perdida isto seria o que o 
-                                    nosso sistema quer evitar.
-                                </p>
-                            </div>
-                            <div class="col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Equipe de Desenvolvimento</h3>
-                                <div class="row justify-content-center p-3">
-                                    <div class="col-4 justify-content-center">
-                                        <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos " />
-                                        </div>
-                                        <h4 class="equipe text-center">Luis Fellipe</h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos " />
-                                        </div>
-                                        <h4 class="equipe text-center">Gabriel Antonio</h4>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos" />
-                                        </div>
-                                        <h4 class="equipe text-center">Matheus Rodrigo</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-</p>
-                    </div>
-                </div>
-    
+                <h3 class="PessoasDesaparecidas mb-3 pb-5">Como tratar alguem especial ?</h3>
+                <p class="text-justify">Por conta de ser algo incomum no nosso dia a dia não sabemos muito bem como lidar quando encontramos alguma pessoa com algum tipo de deficiencia mental por isso juntamos algumas dicas para que você nao pague nenhum mico!</p>
+                <ul class="text-justify">
+                    <li>Você deve agir naturalmente ao dirigir-se a uma pessoa com deficiência intelectual. <br />
+                       </li>
+                    <li>Trate-a com respeito e consideração. Se for uma criança, trate-a como criança. Se for adolescente, trate-a como adolescente, e se for uma pessoa adulta, trate-a como tal.</li>
+                    <li>Não a ignore. Cumprimente e despeça-se dela normalmente, como faria com qualquer pessoa.</li>
+                    <li>Dê-lhe atenção, converse e verá como pode ser divertido. Seja natural, diga palavras amistosas.</li>
+                    <li>Não superproteja a pessoa com deficiência intelectual. Deixe que ela faça ou tente fazer sozinha tudo o que puder. Ajude apenas quando for realmente necessário.</li>
+                    <li>Não subestime sua inteligência. As pessoas com deficiência intelectual levam mais tempo para aprender, mas podem adquirir muitas habilidades intelectuais e sociais.</li>
+                </ul>
+                <p>Fonte: https://www2.camara.leg.br/ </p>
             </div>
             <div class="col-2">
 
@@ -226,4 +183,6 @@
 </div>
 
 </asp:Content>
+
+
 
