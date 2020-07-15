@@ -77,6 +77,11 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             {
                 Session["vulIdDesaparecido"] = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
             }
+            else
+            {
+                Session["vulIdDesaparecido"] = 0;
+            }
+
             Session["ResposavelPor"] = Convert.ToInt32(ds.Tables[0].Rows[0]["res_id"]);
             int idLogado = Convert.ToInt32(Session["idResponsavel"]);
 
@@ -110,16 +115,6 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
         {
             // ERRO
         }
-    }
-
-    protected void btnReport_Click(object sender, EventArgs e)
-    {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#report').modal('show');</script>", false);
-    }
-
-    protected void btnEncontrei_Click(object sender, EventArgs e)
-    {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontrei').modal('show');</script>", false);
     }
 
     protected void CadastroDesaparecido_Click(object sender, EventArgs e)
@@ -177,5 +172,25 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             //Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalTest').modal('show');</script>", false);
             Response.Redirect("Desaparecido.aspx?id=" + e.CommandArgument.ToString());
         }
+    }
+
+    protected void btnReport_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#report').modal('show');</script>", false);
+    }
+
+    protected void btnEncontrei_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontrei').modal('show');</script>", false);
+    }
+
+    protected void btnEncontreiCadastro_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("CadastroInicialResponsavel.aspx");
+    }
+
+    protected void btnEncontreiDeslogado_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#encontreiDeslogado').modal('show');</script>", false);
     }
 }

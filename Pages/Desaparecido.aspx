@@ -175,9 +175,35 @@
                 <div class="row justify-content-center mb-3">
 
                     <div class="col-10 pr-1" align="center">
-                        <div>
-                            <asp:Button ID="btnEncontrei" runat="server" CssClass="btn-encontrei" Text="Vi esta pessoa" OnClick="btnEncontrei_Click"/>
-                        </div>
+                        <% if (Session["isLoggedIn"].ToString() == "True")
+                            { %>
+                        <%
+                            int idRes = Convert.ToInt32(Session["idResponsavel"]);
+                            int resP = Convert.ToInt32(Session["ResposavelPor"]);
+                            if (idRes == resP)
+                            {
+                        %>
+                        <%--<div class="align-items-center interior">--%>
+                        <% if (Convert.ToInt32(Session["vulIdDesaparecido"]) != 0)
+                            { %>
+                        <asp:Button ID="btnVulEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este vulnerável foi encontrado"></asp:Button>
+                        <% }
+                        else
+                        { %>
+                        <asp:Button ID="btnDesEncontrado" runat="server" CssClass="btn-encontrei p-0" Text="Este desaparecido foi encontrado"></asp:Button>
+                        <% } %>
+                        <%--</div>--%>
+                        <%  }
+
+                        else
+                        { %>
+                        <asp:Button ID="btnEncontrei" runat="server" CssClass="btn-encontrei" Text="Vi esta pessoa" OnClick="btnEncontrei_Click" />
+                        <% }
+                        }
+                        else
+                        { %>
+                        <asp:Button ID="btnEncontreiDeslogado" runat="server" CssClass="btn-encontrei" Text="Vi esta pessoa" OnClick="btnEncontreiDeslogado_Click" /> 
+                        <% } %>
                     </div>
 
                     <div class="col-1 pr-1">
@@ -310,7 +336,7 @@
         </div>
     </div>
 
-    <!-- Modal de encontrei a pessoa -->
+    <!-- Modal de vi a pessoa -->
     <div class="modal" id="encontrei">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -358,6 +384,30 @@
                     <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
                 </div>
 
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de vi a pessoa deslogado -->
+    <div class="modal fade" id="encontreiDeslogado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning" role="alert">
+                        <p class="font-weight-bold">Sua ajuda é muito importante!</p>
+                        Você será levado para nosso formulário de cadastro, para que possa ajudar na busca dessa pessoa!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnEncontreiCadastro" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Efetuar meu cadastro" OnClick="btnEncontreiCadastro_Click"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>
