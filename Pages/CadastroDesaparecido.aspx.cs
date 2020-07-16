@@ -5,12 +5,28 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.IO;
 
 public partial class Pages_CadastroDesaparecido : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         
+    }
+    public Int64 GerarID()
+    {
+        try
+        {
+            DateTime data = new DateTime();
+            data = DateTime.Now;
+            string s = data.ToString().Replace("/", "").Replace(":", "").Replace(" ", "");
+            return Convert.ToInt64(s);
+        }
+        catch (Exception erro)
+        {
+
+            throw;
+        }
     }
 
     protected void btnContinuaCadastroDesaparecido_Click(object sender, EventArgs e)
@@ -120,6 +136,87 @@ public partial class Pages_CadastroDesaparecido : System.Web.UI.Page
         minfo.Min_altura = txtAltura.Text;
         minfo.Min_peso = txtPeso.Text;
         minfo.Min_descricao = txtDescricao.Text;
+
+        if (FileUploadControl.PostedFile.ContentLength < 8388608)
+        {
+            try
+            {
+                if (FileUploadControl.HasFile)
+                {
+                    try
+                    {
+                        //Aqui ele vai filtrar pelo tipo de arquivo
+                        if (FileUploadControl.PostedFile.ContentType == "image/jpeg" ||
+                            FileUploadControl.PostedFile.ContentType == "image/png" ||
+                            FileUploadControl.PostedFile.ContentType == "image/gif" ||
+                            FileUploadControl.PostedFile.ContentType == "image/bmp")
+                        {
+                            try
+                            {
+                                //Obtem o  HttpFileCollection
+                                HttpFileCollection hfc = Request.Files;
+                                for (int i = 0; i < hfc.Count; i++)
+                                {
+                                    HttpPostedFile hpf = hfc[i];
+                                    if (hpf.ContentLength > 0)
+                                    {
+                                        //Pega o nome do arquivo
+                                        string nome = System.IO.Path.GetFileName(hpf.FileName);
+                                        //Pega a extensão do arquivo
+                                        string extensao = Path.GetExtension(hpf.FileName);
+                                        //Gera nome novo do Arquivo numericamente
+                                        string filename = string.Format("{0:00000000000000}", GerarID());
+                                        //Caminho a onde será salvo
+                                        hpf.SaveAs(Server.MapPath("~/uploads/fotos/") + filename + i
+                                        + extensao);
+
+                                        //Prefixo p/ img pequena
+                                        var prefixoP = "-p";
+                                        //Prefixo p/ img grande
+                                        var prefixoG = "-g";
+
+                                        //pega o arquivo já carregado
+                                        string pth = Server.MapPath("~/uploads/fotos/")
+                                        + filename + i + extensao;
+
+                                        //Redefine altura e largura da imagem e Salva o arquivo + prefixo
+                                        Redefinir.resizeImageAndSave(pth, 70, 53, prefixoP);
+                                        Redefinir.resizeImageAndSave(pth, 500, 331, prefixoG);
+                                    }
+
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                            
+
+                        }
+                        else
+                        {
+                            // Mensagem notifica que é permitido carregar apenas 
+                            // as imagens definida la em cima.
+                            
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Mensagem notifica quando ocorre erros
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Mensagem notifica quando ocorre erros
+                
+            }
+        }
+        else
+        {
+            // Mensagem notifica quando imagem é superior a 8 MB
+        }
 
         switch (DesaparecidoBD.InsertDesaparecido(p, d, minfo))
         {

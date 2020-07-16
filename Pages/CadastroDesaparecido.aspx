@@ -103,6 +103,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <asp:FileUpload ID="FileUploadControl" runat="server"></asp:FileUpload>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-12">
             <div class="form-group">
