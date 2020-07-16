@@ -427,7 +427,7 @@ public class DesaparecidoBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select * from des_desaparecidos inner join pes_pessoas using (pes_id) where des_encontrado = CURDATE();";
+        string sql = "select * from des_desaparecidos inner join pes_pessoas using (pes_id) where des_encontrado is not null order by des_encontrado desc limit 5;";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
