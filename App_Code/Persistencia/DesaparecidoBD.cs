@@ -525,4 +525,50 @@ public class DesaparecidoBD
         }
         return retorno;
     }
+
+    public static int UpdateDados(Mais_Informacoes m, Pessoas p)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "UPDATE pes_pessoas SET pes_nome = ?pes_nome, pes_dataNascimento = ?pes_dataNascimento, pes_sexo = ?pes_sexo, pes_cutis = ?pes_cutis WHERE pes_id = ?pes_id;";
+            sql += "UPDATE min_mais_informacoes SET min_cor_olhos = ?min_cor_olhos, min_cor_cabelo = ?min_cor_cabelo, min_altura = ?min_altura, min_peso = ?min_peso, min_descricao = ?min_descricao, min_tipo_sanguineo = ?min_tipo_sanguineo WHERE des_id = ?des_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_nome", p.Pes_nome));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_dataNascimento", p.Pes_dataNascimento));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_sexo", p.Pes_sexo));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_cutis", p.Pes_cutis));
+
+            objCommand.Parameters.Add(Mapped.Parameter("?min_cor_olhos", m.Min_cor_olhos));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_cor_cabelo", m.Min_cor_cabelo));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_altura", m.Min_altura));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_peso", m.Min_peso));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_descricao", m.Min_descricao));
+            objCommand.Parameters.Add(Mapped.Parameter("?min_tipo_sanguineo", m.Min_tipo_sanguineo));
+
+
+            // Vulneravel
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", p.Pes_id));
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", m.Des_id));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }

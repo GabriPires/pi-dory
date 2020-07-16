@@ -353,12 +353,14 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
 
     protected void btnEditarBasico_Click(object sender, EventArgs e)
     {
-
+        int desId = Convert.ToInt32(Request.QueryString["id"]);
+        Response.Redirect("EditarInfosDesaparecido.aspx?id=" + desId);
     }
 
     protected void btnEditarAdicional_Click(object sender, EventArgs e)
     {
-
+        int desId = Convert.ToInt32(Request.QueryString["id"]);
+        Response.Redirect("EditarMaisInfosDesaparecido.aspx?id=" + desId);
     }
 
     protected void btnRemover_Click(object sender, EventArgs e)
