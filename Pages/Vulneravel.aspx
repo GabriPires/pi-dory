@@ -114,7 +114,7 @@
                             %>
                             <div class="align-items-center interior">
                                 <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
-                                <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
+                                <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover" OnClick="btnRemover_Click"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
                             </div>
                             <%  }
                                 } %>
@@ -175,7 +175,7 @@
                                 {
                             %>
                             <div class="align-items-center interior">
-                                <asp:LinkButton ID="btnEditarAdicional" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                <asp:LinkButton ID="btnEditarAdicional" runat="server" CssClass="button btnEditarRemover" OnClick="btnEditarAdicional_Click"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
                             </div>
                             <%  }
                                 } %>
@@ -199,7 +199,7 @@
                             <asp:Literal ID="ltlDeficienciaFisica" runat="server"></asp:Literal></p>
                     </div>
                     <div class="col-12">
-                        <p><strong>Doenças: </strong>
+                        <p><strong>Outras doenças ou alergias: </strong>
                             <asp:Literal ID="ltlDoencas" runat="server"></asp:Literal></p>
                     </div>
 
@@ -286,7 +286,6 @@
                 </div>
                 <div class="row">
                     <div class="col-12 container-left">
-                        <div class="bagulhoamarelo"></div>
                         <h2 class="estatisticas mt-3">Estatísticas</h2>
                         <h3 class="subTituloEstatistivas">Estados com maior numeros de casos</h3>
                         <img src="../Images/grafico.jpg" class="img-fluid" />
@@ -355,8 +354,33 @@
         </div>
     </div>
 
-    <!-- Modal de editar dados -->
-    <div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal de remoer -->
+    <div class="modal fade" id="modalRemover" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert">
+                        <p class="font-weight-bold">Tem certeza que deseja remover seu vulnerável do Dory?</p>
+                        Após confirmar, as informações de seu vulnerável não estarão mais disponíveis no sistema.
+                            <p class="font-weight-bold mt-3 mb-0">Você confirma que quer remover seu vulverável?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnConfirmaRemover" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmaRemover_Click" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de editar informações da saúde -->
+    <div class="modal fade" id="modalEditarSaude" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -367,18 +391,33 @@
                 </div>
                 <div class="modal-body">
                     <div class="" role="alert">
-                        <p class="font-weight-bold">Ficamos felizes que pudemos reconectar mais vidas!</p>
-                        Após confirmar, as informações de seu vulnerável sairão das páginas de desaparecidos e dos resultados de buscas, 
-                            mas permanecerão no sistema para que você continue monitorando seu ente querido.
+                        <p class="font-weight-bold">Mantenha os dados sempre atualizados!</p>
+                        Com informações mais consistentes, caso seu ente seja encontrado, ele poderá ser cuidado da melhor maneira possível até que possamos <strong>reconectá-los</strong>!
                             <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Informe quando seu vulverável foi encontrado</p>
-                                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control" type="date" />
+                                <p class="font-weight-bold mt-3 mb-0">Restrições alimentares</p>
+                                <asp:TextBox ID="txtRestricoesAlimentares" runat="server" CssClass="form-control" />
                             </div>
-                            <p class="font-weight-bold mt-3 mb-0">Você confirma que seu vulverável foi encontrado?</p>
+                            <div class="form-group">
+                                <p class="font-weight-bold mt-3 mb-0">Restrições a medicamentos</p>
+                                <asp:TextBox ID="txtRestricoesMedicamentos" runat="server" CssClass="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <p class="font-weight-bold mt-3 mb-0">Deficiência mental</p>
+                                <asp:TextBox ID="txtDefMental" runat="server" CssClass="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <p class="font-weight-bold mt-3 mb-0">Deficiência física</p>
+                                <asp:TextBox ID="txtDefFisica" runat="server" CssClass="form-control" />
+                            </div>
+                             <div class="form-group">
+                                <p class="font-weight-bold mt-3 mb-0">Outras doenças ou alergias</p>
+                                <asp:TextBox ID="txtOutros" runat="server" CssClass="form-control" />
+                            </div>
+                        <p class="font-weight-bold mt-3 mb-0">As informações estão corretas?</p>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmarEncontrei_Click" />
+                    <asp:Button ID="btnEditarSaude" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Salvar" OnClick="btnEditarSaude_Click"/>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

@@ -101,6 +101,41 @@ public class VulneravelBD
         return retorno;
     }
 
+    public static int DeleteVulneravel(int vulId, int pesId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "DELETE FROM min_mais_informacoes WHERE vul_id = ?vul_id;";
+            sql += "DELETE FROM tut_tutorias WHERE pes_id = ?pes_id;";
+            sql += "DELETE FROM des_desaparecidos WHERE vul_id = ?vul_id;";
+            sql += "DELETE FROM vul_vulneraveis WHERE vul_id = ?vul_id;";
+            sql += "DELETE FROM pes_pessoas WHERE pes_id = ?pes_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+            objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pesId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
+
     public static DataSet SelectPesIdVulneravel()
     {
         DataSet ds = new DataSet();
