@@ -113,7 +113,7 @@
                                 {
                             %>
                             <div class="align-items-center interior">
-                                <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover" OnClick="btnEditarBasico_Click"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
                                 <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover" OnClick="btnRemover_Click"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
                             </div>
                             <%  }
@@ -373,51 +373,6 @@
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnConfirmaRemover" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmaRemover_Click" />
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de editar informações da saúde -->
-    <div class="modal fade" id="modalEditarSaude" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="" role="alert">
-                        <p class="font-weight-bold">Mantenha os dados sempre atualizados!</p>
-                        Com informações mais consistentes, caso seu ente seja encontrado, ele poderá ser cuidado da melhor maneira possível até que possamos <strong>reconectá-los</strong>!
-                            <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Restrições alimentares</p>
-                                <asp:TextBox ID="txtRestricoesAlimentares" runat="server" CssClass="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Restrições a medicamentos</p>
-                                <asp:TextBox ID="txtRestricoesMedicamentos" runat="server" CssClass="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Deficiência mental</p>
-                                <asp:TextBox ID="txtDefMental" runat="server" CssClass="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Deficiência física</p>
-                                <asp:TextBox ID="txtDefFisica" runat="server" CssClass="form-control" />
-                            </div>
-                             <div class="form-group">
-                                <p class="font-weight-bold mt-3 mb-0">Outras doenças ou alergias</p>
-                                <asp:TextBox ID="txtOutros" runat="server" CssClass="form-control" />
-                            </div>
-                        <p class="font-weight-bold mt-3 mb-0">As informações estão corretas?</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <asp:Button ID="btnEditarSaude" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Salvar" OnClick="btnEditarSaude_Click"/>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

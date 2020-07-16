@@ -122,12 +122,6 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
             ltlDeficienciaFisica.Text = ds.Tables[0].Rows[0]["min_deficiencia_fisica"].ToString();
             ltlDoencas.Text = ds.Tables[0].Rows[0]["min_doencas"].ToString();
 
-            txtRestricoesAlimentares.Text = ds.Tables[0].Rows[0]["min_restricao_alimentar"].ToString();
-            txtRestricoesMedicamentos.Text = ds.Tables[0].Rows[0]["min_restricao_medicamento"].ToString();
-            txtDefMental.Text = ds.Tables[0].Rows[0]["min_deficiencia_mental"].ToString();
-            txtDefFisica.Text = ds.Tables[0].Rows[0]["min_deficiencia_fisica"].ToString();
-            txtOutros.Text = ds.Tables[0].Rows[0]["min_doencas"].ToString();
-
             int status = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_status"]);
 
             Session["StatusVulneravel"] = status;
@@ -291,77 +285,8 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
 
     protected void btnEditarAdicional_Click(object sender, EventArgs e)
     {
-        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalEditarSaude').modal('show');</script>", false);
-    }
-    protected void btnEditarSaude_Click(object sender, EventArgs e)
-    {
-        if (!IsPostBack)
-        {
-            Mais_Informacoes minfo = new Mais_Informacoes();
-
-            // Deficiencia mental
-            if (txtDefMental.Text != "")
-            {
-                minfo.Min_deficiencia_mental = txtDefMental.Text;
-            }
-            else
-            {
-                minfo.Min_deficiencia_mental = "Não tem ou não foi informado";
-            }
-
-            // Deficiencia fisica
-            if (txtDefFisica.Text != "")
-            {
-                minfo.Min_deficiencia_fisica = txtDefFisica.Text;
-            }
-            else
-            {
-                minfo.Min_deficiencia_fisica = "Não tem ou não foi informado";
-            }
-
-            // Restricao alimentar
-            if (txtRestricoesAlimentares.Text != "")
-            {
-                minfo.Min_restricao_alimentar = txtRestricoesAlimentares.Text;
-            }
-            else
-            {
-                minfo.Min_restricao_alimentar = "Não tem ou não foi informado";
-            }
-
-            // Restricao medicamentos
-            if (txtRestricoesMedicamentos.Text != "")
-            {
-                minfo.Min_restricao_medicamento = txtRestricoesMedicamentos.Text;
-            }
-            else
-            {
-                minfo.Min_restricao_medicamento = "Não tem ou não foi informado";
-            }
-
-            // Outros
-            if (txtOutros.Text != "")
-            {
-                minfo.Min_doencas = txtOutros.Text;
-            }
-            else
-            {
-                minfo.Min_doencas = "Não tem ou não foi informado";
-            }
-
-            int vulId = Convert.ToInt32(Session["idVulneravel"]);
-            minfo.Vul_id = vulId;
-
-            switch (VulneravelBD.UpdateVulneravel(minfo))
-            {
-                case 0:
-                    Response.Redirect("Vulneravel.aspx?id=" + vulId);
-                    break;
-                case -2:
-                    Response.Redirect("Index.aspx");
-                    break;
-            }
-        }
+        int vulId = Convert.ToInt32(Request.QueryString["id"]);
+        Response.Redirect("EditarMaisInfosVulneravel.aspx?id=" + vulId);
     }
 
     protected void btnRemover_Click(object sender, EventArgs e)
@@ -384,5 +309,11 @@ public partial class Pages_Vulneravel : System.Web.UI.Page
                 Response.Redirect("QuemSomos.aspx");
                 break;
         }
+    }
+
+    protected void btnEditarBasico_Click(object sender, EventArgs e)
+    {
+        int vulId = Convert.ToInt32(Request.QueryString["id"]);
+        Response.Redirect("EditarInfosVulneravel.aspx?id=" + vulId);
     }
 }
