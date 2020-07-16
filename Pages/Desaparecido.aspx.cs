@@ -103,7 +103,7 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
                 }
                 else
                 {
-                    // Caso nao tenha nenhum desaparecido
+                    ltlNaoTemAtividade.Text = "<div class='col-12'><hr/><p>Não foi encontrado dados do histórico deste desaparecido :(</p></div>";
                 }
 
 

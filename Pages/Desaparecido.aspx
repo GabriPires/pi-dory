@@ -220,7 +220,7 @@
                                 </div>
                           </ItemTemplate>
                     </asp:Repeater>
-
+                    <asp:Literal runat="server" ID="ltlNaoTemAtividade"></asp:Literal>
                 </div>
 
                 <div class="row justify-content-center mb-3">
