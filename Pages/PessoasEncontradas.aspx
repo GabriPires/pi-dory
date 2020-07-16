@@ -116,7 +116,7 @@
                                                     Nome: <%#Eval("pes_nome") %>
                                                 </p>
                                                 <p class="idade">
-                                                    Data de Encontro: <%#Eval("pes_cpf") %>
+                                                    Data de Encontro: <%#Eval("des_encontrado").ToString().Substring(0,10) %>
                                                 </p>
                                             </div>
                                         </div>
