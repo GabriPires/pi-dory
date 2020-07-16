@@ -196,6 +196,33 @@
                     </div>
 
                 </div>
+
+                <div class="row justify-content-center container-left m-3 mb-4">
+                    <div class="col-12">
+                        <div class="flex-row cabecalhoEditar">
+                            <h2 class="mt-2">Atividade recente do desaparecido</h2>
+                        </div>
+                    </div>
+                    <asp:Repeater runat="server" ID="rptAtividade">
+                        <ItemTemplate>
+                                <div class="col-12 ">
+                                    <hr />
+                                    <p><strong>Onde foi visto: </strong><%#Eval("cde_ultimo_local_encontrado") %></p>
+                                </div>
+                                <div class="col-12 ">
+                                    <p><strong>Cidade em que foi visto:</strong> <%#Eval("cde_ultima_localizacao") %></p>
+                                </div>
+                                <div class="col-12 ">
+                                    <p><strong>Roupa que estava usando:</strong> <%#Eval("cde_ultima_roupa") %></p>
+                                </div>
+                                <div class="col-12">
+                                    <p><strong>Data que foi visto:</strong> <%#Eval("cde_ultimo_horario_visto") %></p>
+                                </div>
+                          </ItemTemplate>
+                    </asp:Repeater>
+
+                </div>
+
                 <div class="row justify-content-center mb-3">
 
                     <div class="col-10 pr-1" align="center">

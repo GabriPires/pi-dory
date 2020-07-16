@@ -427,7 +427,7 @@ public class DesaparecidoBD
         IDbCommand objCommand;
         IDataAdapter objDataAdapter;
 
-        string sql = "select * from des_desaparecidos inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (des_id) inner join tut_tutorias using (pes_id) where des_encontrado = CURDATE();";
+        string sql = "select * from des_desaparecidos inner join pes_pessoas using (pes_id) where des_encontrado = CURDATE();";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
@@ -444,7 +444,7 @@ public class DesaparecidoBD
         return ds;
     }
 
-    public static DataSet Encontrados(int desId)
+    public static DataSet Encontrados()
     {
         DataSet ds = new DataSet();
         IDbConnection objConnection;
@@ -452,6 +452,30 @@ public class DesaparecidoBD
         IDataAdapter objDataAdapter;
 
         string sql = "select * from des_desaparecidos inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (des_id) inner join tut_tutorias using (pes_id) where des_encontrado is not null;";
+
+        objConnection = Mapped.Connection();
+        objCommand = Mapped.Command(sql, objConnection);
+
+        // objCommand.Parameters.Add(Mapped.Parameter("?des_id", desId));
+
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+
+        objConnection.Close();
+        objConnection.Dispose();
+        objCommand.Dispose();
+
+        return ds;
+    }
+
+    public static DataSet SelectHistoricoDesaparecido(int desId)
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConnection;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+
+        string sql = "select * from cde_caso_de_desaparecimento where des_id = ?des_id order by cde_id desc limit 3;";
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);

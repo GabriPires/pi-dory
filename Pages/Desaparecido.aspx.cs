@@ -36,7 +36,6 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             catch (Exception)
             {
                 //erro
-
             }
 
             try
@@ -88,6 +87,30 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
             {
                 //erro
 
+            }
+
+            try
+            {
+                int idDesaparecido3 = Convert.ToInt32(Request.QueryString["id"]);
+
+                DataSet ds3 = DesaparecidoBD.SelectHistoricoDesaparecido(idDesaparecido3);
+                int qtd = ds3.Tables[0].Rows.Count;
+
+                if (qtd > 0)
+                {
+                    rptAtividade.DataSource = ds3;
+                    rptAtividade.DataBind();
+                }
+                else
+                {
+                    // Caso nao tenha nenhum desaparecido
+                }
+
+
+            }
+            catch (Exception)
+            {
+                //erro
             }
         }
 

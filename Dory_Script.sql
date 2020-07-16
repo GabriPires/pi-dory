@@ -158,5 +158,7 @@ select * from des_desaparecidos order by des_id desc limit 1;
 
 select des_id from des_desaparecidos where vul_id = 1 order by des_id desc limit 1;
 
+select * from cde_caso_de_desaparecimento where des_id = 1 order by cde_id desc limit 3;
+
 select res_id from des_desaparecidos inner join  pes_pessoas using (pes_id) inner join min_mais_informacoes using (des_id) inner join tut_tutorias using (pes_id) where des_id = 4;
 select * from vul_vulneraveis inner join pes_pessoas using (pes_id) inner join min_mais_informacoes using (vul_id) inner join tut_tutorias using (pes_id) where vul_id = 2;
