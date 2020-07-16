@@ -71,6 +71,30 @@
                     </div>
                     <div class="col-12 container-left mt-3">
                         <h3 class="tituloAtividadeRecente">Atividade Recente</h3>
+                        <asp:Repeater runat="server" ID="rptatividaderecente" >
+                            <ItemTemplate>
+                                <div class="col-12">
+                                    <div class="row mt-3">
+                                        <div class="cardPessoa mb-2 flex-row">
+                                            
+                                            <div class="plus mr-3 mb-3">
+                                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="imagem" />
+                                             </div>
+                                 
+                                                <p class="nome">
+                                                    Nome: <%#Eval("pes_nome") %>
+                                                </p>
+                                               <p class="idade">
+                                                    Dia que foi encontrado: <%#Eval("des_encontrado") %>
+                                                </p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ItemTemplate>
+                          </asp:Repeater>
                     </div>
                 </div>
             </div>

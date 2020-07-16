@@ -63,6 +63,32 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
                 //erro
 
             }
+
+            try
+            {
+                int idDesaparecido2 = Convert.ToInt32(Request.QueryString["id"]);
+                Session["idDesaparecido"] = idDesaparecido2;
+
+                DataSet ds2 = DesaparecidoBD.SelectAtividadeRecente(idDesaparecido2);
+                int qtd = ds2.Tables[0].Rows.Count;
+
+                if (qtd > 0)
+                {
+                    rptatividaderecente.DataSource = ds2;
+                    rptatividaderecente.DataBind();
+                }
+                else
+                {
+                    // Caso nao tenha nenhum desaparecido
+                }
+
+
+            }
+            catch (Exception)
+            {
+                //erro
+
+            }
         }
 
         int idDesaparecido = Convert.ToInt32(Request.QueryString["id"]);
