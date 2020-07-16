@@ -111,8 +111,8 @@
                                 {
                             %>
                                     <div class="align-items-center interior">
-                                        <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnEditarBasico" runat="server" CssClass="button btnEditarRemover" OnClick="btnEditarBasico_Click"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnRemover" runat="server" CssClass="button btnEditarRemover" OnClick="btnRemover_Click"><i class="fa fa-trash-o fa-fw"></i></asp:LinkButton>
                                     </div>
                             <%  }
                                } %>
@@ -163,7 +163,7 @@
                                 {
                             %>
                                     <div class="align-items-center interior">
-                                        <asp:LinkButton ID="btnEditarAdicional" runat="server" CssClass="button btnEditarRemover"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="btnEditarAdicional" runat="server" CssClass="button btnEditarRemover" OnClick="btnEditarAdicional_Click"><i class="fa fa-edit fa-fw"></i></asp:LinkButton>
                                     </div>
                             <%  }
                                } %>
@@ -503,6 +503,31 @@
                 </div>
                 <div class="modal-footer">
                     <asp:Button ID="btnConfirmaEcontreiDesaparecido" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmaEcontreiDesaparecido_Click"/>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de remover -->
+    <div class="modal fade" id="modalRemover" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" role="alert">
+                        <p class="font-weight-bold">Tem certeza que deseja remover seu desaparecido do Dory?</p>
+                        Após confirmar, as informações de seu desaparecido não estarão mais disponíveis no sistema.
+                            <p class="font-weight-bold mt-3 mb-0">Você confirma que quer remover seu desaparecido?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button ID="btnConfirmaRemover" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Sim" OnClick="btnConfirmaRemover_Click" />
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>

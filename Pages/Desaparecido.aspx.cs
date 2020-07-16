@@ -350,4 +350,43 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
                 break;
         }
     }
+
+    protected void btnEditarBasico_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnEditarAdicional_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void btnRemover_Click(object sender, EventArgs e)
+    {
+        Page.ClientScript.RegisterStartupScript(this.GetType(), "script", "<script>$('#modalRemover').modal('show');</script>", false);
+    }
+
+    protected void btnConfirmaRemover_Click(object sender, EventArgs e)
+    {
+        int desId = Convert.ToInt32(Request.QueryString["id"]);
+        DataSet ds = DesaparecidoBD.SelectDadosDesaparecido(desId);
+        int pesId = Convert.ToInt32(ds.Tables[0].Rows[0]["pes_id"]);
+
+        int vulId = 0;
+
+        if(ds.Tables[0].Rows[0]["vul_id"].ToString() != "")
+        {
+            vulId = Convert.ToInt32(ds.Tables[0].Rows[0]["vul_id"]);
+        }
+
+        switch (DesaparecidoBD.DeleteDesaparecido(desId, pesId, vulId))
+        {
+            case 0:
+                Response.Redirect("Index.aspx");
+                break;
+            case -2:
+                Response.Redirect("QuemSomos.aspx");
+                break;
+        }
+    }
 }

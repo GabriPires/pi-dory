@@ -354,7 +354,7 @@
         </div>
     </div>
 
-    <!-- Modal de remoer -->
+    <!-- Modal de remover -->
     <div class="modal fade" id="modalRemover" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

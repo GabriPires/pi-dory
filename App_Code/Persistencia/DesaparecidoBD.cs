@@ -489,4 +489,40 @@ public class DesaparecidoBD
 
         return ds;
     }
+
+    public static int DeleteDesaparecido(int desId, int pesId, int vulId)
+    {
+        int retorno = 0;
+
+        try
+        {
+            IDbConnection objConnection;
+            IDbCommand objCommand;
+
+            string sql = "DELETE FROM min_mais_informacoes WHERE des_id = ?des_id;";
+            sql += "DELETE FROM tut_tutorias WHERE pes_id = ?pes_id;";
+            sql += "DELETE FROM des_desaparecidos WHERE des_id = ?des_id;";
+            sql += "DELETE FROM vul_vulneraveis WHERE vul_id = ?vul_id;";
+            sql += "DELETE FROM pes_pessoas WHERE pes_id = ?pes_id;";
+
+            objConnection = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConnection);
+
+            // Parametrização
+            objCommand.Parameters.Add(Mapped.Parameter("?des_id", desId));
+            objCommand.Parameters.Add(Mapped.Parameter("?pes_id", pesId));
+            objCommand.Parameters.Add(Mapped.Parameter("?vul_id", vulId));
+
+            objCommand.ExecuteNonQuery();
+
+            objConnection.Close();
+            objConnection.Dispose();
+            objCommand.Dispose();
+        }
+        catch (Exception ex)
+        {
+            retorno = -2;
+        }
+        return retorno;
+    }
 }
