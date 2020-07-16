@@ -207,7 +207,7 @@
                                     <p><strong>Roupa que estava usando:</strong> <%#Eval("cde_ultima_roupa") %></p>
                                 </div>
                                 <div class="col-12">
-                                    <p><strong>Data que foi visto:</strong> <%#Eval("cde_ultimo_horario_visto") %></p>
+                                    <p><strong>Data que foi visto:</strong> <%#Eval("cde_ultimo_horario_visto").ToString().Substring(0,10) %></p>
                                 </div>
                           </ItemTemplate>
                     </asp:Repeater>
@@ -392,7 +392,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
-                                <div class="" role="alert">
+                                <div class="alert alert-danger" role="alert">
                                     <p><strong>Caso você esteja com o desaparecido por perto</strong></p>
                                     Entre em contato imediatamente com o responsável por ele.
                                 </div>
@@ -409,12 +409,8 @@
                                     <asp:TextBox ID="txtUltimaRoupa" runat="server" CssClass="form-control"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
-                                    <h6>Que horas você o viu?</h6>
-                                    <asp:TextBox ID="txtUltimaHora" runat="server" CssClass="form-control"></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <h6>Informações adicionais</h6>
-                                    <textarea id="Textarea1" runat="server" class="form-control" placeholder="Utilize este campo para descrever melhor a situação e dar informações adicionais para o responsável."></textarea>
+                                    <h6>Quando você o viu?</h6>
+                                    <asp:TextBox ID="txtUltimaHora" runat="server" CssClass="form-control" type="date"></asp:TextBox>
                                 </div>
                             </div>
                         </div>

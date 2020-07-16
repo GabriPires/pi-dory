@@ -333,11 +333,11 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
 
         if (txtUltimaHora.Text != "")
         {
-            c.Cde_ultimo_horario_visto = txtUltimaHora.Text;
+            c.Cde_ultimo_horario_visto = Convert.ToDateTime(txtUltimaHora.Text);
         }
         else
         {
-            c.Cde_ultimo_horario_visto = "Não foi informado";
+            // c.Cde_ultimo_horario_visto = "Não foi informado";
         }
 
         switch (DesaparecidoBD.InsertCasoDeDesaparecimento(c))
