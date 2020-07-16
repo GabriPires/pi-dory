@@ -87,145 +87,29 @@
                         </div>
                     </div>
                     <div class="col-12 mt-4">
-                        <div class="container">
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: José Eduardo</p>
-                                        <p class="idade">Idade: 39 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="Button1"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Ana Clara</p>
-                                        <p class="idade">Idade: 25 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="btnVer_Mais"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
+                        <asp:Repeater runat="server" ID="rptCard" >
+                            <ItemTemplate>
+                                <div class="col-12">
+                                    <div class="row mt-3">
+                                        <div class="cardPessoa mb-2 flex-row">
+                                            <div class="imagem">
+                                                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="imagem" />
+                                            </div>
+                                            <div class="infos">
+                                 
+                                                <p class="nome">
+                                                    Nome: <%#Eval("Nome") %>
+                                                </p>
+                                                <p class="idade">
+                                                    Data de Encontro: <%#Eval("Idade") %>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom2.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Roberto Amaral</p>
-                                        <p class="idade">Idade: 27 Anos</p>
 
-                                        <asp:Button runat="server" Text="Ver+" ID="Button2"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom2.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Roberta Silva</p>
-                                        <p class="idade">Idade: 35 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="Button3"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom3.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Enzo</p>
-                                        <p class="idade">Idade: 21 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="Button4"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom3.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Perola Ribeiro</p>
-                                        <p class="idade">Idade: 39 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="Button5"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/malucorandom4.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Francisco Oliveira</p>
-                                        <p class="idade">Idade: 53 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="Button6"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="cardPessoa">
-                                    <div class="imagem">
-                                        <img src="../Images/minarandom4.jpg" class="imagem" />
-                                    </div>
-                                    <div class="infos">
-                                        <p class="nome">Nome: Valentina</p>
-                                        <p class="idade">Idade: 7 Anos</p>
-
-                                        <asp:Button runat="server" Text="Ver+" ID="Button7"
-                                            CssClass="btn btn-primary btn-block rounded-pill buttonVerMais"
-                                            Style="width: 20%; background-color: #475ac0; border-color: #475ac0;"
-                                         />
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                            </ItemTemplate>
+                          </asp:Repeater>
                     </div>
 
                 </div>

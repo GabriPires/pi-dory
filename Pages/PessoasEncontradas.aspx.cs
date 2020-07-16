@@ -12,7 +12,28 @@ public partial class Pages_PessoasEncontradas : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
+            try
+            {
+                DataSet ds = DesaparecidoBD.Encontrados();
+                int qtd = ds.Tables[0].Rows.Count;
 
+                if (qtd > 0)
+                {
+                    rptCard.DataSource = ds;
+                    rptCard.DataBind();
+                }
+                else
+                {
+                    // Caso nao tenha nenhum desaparecido
+                }
+
+
+            }
+            catch (Exception)
+            {
+                //erro
+
+            }
 
             try
             {
