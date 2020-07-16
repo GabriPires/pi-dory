@@ -81,7 +81,7 @@
                                         <p class="font-weight-bold m-0" style="font-size:15px">Nome</p>
                                         <p class="m-0" style="font-size:14px"><%#Eval("pes_nome")%></p>
                                         <p class="font-weight-bold m-0" style="font-size:15px">Reconectamos</p>
-                                        <p class="m-0" style="font-size:14px"><%#Eval("des_encontrado").ToString().Substring(0,10)%></p>
+                                        <p class="m-0" style="font-size:14px">dia <%#Eval("des_encontrado").ToString().Substring(0,10)%></p>
                                     </div>
                                 </div>
                             </ItemTemplate>
