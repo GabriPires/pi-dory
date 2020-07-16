@@ -65,28 +65,22 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
 
             try
             {
-                int idDesaparecido2 = Convert.ToInt32(Request.QueryString["id"]);
-                Session["idDesaparecido"] = idDesaparecido2;
-
-                DataSet ds2 = DesaparecidoBD.SelectAtividadeRecente(idDesaparecido2);
+                DataSet ds2 = DesaparecidoBD.SelectAtividadeRecente();
                 int qtd = ds2.Tables[0].Rows.Count;
 
                 if (qtd > 0)
                 {
-                    rptatividaderecente.DataSource = ds2;
-                    rptatividaderecente.DataBind();
+                    rptAtividadeRecente.DataSource = ds2;
+                    rptAtividadeRecente.DataBind();
                 }
                 else
                 {
                     // Caso nao tenha nenhum desaparecido
                 }
-
-
             }
             catch (Exception)
             {
                 //erro
-
             }
 
             try
@@ -105,8 +99,6 @@ public partial class Pages_Desaparecido : System.Web.UI.Page
                 {
                     ltlNaoTemAtividade.Text = "<div class='col-12'><hr/><p>Não foi encontrado dados do histórico deste desaparecido :(</p></div>";
                 }
-
-
             }
             catch (Exception)
             {

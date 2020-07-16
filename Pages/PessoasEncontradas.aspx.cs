@@ -84,6 +84,27 @@ public partial class Pages_PessoasEncontradas : System.Web.UI.Page
                 //erro
 
             }
+
+            try
+            {
+
+                DataSet ds2 = DesaparecidoBD.SelectAtividadeRecente();
+                int qtd = ds2.Tables[0].Rows.Count;
+
+                if (qtd > 0)
+                {
+                    rptAtividadeRecente.DataSource = ds2;
+                    rptAtividadeRecente.DataBind();
+                }
+                else
+                {
+                    // Caso nao tenha nenhum desaparecido
+                }
+            }
+            catch (Exception)
+            {
+                //erro
+            }
         }
 
     }

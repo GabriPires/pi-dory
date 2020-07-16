@@ -420,7 +420,7 @@ public class DesaparecidoBD
         return retorno;
     }
 
-    public static DataSet SelectAtividadeRecente(int desId)
+    public static DataSet SelectAtividadeRecente()
     {
         DataSet ds = new DataSet();
         IDbConnection objConnection;
@@ -431,8 +431,6 @@ public class DesaparecidoBD
 
         objConnection = Mapped.Connection();
         objCommand = Mapped.Command(sql, objConnection);
-
-        objCommand.Parameters.Add(Mapped.Parameter("?des_id", desId));
 
         objDataAdapter = Mapped.Adapter(objCommand);
         objDataAdapter.Fill(ds);

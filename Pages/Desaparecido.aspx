@@ -37,21 +37,21 @@
                         <div class="row">
                             <div class="col-3 p-2 pl-3">
                                 <div class="plus">
-                                    <asp:LinkButton ID="facebook" runat="server" CssClass="button" onclientclick="window.open('https://www.facebook.com/asp.net')">
+                                    <asp:LinkButton ID="facebook" runat="server" CssClass="button" OnClientClick="window.open('https://www.facebook.com/asp.net')">
                                         <i class="fa fa-facebook-f fa-fw"></i>
                                     </asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3">
                                 <div class="plus">
-                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" onclientclick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
+                                    <asp:LinkButton ID="youtube" runat="server" CssClass="button" OnClientClick="window.open('https://www.youtube.com/channel/UC-NZkLwbVeVi9BzAAaRdWSw')">
                                         <i class="fa fa-youtube-play fa-fw"></i>
                                     </asp:LinkButton>
                                 </div>
                             </div>
                             <div class="col-3 p-2 pl-3">
                                 <div class="plus">
-                                    <asp:LinkButton ID="twitter" runat="server" CssClass="button" onclientclick="window.open('https://twitter.com/aspnet')">
+                                    <asp:LinkButton ID="twitter" runat="server" CssClass="button" OnClientClick="window.open('https://twitter.com/aspnet')">
                                         <div class="social">
                                             <i class="fa fa-twitter fa-fw"></i>
                                         </div>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-3 p-2 pl-3 pr-0">
                                 <div class="plus">
-                                    <asp:LinkButton ID="instagram" runat="server" CssClass="button" onclientclick="window.open('https://www.instagram.com/asp.net_learning/')">
+                                    <asp:LinkButton ID="instagram" runat="server" CssClass="button" OnClientClick="window.open('https://www.instagram.com/asp.net_learning/')">
                                         <div class="social">
                                             <i class="fa fa-instagram fa-fw"></i>
                                         </div>
@@ -71,30 +71,21 @@
                     </div>
                     <div class="col-12 container-left mt-3">
                         <h3 class="tituloAtividadeRecente">Atividade Recente</h3>
-                        <asp:Repeater runat="server" ID="rptatividaderecente" >
+                        <asp:Repeater ID="rptAtividadeRecente" runat="server">
                             <ItemTemplate>
-                                <div class="col-12">
-                                    <div class="row mt-3">
-                                        <div class="cardPessoa mb-2 flex-row">
-                                            
-                                            <div class="plus mr-3 mb-3">
-                                                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="imagem" />
-                                             </div>
-                                 
-                                                <p class="nome">
-                                                    Nome: <%#Eval("pes_nome") %>
-                                                </p>
-                                               <p class="idade">
-                                                    Dia que foi encontrado: <%#Eval("des_encontrado") %>
-                                                </p>
-                                                
-                                            </div>
-                                        </div>
+                                <div class="row p-2">
+                                    <div class="col-4 p-2">
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="img-fluid p-0" style="border-radius: 50%"/>
+                                    </div>
+                                    <div class="col-7 p-2">
+                                        <p class="font-weight-bold m-0" style="font-size:15px">Nome</p>
+                                        <p class="m-0" style="font-size:14px"><%#Eval("pes_nome")%></p>
+                                        <p class="font-weight-bold m-0" style="font-size:15px">Reconectamos</p>
+                                        <p class="m-0" style="font-size:14px"><%#Eval("des_encontrado").ToString().Substring(0,10)%></p>
                                     </div>
                                 </div>
-
                             </ItemTemplate>
-                          </asp:Repeater>
+                        </asp:Repeater>
                     </div>
                 </div>
             </div>

@@ -71,6 +71,21 @@
                     </div>
                     <div class="col-12 container-left mt-3">
                         <h3 class="tituloAtividadeRecente">Atividade Recente</h3>
+                        <asp:Repeater ID="rptAtividadeRecente" runat="server">
+                            <ItemTemplate>
+                                <div class="row p-2">
+                                    <div class="col-4 p-2">
+                                        <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="img-fluid p-0" style="border-radius: 50%"/>
+                                    </div>
+                                    <div class="col-7 p-2">
+                                        <p class="font-weight-bold m-0" style="font-size:15px">Nome</p>
+                                        <p class="m-0" style="font-size:14px"><%#Eval("pes_nome")%></p>
+                                        <p class="font-weight-bold m-0" style="font-size:15px">Reconectamos</p>
+                                        <p class="m-0" style="font-size:14px"><%#Eval("des_encontrado").ToString().Substring(0,10)%></p>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:Repeater>
                     </div>
                 </div>
             </div>
