@@ -37,7 +37,8 @@
                     <asp:Button ID="btnLoginFacebook" runat="server" CssClass="btn btn-primary btn-login-facebook" Text="Entre com o Facebook" />
                 </div>
 
-                <hr /><div class="d-flex justify-content-center">
+                <hr />
+                <div class="d-flex justify-content-center">
                     <p>Não tem uma conta? Crie uma!</p>
                 </div>
                 <div class="d-flex justify-content-center">

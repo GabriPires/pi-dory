@@ -64,10 +64,17 @@
                 </div>
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-6">
             <div class="form-group">
                 <div class="d-flex justify-content-center mt-2">
-                    <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Continuar cadastro" OnClick="btn_Click" />
+                    <asp:Button ID="btnCadastrar" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Confirmar cadastro" OnClick="btn_Click" />
+                </div>
+                <hr />
+                <div class="d-flex justify-content-center">
+                    <p>Já tem uma conta?</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="Login.aspx" class="btn btn-primary btn-cadastro text-white">Fazer login</a>
                 </div>
             </div>
 
