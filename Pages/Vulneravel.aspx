@@ -96,7 +96,7 @@
                         <h2 class="PessoasDesaparecidas mt-3">Vulnerável</h2>
 
                         <div class="imagem mx-auto my-5">
-                            <img src="../Images/malucorandom.jpg" class="imagem" />
+                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="imagem" />
                         </div>
                     </div>
                 </div>
