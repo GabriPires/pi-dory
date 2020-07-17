@@ -89,7 +89,14 @@ public partial class Pages_CadastroFinalResponsavel : System.Web.UI.Page
                 switch (ResponsavelBD.UpdateEnderecoResponsavel(endereco, endId))
                 {
                     case 0:
-                        Response.Redirect("CadastroDesaparecido.aspx");
+                        if(Convert.ToInt32(Request.QueryString["valid"]) == 2)
+                        {
+                            Response.Redirect("CadastroDesaparecido.aspx");
+                        }
+                        else
+                        {
+                            Response.Redirect("CadastroVulneravel.aspx");
+                        }
                         break;
                     case -2:
                         Response.Redirect("Index.aspx");

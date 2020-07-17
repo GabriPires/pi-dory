@@ -40,7 +40,7 @@ public partial class Pages_VerificaDocumentos : System.Web.UI.Page
 
                 if (rg == "" || cpf == "" || end == false)
                 {
-                    Response.Redirect("CadastroFinalResponsavel.aspx");
+                    Response.Redirect("CadastroFinalResponsavel.aspx?valid=2");
                     txtAguarde.Text = rg +" e "+ cpf;
                 }
                 else

@@ -13,7 +13,7 @@
             </a>
         </div>
         <div class="col-12 text-center mb-5 mt-2 ">
-            <h1>Cadastro de Vulneravel</h1>
+            <h1>Cadastro de Vulnerável</h1>
         </div>
 
         <div class="col-8">
