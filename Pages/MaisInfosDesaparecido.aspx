@@ -20,7 +20,7 @@
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="form-group">
-                        <h5 class="subtitulo2">Tem algum Tipo de Deficiencia Mental ? Caso sim descreva:</h5>
+                        <h5 class="subtitulo2">Tem algum tipo de deficiência mental ? Caso sim descreva:</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="btn-group" >
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group ">
-                        <h5 class="subtitulo2">Tem algum Tipo de Deficiencia Física ? Caso sim descreva:</h5>
+                        <h5 class="subtitulo2">Tem algum tipo de deficiência física ? Caso sim descreva:</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="btn-group" >
@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group ">
-                        <h5 class="subtitulo2">Tem algum Tipo de Retrição Alimentar ? Caso sim descreva:</h5>
+                        <h5 class="subtitulo2">Tem algum tipo de restrição alimentar ? Caso sim descreva:</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="btn-group" >
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group ">
-                        <h5 class="subtitulo2">Tem algum Tipo de Retrição para medicamentos ? Caso sim descreva:</h5>
+                        <h5 class="subtitulo2">Tem algum tipo de restrição a medicamentos ? Caso sim descreva:</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="btn-group" >
@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group">
-                        <h5 class="subtitulo2">Tem algum Tipo de Doença que não se encaixe nos itens acima ? Caso sim descreva:</h5>
+                        <h5 class="subtitulo2">Tem algum tipo de doença que não se encaixe nos itens acima? Caso sim descreva:</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="btn-group" >

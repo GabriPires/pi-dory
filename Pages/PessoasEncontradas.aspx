@@ -190,7 +190,6 @@
                 </div>
                 <div class="row">
                     <div class="col-12 container-left">
-                        <div class="bagulhoamarelo"></div>
                         <h2 class="estatisticas mt-3">Estatísticas</h2>
                         <h3 class="subTituloEstatistivas">Estados com maior numeros de casos</h3>
                         <img src="../Images/grafico.jpg" class="img-fluid" />

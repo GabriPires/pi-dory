@@ -110,33 +110,31 @@
                             <div class="col-12">
                                 <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Por que Dory</h3>
                                 <p class="p-3" style="text-align: justify;">
-                                    O nome do nosso sistema faz uma referencia direta com a personagem da disney Dory do filme "procurando o nemo" 
-                                    e "procurando Dory" uma personagem que durante o primeiro filme ajuda o Merlim um peixe-palhaço a encontrar o
-                                    seu filho até então sequestrado e isto seria o objetivo do nosso sistema
-                                    e neste mesmo filme nós é informado que ela sofre de perda de memória recente e está perdida isto seria o que o 
-                                    nosso sistema quer evitar.
+                                    O nome claramente foi inspirado na personagem Dory, da animação da Pixar "Procurando Dory". <br />
+                                    Tendo em mente a característica principal da peixinha, que são seus lapsos de memória, fazendo com que ela se perca facilmente. 
+                                    Porém sempre mantendo a esperança que há também na memória do filme, onde tudo acaba bem no final.
                                 </p>
                             </div>
                             <div class="col-12">
-                                <h3 class="PessoasDesaparecidas mb-2" style="font-size:25px;text-align:left;margin-left:5px;">Equipe de Desenvolvimento</h3>
+                                <h3 class="PessoasDesaparecidas mb-2" style="font-size: 25px; text-align: left; margin-left: 5px;">Equipe de Desenvolvimento</h3>
                                 <div class="row justify-content-center p-3">
                                     <div class="col-4 justify-content-center">
                                         <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos " />
+                                            <img src="../Images/fellipe.jpeg" class="rounded-circle quemsomos " />
                                         </div>
-                                        <h4 class="equipe text-center">Luis Fellipe</h4>
+                                        <h4 class="equipe ml-4">Luis Fellipe</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos " />
+                                            <img src="../Images/gabriel.jpeg" class="rounded-circle quemsomos " />
                                         </div>
-                                        <h4 class="equipe text-center">Gabriel Antonio</h4>
+                                        <h4 class="equipe ml-2">Gabriel Antonio</h4>
                                     </div>
                                     <div class="col-4">
                                         <div class="quemsomos">
-                                            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle quemsomos" />
+                                            <img src="../Images/matheus.jpeg" class="rounded-circle quemsomos" />
                                         </div>
-                                        <h4 class="equipe text-center">Matheus Rodrigo</h4>
+                                        <h4 class="equipe ml-1">Matheus Rodrigo</h4>
                                     </div>
                                 </div>
                             </div>

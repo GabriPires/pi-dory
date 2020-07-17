@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group ">
-                        <h5 class="subtitulo2">Tem algum tipo de restrição para medicamentos? Caso sim, descreva</h5>
+                        <h5 class="subtitulo2">Tem algum tipo de restrição a medicamentos? Caso sim, descreva</h5>
                         <div class="row">
                             <div class="col-5">
                                 <div class="btn-group" >

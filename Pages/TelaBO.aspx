@@ -29,16 +29,19 @@
             <asp:TextBox ID="txtCPF" runat="server" CssClass="form-control form-control-lg" placeholder="Seu CPF" required="true" />
         </div>
         <div class="col-12 mb-3">
-            <asp:TextBox ID="txtCPFDesaparecido" runat="server" CssClass="form-control form-control-lg" placeholder="CPF do Desaparecido" required="true" />
+            <asp:TextBox ID="txtCPFDesaparecido" runat="server" CssClass="form-control form-control-lg" placeholder="CPF do desaparecido" required="true" />
         </div>
         <div class="col-12 mb-3">
             <asp:TextBox ID="txtRG" runat="server" CssClass="form-control form-control-lg" placeholder="Seu RG" required="true" />
         </div>
         <div class="col-12 mb-3">
-            <asp:TextBox ID="txtRGDesaparecido" runat="server" CssClass="form-control form-control-lg" placeholder="RG da pessoa Desaparecida" required="true" />
+            <asp:TextBox ID="txtRGDesaparecido" runat="server" CssClass="form-control form-control-lg" placeholder="RG da pessoa desaparecida" required="true" />
         </div>
-        <div class="col-12 mb-3">
-            <asp:TextBox ID="txtBO" runat="server" CssClass="form-control form-control-lg" placeholder="Numero do Boletim de Ocorrencia" required="true" />
+        <div class="col-8 mb-3">
+            <asp:TextBox ID="txtBO" runat="server" CssClass="form-control form-control-lg" placeholder="Numero do Boletim de Ocorrência" required="true" />
+        </div>
+        <div class="col-4 mb-3">
+            <asp:TextBox ID="txtDataOcorrido" runat="server" CssClass="form-control form-control-lg" placeholder="Data do Boletim de Ocorrência" required="true" />
         </div>
         <div class="col-11 mb-3">
             <asp:Button ID="btnFinalizarCadastro" runat="server" CssClass="btn btn-primary btn-cadastro text-white" Text="Finalizar" OnClick="btnFinalizarCadastro_Click"/>
